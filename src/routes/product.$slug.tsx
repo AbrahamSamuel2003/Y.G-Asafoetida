@@ -243,18 +243,18 @@ function ProductPage() {
       {/* Breadcrumb Navigation */}
       <div className="border-b border-border bg-muted/20">
         <div className="container-page py-2.5 sm:py-3">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            <Link to="/" className="hover:text-foreground">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-muted-foreground overflow-x-auto whitespace-nowrap scrollbar-none">
+            <Link to="/" className="hover:text-foreground shrink-0">
               Home
             </Link>
-            <ChevronRight className="h-3 w-3 text-muted-foreground/60" aria-hidden />
-            <Link to="/shop" className="hover:text-foreground">
+            <ChevronRight className="h-3 w-3 text-muted-foreground/60 shrink-0" aria-hidden />
+            <Link to="/shop" className="hover:text-foreground shrink-0">
               Shop
             </Link>
-            <ChevronRight className="h-3 w-3 text-muted-foreground/60" aria-hidden />
-            <span className="capitalize text-muted-foreground">{product.format}</span>
-            <ChevronRight className="h-3 w-3 text-muted-foreground/60" aria-hidden />
-            <span aria-current="page" className="truncate font-medium text-foreground">
+            <ChevronRight className="h-3 w-3 text-muted-foreground/60 shrink-0" aria-hidden />
+            <span className="capitalize text-muted-foreground shrink-0">{product.format}</span>
+            <ChevronRight className="h-3 w-3 text-muted-foreground/60 shrink-0" aria-hidden />
+            <span aria-current="page" className="truncate font-medium text-foreground min-w-0">
               {product.name}
             </span>
           </nav>
@@ -466,7 +466,7 @@ function ProductPage() {
                 </div>
               </div>
             ) : (
-              <div className="space-y-3">
+              <div className="space-y-2.5 sm:space-y-3">
                 {product.stockLeft ? (
                   <p className="text-[11px] font-semibold text-primary flex items-center gap-1.5">
                     <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
@@ -485,26 +485,26 @@ function ProductPage() {
 
                   <Button
                     size="sm"
-                    className="h-10 flex-1 font-semibold gap-1.5 shadow-xs"
+                    className="h-11 sm:h-10 flex-1 font-bold gap-1.5 sm:gap-2 shadow-xs text-xs sm:text-sm"
                     onClick={() => {
                       add(product.slug, variant.id, qty);
                       toast.success(`Added ${qty} × ${product.name} to your basket!`);
                     }}
                   >
-                    <ShoppingBag className="h-4 w-4" />
-                    Add to Basket
-                  </Button>
-
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="h-10 px-4 font-semibold text-primary border-primary/40 hover:bg-primary hover:text-primary-foreground transition-colors"
-                    onClick={handleBuyNow}
-                  >
-                    <Zap className="h-4 w-4" />
-                    Buy Now
+                    <ShoppingBag className="h-4 w-4 shrink-0" />
+                    <span>Add to Basket · {formatPrice(variant.price * qty)}</span>
                   </Button>
                 </div>
+
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="w-full h-10 sm:h-10 font-bold gap-1.5 shadow-xs border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                  onClick={handleBuyNow}
+                >
+                  <Zap className="h-4 w-4 fill-primary group-hover:fill-primary-foreground" />
+                  Instant Checkout · Buy Now
+                </Button>
               </div>
             )}
 
@@ -561,18 +561,18 @@ function ProductPage() {
             </div>
 
             {/* 3-Point Guarantee Badges */}
-            <div className="grid grid-cols-3 gap-2 text-[11px] text-muted-foreground border-t border-border/60 pt-3">
-              <div className="flex items-center gap-1.5">
+            <div className="grid grid-cols-3 gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-medium text-muted-foreground border-t border-border/60 pt-3">
+              <div className="flex items-center justify-center gap-1 rounded-lg bg-muted/40 py-1.5 px-1 text-center">
                 <Truck className="h-3.5 w-3.5 text-primary shrink-0" />
-                <span>Free &gt; ₹499</span>
+                <span className="truncate">Free &gt; ₹499</span>
               </div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center justify-center gap-1 rounded-lg bg-muted/40 py-1.5 px-1 text-center">
                 <ShieldCheck className="h-3.5 w-3.5 text-primary shrink-0" />
-                <span>FSSAI Certified</span>
+                <span className="truncate">FSSAI Certified</span>
               </div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center justify-center gap-1 rounded-lg bg-muted/40 py-1.5 px-1 text-center">
                 <RotateCcw className="h-3.5 w-3.5 text-primary shrink-0" />
-                <span>7-Day Replace</span>
+                <span className="truncate">7-Day Replace</span>
               </div>
             </div>
 
@@ -661,7 +661,7 @@ function ProductPage() {
       <div
         role="region"
         aria-label="Add to basket"
-        className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background/95 px-3.5 py-2.5 backdrop-blur-md lg:hidden shadow-lg"
+        className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background/95 px-3.5 pt-2 pb-[calc(0.625rem+env(safe-area-inset-bottom,0px))] backdrop-blur-md lg:hidden shadow-lg"
       >
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">
