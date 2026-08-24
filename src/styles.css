@@ -1,0 +1,379 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Y.G Asafoetida design system — 4 mild, elegant, bright heritage themes:
+ * 1. Saffron Sandal (Default warm terracotta gold)
+ * 2. Herbal Sage (Gentle cardamom / pistachio sage)
+ * 3. Rosewater Silk (Mild rosewood / kumkum coral)
+ * 4. Temple Amber (Warm honeyed amber & brass)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-clove: var(--clove);
+  --color-clove-foreground: var(--clove-foreground);
+  --color-sage: var(--sage);
+  --color-cream: var(--cream);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+}
+
+/* ======================================================== */
+/* 1. SAFFRON SANDAL THEME (DEFAULT)                       */
+/* ======================================================== */
+:root,
+[data-theme="saffron"] {
+  --radius: 0.625rem;
+
+  --background: oklch(0.978 0.015 88);
+  --foreground: oklch(0.26 0.045 44);
+  --card: oklch(0.995 0.007 90);
+  --card-foreground: oklch(0.26 0.045 44);
+  --popover: oklch(0.995 0.007 90);
+  --popover-foreground: oklch(0.26 0.045 44);
+
+  --primary: oklch(0.55 0.16 46);
+  --primary-foreground: oklch(0.985 0.012 90);
+
+  --secondary: oklch(0.93 0.035 84);
+  --secondary-foreground: oklch(0.3 0.055 46);
+
+  --muted: oklch(0.945 0.022 86);
+  --muted-foreground: oklch(0.5 0.035 55);
+
+  --accent: oklch(0.9 0.06 82);
+  --accent-foreground: oklch(0.3 0.055 46);
+
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.985 0.012 90);
+
+  --border: oklch(0.89 0.025 82);
+  --input: oklch(0.89 0.025 82);
+  --ring: oklch(0.55 0.16 46);
+
+  --gold: oklch(0.75 0.13 78);
+  --gold-foreground: oklch(0.26 0.05 44);
+  --clove: oklch(0.29 0.055 40);
+  --clove-foreground: oklch(0.965 0.02 88);
+  --sage: oklch(0.68 0.06 140);
+  --cream: oklch(0.965 0.02 88);
+
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.75 0.13 78);
+  --chart-3: oklch(0.55 0.16 46);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.68 0.06 140);
+
+  --sidebar: oklch(0.965 0.02 88);
+  --sidebar-foreground: oklch(0.26 0.045 44);
+  --sidebar-primary: oklch(0.55 0.16 46);
+  --sidebar-primary-foreground: oklch(0.985 0.012 90);
+  --sidebar-accent: oklch(0.9 0.06 82);
+  --sidebar-accent-foreground: oklch(0.3 0.055 46);
+  --sidebar-border: oklch(0.89 0.025 82);
+  --sidebar-ring: oklch(0.55 0.16 46);
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    oklch(0.968 0.025 88) 0%,
+    oklch(0.93 0.045 78) 100%
+  );
+  --gradient-gold: linear-gradient(
+    100deg,
+    oklch(0.55 0.16 46) 0%,
+    oklch(0.72 0.14 70) 100%
+  );
+  --shadow-soft: 0 1px 3px oklch(0.29 0.055 40 / 0.05),
+    0 8px 20px -12px oklch(0.29 0.055 40 / 0.22);
+  --shadow-lift: 0 2px 4px oklch(0.29 0.055 40 / 0.06),
+    0 14px 28px -14px oklch(0.29 0.055 40 / 0.32);
+}
+
+/* ======================================================== */
+/* 2. HERBAL SAGE THEME (GENTLE CARDAMOM / PISTACHIO)       */
+/* ======================================================== */
+[data-theme="sage"] {
+  --radius: 0.625rem;
+
+  --background: oklch(0.978 0.014 140);
+  --foreground: oklch(0.24 0.04 150);
+  --card: oklch(0.996 0.006 140);
+  --card-foreground: oklch(0.24 0.04 150);
+  --popover: oklch(0.996 0.006 140);
+  --popover-foreground: oklch(0.24 0.04 150);
+
+  --primary: oklch(0.48 0.12 152);
+  --primary-foreground: oklch(0.99 0.01 140);
+
+  --secondary: oklch(0.93 0.03 140);
+  --secondary-foreground: oklch(0.26 0.04 150);
+
+  --muted: oklch(0.94 0.02 140);
+  --muted-foreground: oklch(0.48 0.03 150);
+
+  --accent: oklch(0.89 0.05 135);
+  --accent-foreground: oklch(0.26 0.04 150);
+
+  --border: oklch(0.88 0.025 140);
+  --input: oklch(0.88 0.025 140);
+  --ring: oklch(0.48 0.12 152);
+
+  --gold: oklch(0.72 0.12 110);
+  --gold-foreground: oklch(0.24 0.04 150);
+  --clove: oklch(0.26 0.04 150);
+  --clove-foreground: oklch(0.97 0.015 140);
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    oklch(0.97 0.02 140) 0%,
+    oklch(0.92 0.04 130) 100%
+  );
+  --gradient-gold: linear-gradient(
+    100deg,
+    oklch(0.48 0.12 152) 0%,
+    oklch(0.68 0.11 130) 100%
+  );
+  --shadow-soft: 0 1px 3px oklch(0.26 0.04 150 / 0.05),
+    0 8px 20px -12px oklch(0.26 0.04 150 / 0.22);
+  --shadow-lift: 0 2px 4px oklch(0.26 0.04 150 / 0.06),
+    0 14px 28px -14px oklch(0.26 0.04 150 / 0.32);
+}
+
+/* ======================================================== */
+/* 3. ROSEWATER SILK THEME (MILD KUMKUM RUBY & CORAL)       */
+/* ======================================================== */
+[data-theme="rose"] {
+  --radius: 0.625rem;
+
+  --background: oklch(0.98 0.012 50);
+  --foreground: oklch(0.25 0.045 25);
+  --card: oklch(0.997 0.005 50);
+  --card-foreground: oklch(0.25 0.045 25);
+  --popover: oklch(0.997 0.005 50);
+  --popover-foreground: oklch(0.25 0.045 25);
+
+  --primary: oklch(0.52 0.15 22);
+  --primary-foreground: oklch(0.99 0.01 50);
+
+  --secondary: oklch(0.94 0.03 40);
+  --secondary-foreground: oklch(0.28 0.045 25);
+
+  --muted: oklch(0.95 0.02 40);
+  --muted-foreground: oklch(0.50 0.035 30);
+
+  --accent: oklch(0.91 0.055 35);
+  --accent-foreground: oklch(0.28 0.045 25);
+
+  --border: oklch(0.89 0.025 40);
+  --input: oklch(0.89 0.025 40);
+  --ring: oklch(0.52 0.15 22);
+
+  --gold: oklch(0.74 0.13 55);
+  --gold-foreground: oklch(0.25 0.045 25);
+  --clove: oklch(0.27 0.045 25);
+  --clove-foreground: oklch(0.97 0.015 50);
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    oklch(0.975 0.02 50) 0%,
+    oklch(0.93 0.04 35) 100%
+  );
+  --gradient-gold: linear-gradient(
+    100deg,
+    oklch(0.52 0.15 22) 0%,
+    oklch(0.70 0.12 40) 100%
+  );
+  --shadow-soft: 0 1px 3px oklch(0.27 0.045 25 / 0.05),
+    0 8px 20px -12px oklch(0.27 0.045 25 / 0.22);
+  --shadow-lift: 0 2px 4px oklch(0.27 0.045 25 / 0.06),
+    0 14px 28px -14px oklch(0.27 0.045 25 / 0.32);
+}
+
+/* ======================================================== */
+/* 4. TEMPLE AMBER THEME (WARM GOLDEN OCHRE & BRASS)        */
+/* ======================================================== */
+[data-theme="amber"] {
+  --radius: 0.625rem;
+
+  --background: oklch(0.976 0.02 85);
+  --foreground: oklch(0.25 0.05 60);
+  --card: oklch(0.996 0.008 85);
+  --card-foreground: oklch(0.25 0.05 60);
+  --popover: oklch(0.996 0.008 85);
+  --popover-foreground: oklch(0.25 0.05 60);
+
+  --primary: oklch(0.52 0.15 68);
+  --primary-foreground: oklch(0.99 0.01 85);
+
+  --secondary: oklch(0.93 0.04 80);
+  --secondary-foreground: oklch(0.28 0.05 60);
+
+  --muted: oklch(0.94 0.025 80);
+  --muted-foreground: oklch(0.48 0.04 65);
+
+  --accent: oklch(0.89 0.07 80);
+  --accent-foreground: oklch(0.28 0.05 60);
+
+  --border: oklch(0.88 0.03 80);
+  --input: oklch(0.88 0.03 80);
+  --ring: oklch(0.52 0.15 68);
+
+  --gold: oklch(0.76 0.14 78);
+  --gold-foreground: oklch(0.25 0.05 60);
+  --clove: oklch(0.27 0.05 60);
+  --clove-foreground: oklch(0.97 0.02 85);
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    oklch(0.97 0.03 85) 0%,
+    oklch(0.92 0.055 75) 100%
+  );
+  --gradient-gold: linear-gradient(
+    100deg,
+    oklch(0.52 0.15 68) 0%,
+    oklch(0.72 0.14 75) 100%
+  );
+  --shadow-soft: 0 1px 3px oklch(0.27 0.05 60 / 0.05),
+    0 8px 20px -12px oklch(0.27 0.05 60 / 0.22);
+  --shadow-lift: 0 2px 4px oklch(0.27 0.05 60 / 0.06),
+    0 14px 28px -14px oklch(0.27 0.05 60 / 0.32);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 68rem;
+  padding-inline: 1rem;
+}
+
+@utility eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+@utility surface-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+@utility gradient-gold {
+  background-image: var(--gradient-gold);
+}
+
+@utility gradient-warm {
+  background-image: var(--gradient-warm);
+}
+
+@utility shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+/* Storybook page styling for the heritage story */
+@utility storybook-page {
+  position: relative;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lift);
+}
+
+@utility dropcap {
+  & > p:first-of-type::first-letter {
+    float: left;
+    font-family: var(--font-display, serif);
+    font-size: 3.2em;
+    line-height: 0.82;
+    font-weight: 700;
+    padding-right: 0.08em;
+    margin-top: 0.05em;
+    color: var(--color-primary);
+  }
+}
+
+@utility story-rule {
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, var(--color-primary) 45%, transparent),
+    transparent
+  );
+}
