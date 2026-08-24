@@ -15,17 +15,73 @@ import { formatLabels, products, type Format } from "@/data/products";
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Shop Hing — Powder, Granules & Cakes | Y.G Asafoetida" },
+      { title: "Buy Authentic Hing Online — Powders, Cakes, Health Mix & Sambrani | Y.G Asafoetida" },
       {
         name: "description",
         content:
-          "Browse Y.G Asafoetida's full range: premium compounded hing powder, gluten-free hing, granules for curd rice and gold asafoetida cakes.",
+          "Explore 11 authentic heritage products: Gold & Premium Hing Powder, Gluten-Free Hing, Solid Cakes, Granules, Traditional Sathu Maavu, and Pure Benzoin Pooja Sambrani. Fast shipping across India.",
       },
-      { property: "og:title", content: "Shop Hing — Y.G Asafoetida" },
+      {
+        name: "keywords",
+        content:
+          "buy hing online, asafoetida powder price, pure gold hing cake, gluten free hing powder, traditional health mix, sathu maavu online, pure benzoin pooja sambrani, buy hing in India",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://ygasafoetida.in/shop" },
+      { property: "og:title", content: "Buy Authentic Hing, Health Mix & Sambrani — Y.G Asafoetida" },
       {
         property: "og:description",
         content:
-          "Premium compounded hing powder, gluten-free hing, granules and gold cakes from Tirunelveli.",
+          "Explore 11 authentic heritage products: Gold & Premium Hing Powder, Gluten-Free Hing, Solid Cakes, Granules, Traditional Sathu Maavu, and Pure Benzoin Pooja Sambrani.",
+      },
+      { property: "og:image", content: "https://ygasafoetida.in/products/all-product/img-1.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Shop Authentic Heritage Hing — Y.G Asafoetida" },
+      {
+        name: "twitter:description",
+        content:
+          "Explore 11 authentic heritage preparations: Hing powders, solid cakes, gluten-free, health mix, and sambrani.",
+      },
+      { name: "twitter:image", content: "https://ygasafoetida.in/products/all-product/img-1.jpg" },
+    ],
+    links: [{ rel: "canonical", href: "https://ygasafoetida.in/shop" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Y.G Asafoetida & Traditional Products Store",
+          "description": "Authentic compounded hing powders, solid cakes, traditional health mix, and pooja sambrani.",
+          "url": "https://ygasafoetida.in/shop",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://ygasafoetida.in/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Shop",
+                "item": "https://ygasafoetida.in/shop"
+              }
+            ]
+          },
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": products.map((p, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "name": p.name,
+              "url": `https://ygasafoetida.in/product/${p.slug}`,
+              "image": `https://ygasafoetida.in/products/${p.slug}/img-1.jpg`
+            }))
+          }
+        }),
       },
     ],
   }),

@@ -19,17 +19,51 @@ import {
 export const Route = createFileRoute("/story")({
   head: () => ({
     meta: [
-      { title: "Our 1932 Story — Three Generations of Tirunelveli Hing | Y.G Asafoetida" },
+      { title: "Our Heritage Since 1932 — Three Generations of Tirunelveli Hing | Y.G Asafoetida" },
       {
         name: "description",
         content:
-          "The 92-year journey of Y.G Asafoetida from a small shop on South Car Street in Tirunelveli to India's most trusted heritage hing house.",
+          "The 92-year journey of Y.G Asafoetida from a small shop on South Car Street in Tirunelveli to India's most trusted heritage hing house. Learn our artisanal stone-milling compounding craft.",
       },
-      { property: "og:title", content: "Our 1932 Story — Y.G Asafoetida Since 1932" },
+      {
+        name: "keywords",
+        content:
+          "Y.G Asafoetida history, Tirunelveli hing history, heritage asafoetida, traditional hing compounding, South Indian spices history, 1932 spices brand",
+      },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://ygasafoetida.in/story" },
+      { property: "og:title", content: "Our Heritage Since 1932 — Y.G Asafoetida" },
       {
         property: "og:description",
         content:
-          "Ninety-two years of stone-compounding pure hing in Tirunelveli, told across generations.",
+          "Ninety-two years of stone-compounding pure hing in Tirunelveli, preserved across three generations.",
+      },
+      { property: "og:image", content: "https://ygasafoetida.in/logo.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Our 1932 Heritage — Y.G Asafoetida" },
+      {
+        name: "twitter:description",
+        content:
+          "The 92-year journey of Y.G Asafoetida compounding in Tirunelveli, Tamil Nadu.",
+      },
+      { name: "twitter:image", content: "https://ygasafoetida.in/logo.png" },
+    ],
+    links: [{ rel: "canonical", href: "https://ygasafoetida.in/story" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "The Y.G Asafoetida Heritage Story",
+          "description": "The 92-year history and artisanal compounding craft of Y.G Asafoetida in Tirunelveli since 1932.",
+          "url": "https://ygasafoetida.in/story",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Y.G Asafoetida",
+            "logo": "https://ygasafoetida.in/logo.png"
+          }
+        }),
       },
     ],
   }),

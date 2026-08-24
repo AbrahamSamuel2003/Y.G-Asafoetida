@@ -18,16 +18,58 @@ import { saveTicket } from "@/lib/support";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Support — Y.G Asafoetida, Tirunelveli" },
+      { title: "Contact Y.G Asafoetida — Customer Support & Bulk Enquiries | Tirunelveli" },
       {
         name: "description",
         content:
-          "Questions about orders, bulk supply or our hing formulations? Reach the Y.G Asafoetida team in Tirunelveli by phone, email or this form.",
+          "Reach the Y.G Asafoetida team in Tirunelveli. Get direct help with orders, tracking, culinary recommendations, and bulk wholesale supply. Phone: +91 98765 43210.",
       },
-      { property: "og:title", content: "Contact Y.G Asafoetida" },
+      {
+        name: "keywords",
+        content:
+          "contact Y.G Asafoetida, YG Hing customer care, bulk hing supply, Tirunelveli spices contact, wholesale asafoetida, hing export enquiry",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://ygasafoetida.in/contact" },
+      { property: "og:title", content: "Contact Y.G Asafoetida — Customer Care & Bulk Supply" },
       {
         property: "og:description",
-        content: "Order help, bulk enquiries and product questions — we reply within a working day.",
+        content: "Order help, bulk enquiries, and product questions — we reply within a working day.",
+      },
+      { property: "og:image", content: "https://ygasafoetida.in/logo.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Contact Y.G Asafoetida Support" },
+      {
+        name: "twitter:description",
+        content: "Customer care and wholesale enquiries in Tirunelveli, Tamil Nadu.",
+      },
+      { name: "twitter:image", content: "https://ygasafoetida.in/logo.png" },
+    ],
+    links: [{ rel: "canonical", href: "https://ygasafoetida.in/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact Y.G Asafoetida",
+          "url": "https://ygasafoetida.in/contact",
+          "description": "Customer support, order resolutions, and wholesale bulk enquiries for Y.G Asafoetida.",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "Y.G Asafoetida",
+            "telephone": "+91 98765 43210",
+            "email": "care@ygasafoetida.in",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Town Car Street",
+              "addressLocality": "Tirunelveli",
+              "addressRegion": "Tamil Nadu",
+              "postalCode": "627006",
+              "addressCountry": "IN"
+            }
+          }
+        }),
       },
     ],
   }),

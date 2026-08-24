@@ -11,13 +11,18 @@ export const Route = createFileRoute("/policies/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.title} — Y.G Asafoetida` },
-          { name: "description", content: loaderData.summary.slice(0, 155) },
+          { title: `${loaderData.title} — Y.G Asafoetida Store Policies` },
+          { name: "description", content: `${loaderData.summary.slice(0, 150)}... Read our official store policies.` },
           { property: "og:title", content: `${loaderData.title} — Y.G Asafoetida` },
           { property: "og:description", content: loaderData.summary.slice(0, 155) },
           { property: "og:type", content: "article" },
+          { property: "og:url", content: `https://ygasafoetida.in/policies/${loaderData.slug}` },
+          { property: "og:image", content: "https://ygasafoetida.in/logo.png" },
           { name: "twitter:card", content: "summary_large_image" },
         ]
+      : [],
+    links: loaderData
+      ? [{ rel: "canonical", href: `https://ygasafoetida.in/policies/${loaderData.slug}` }]
       : [],
   }),
   component: PolicyPage,

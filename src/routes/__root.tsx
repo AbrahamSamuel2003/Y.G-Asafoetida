@@ -119,17 +119,49 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Y.G Asafoetida — Heritage Hing from Tirunelveli" },
+      { title: "Y.G Asafoetida — Authentic Heritage Hing & Traditional Products Since 1932" },
       {
         name: "description",
         content:
-          "Compounded and gluten-free asafoetida powder, granules and cakes, made in Tirunelveli since 1932.",
+          "Compounded artisanal asafoetida powder, pure gold hing cake, gluten-free hing, wood-roasted traditional health mix (sathu maavu), and pure temple benzoin sambrani from Tirunelveli since 1932.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Y.G Asafoetida, YG Hing, buy hing online, asafoetida powder, pure bandhani hing, hing cake, gluten free hing, traditional health mix, sathu maavu, pure benzoin sambrani, loban, Tirunelveli hing, authentic Indian spices",
       },
       { name: "author", content: "Y.G Asafoetida" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "theme-color", content: "#c25e00" },
+      // Open Graph
+      { property: "og:site_name", content: "Y.G Asafoetida" },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_IN" },
+      { property: "og:title", content: "Y.G Asafoetida — Authentic Heritage Hing & Traditional Products Since 1932" },
+      {
+        property: "og:description",
+        content:
+          "Compounded artisanal asafoetida powder, pure gold hing cake, gluten-free hing, traditional health mix (sathu maavu), and pure temple benzoin sambrani from Tirunelveli since 1932.",
+      },
+      { property: "og:image", content: "https://ygasafoetida.in/logo.png" },
+      { property: "og:image:alt", content: "Y.G Asafoetida Logo" },
+      // Twitter Card
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Y.G Asafoetida — Authentic Heritage Hing Since 1932" },
+      {
+        name: "twitter:description",
+        content:
+          "Artisanal compounded hing powder, gold cakes, traditional sathu maavu and pure benzoin sambrani from Tirunelveli.",
+      },
+      { name: "twitter:image", content: "https://ygasafoetida.in/logo.png" },
+      // Regional & Local SEO
+      { name: "geo.region", content: "IN-TN" },
+      { name: "geo.placename", content: "Tirunelveli, Tamil Nadu, India" },
+      { name: "geo.position", content: "8.7139;77.7567" },
+      { name: "ICBM", content: "8.7139, 77.7567" },
     ],
     links: [
+      { rel: "canonical", href: "https://ygasafoetida.in" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -137,7 +169,46 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/logo.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "@id": "https://ygasafoetida.in/#organization",
+          "name": "Y.G Asafoetida",
+          "alternateName": ["YG Hing", "Y.G Products", "Y.G Traditional Products"],
+          "url": "https://ygasafoetida.in",
+          "logo": "https://ygasafoetida.in/logo.png",
+          "image": "https://ygasafoetida.in/logo.png",
+          "description": "Compounded and artisanal asafoetida powder, cakes, granules, traditional health mix, and pure benzoin sambrani made in Tirunelveli since 1932.",
+          "foundingDate": "1932",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Town Car Street",
+            "addressLocality": "Tirunelveli",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "627006",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 8.7139,
+            "longitude": 77.7567
+          },
+          "telephone": "+91 98765 43210",
+          "email": "care@ygasafoetida.in",
+          "priceRange": "₹85 - ₹999",
+          "openingHours": "Mo-Sa 09:00-19:00",
+          "sameAs": [
+            "https://www.facebook.com/ygasafoetida",
+            "https://www.instagram.com/ygasafoetida"
+          ]
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,

@@ -22,17 +22,83 @@ import { TypingHeadline } from "@/components/site/TypingHeadline";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Y.G Asafoetida — Heritage Hing from Tirunelveli Since 1932" },
+      { title: "Y.G Asafoetida — Artisanal Hing, Sathu Maavu & Sambrani Since 1932" },
       {
         name: "description",
         content:
-          "Artisanal compounded hing powder, gluten-free powder, slow-blooming granules, chips and pure gold cakes from Tirunelveli since 1932. Formulated for authentic South Indian cooking.",
+          "Buy authentic compounded asafoetida powder, pure gold hing cake, gluten-free hing, wood-roasted traditional health mix (sathu maavu), and pure temple benzoin sambrani online from Tirunelveli since 1932.",
       },
-      { property: "og:title", content: "Y.G Asafoetida — Authentic Heritage Hing Since 1932" },
+      {
+        name: "keywords",
+        content:
+          "buy hing online, asafoetida powder, Y.G Asafoetida, pure gold hing cake, gluten free hing, traditional health mix, sathu maavu online, pure benzoin sambrani, loban resin, Tirunelveli hing store",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://ygasafoetida.in/" },
+      { property: "og:title", content: "Y.G Asafoetida — Authentic Heritage Hing & Traditional Store Since 1932" },
       {
         property: "og:description",
         content:
-          "Nine artisanal hing preparations: Gold Powder, Premium Powder, Gluten-Free, Cake, Chips, Pellets, Bottle Jar, and Gift Sets.",
+          "Artisanal hing preparations, stone-ground Sathu Maavu health mix, and pure benzoin sambrani compounded in Tirunelveli.",
+      },
+      { property: "og:image", content: "https://ygasafoetida.in/logo.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Y.G Asafoetida — Authentic Heritage Hing Since 1932" },
+      {
+        name: "twitter:description",
+        content:
+          "Artisanal compounded hing powder, gluten-free hing, traditional sathu maavu, and pure pooja sambrani from Tirunelveli.",
+      },
+      { name: "twitter:image", content: "https://ygasafoetida.in/logo.png" },
+    ],
+    links: [{ rel: "canonical", href: "https://ygasafoetida.in/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Y.G Asafoetida",
+          "url": "https://ygasafoetida.in",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ygasafoetida.in/shop?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What makes Y.G Asafoetida different from commercial hing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Y.G has been compounding hing in Tirunelveli since 1932 using high-grade mountain Ferula oleoresin and natural carriers, stone-milled in small batches without artificial colors, chemical preservatives, or synthetic aromas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you have a gluten-free asafoetida option?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! Our Y.G Gluten-Free Asafoetida Powder is formulated with 100% pure rice starch in a dedicated celiac-safe line."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the shelf life of Y.G Asafoetida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our compounded powders retain their robust aroma for 18 months from packing. Solid cakes and granules can last up to 24 months when stored airtight in a cool, dry cupboard."
+              }
+            }
+          ]
+        }),
       },
     ],
   }),
