@@ -20,17 +20,17 @@ export function ThemeSwitcher({ className = "" }: { className?: string }) {
         <Button
           variant="ghost"
           size="sm"
-          className={`relative h-9 px-2 sm:px-2.5 rounded-full border border-border/60 hover:bg-secondary/60 transition-all ${className}`}
+          className={`relative h-8 sm:h-9 px-1.5 sm:px-2.5 rounded-full border border-border/60 hover:bg-secondary/60 transition-all shrink-0 ${className}`}
           title={`Active Theme: ${current.name} (Click to change)`}
           aria-label="Select Palette Color Theme"
         >
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1 sm:gap-1.5">
             <span
-              className="h-3 w-3 rounded-full ring-2 ring-background shadow-xs transition-transform"
+              className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full ring-1 ring-background shadow-xs shrink-0 transition-transform"
               style={{ backgroundColor: current.dotColor }}
             />
-            <Palette className="h-3.5 w-3.5 text-muted-foreground" />
-            <span className="hidden md:inline-block text-[11px] font-medium text-foreground">
+            <Palette className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
+            <span className="hidden md:inline-block text-[11px] font-medium text-foreground whitespace-nowrap">
               {current.name}
             </span>
           </div>
