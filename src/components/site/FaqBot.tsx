@@ -60,7 +60,7 @@ export function FaqBot() {
         aria-expanded={open}
         aria-label={open ? "Close the FAQ helper" : "Open the FAQ helper"}
         style={{ bottom: "calc(1rem + var(--fab-offset, 0px))" }}
-        className="fixed right-4 z-40 flex h-13 min-h-13 items-center gap-2 rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground shadow-lift transition-transform hover:scale-105 sm:right-6"
+        className="fixed right-3 z-40 flex h-11 w-11 sm:h-12 sm:w-auto items-center justify-center sm:justify-start gap-2 rounded-full bg-primary p-0 sm:px-4 text-sm font-medium text-primary-foreground shadow-lift transition-transform hover:scale-105 sm:right-6"
       >
         {open ? <X className="h-5 w-5" /> : <MessageSquare className="h-5 w-5" />}
         <span className="hidden sm:inline">{open ? "Close" : "FAQ helper"}</span>

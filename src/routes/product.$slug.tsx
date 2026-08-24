@@ -237,12 +237,12 @@ function ProductPage() {
   };
 
   return (
-    <div className="pb-24 lg:pb-12 space-y-0">
+    <div className="pb-32 lg:pb-12 space-y-0">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Breadcrumb Navigation */}
       <div className="border-b border-border bg-muted/20">
-        <div className="container-page py-3">
+        <div className="container-page py-2.5 sm:py-3">
           <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-muted-foreground">
             <Link to="/" className="hover:text-foreground">
               Home
@@ -262,13 +262,44 @@ function ProductPage() {
       </div>
 
       {/* Main Product Showcase Section */}
-      <section className="container-page py-6 sm:py-10">
-        <div className="grid gap-8 lg:grid-cols-12 items-start">
+      <section className="container-page py-4 sm:py-10">
+        {/* Mobile Header Lockup (Title, Rating, Eyebrow & Wishlist on top) */}
+        <div className="lg:hidden space-y-1.5 pb-3">
+          <div className="flex items-center justify-between gap-2">
+            <p className="eyebrow">{formatLabels[product.format]} · Estd. 1932</p>
+            <WishlistButton slug={product.slug} name={product.name} />
+          </div>
+
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
+            {product.name}
+          </h1>
+
+          <div className="flex flex-wrap items-center gap-2 text-xs">
+            <div className="flex items-center text-amber-500">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star
+                  key={i}
+                  className={`h-3.5 w-3.5 ${
+                    i < Math.round(product.rating) ? "fill-amber-500 text-amber-500" : "text-border"
+                  }`}
+                />
+              ))}
+            </div>
+            <span className="font-bold text-foreground">{product.rating}</span>
+            <span className="text-muted-foreground text-[11px]">({product.reviews} reviews)</span>
+            <span className="text-muted-foreground/60">·</span>
+            <span className="text-primary font-medium flex items-center gap-1 text-[11px]">
+              <CheckCircle2 className="h-3 w-3" /> FSSAI Certified
+            </span>
+          </div>
+        </div>
+
+        <div className="grid gap-6 lg:gap-8 lg:grid-cols-12 items-start">
           {/* ======================================================== */}
           {/* LEFT: COMPACT MEDIA GALLERY */}
           {/* ======================================================== */}
-          <div className="lg:col-span-6 space-y-3">
-            <div className="surface-card group relative overflow-hidden rounded-2xl border border-border bg-secondary/30 p-4 sm:p-6 flex items-center justify-center">
+          <div className="lg:col-span-6 space-y-2.5 sm:space-y-3">
+            <div className="surface-card group relative overflow-hidden rounded-2xl border border-border bg-secondary/30 p-3 sm:p-6 flex items-center justify-center">
               <SmartImage
                 src={product.gallery[activeImage] ?? product.image}
                 alt={product.name}
@@ -277,28 +308,28 @@ function ProductPage() {
                 priority
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 fallbackLabel={product.name}
-                wrapperClassName="aspect-square w-full flex items-center justify-center"
+                wrapperClassName="aspect-4/3 sm:aspect-square max-h-[300px] sm:max-h-none w-full flex items-center justify-center"
                 className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
               />
 
               {/* Floating Badges */}
-              <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
-                <span className="rounded-full bg-card/90 backdrop-blur px-2.5 py-0.5 text-[10px] font-bold text-foreground uppercase border border-border/60 shadow-xs">
+              <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 flex flex-wrap gap-1.5">
+                <span className="rounded-full bg-card/90 backdrop-blur px-2 py-0.5 text-[9px] sm:text-[10px] font-bold text-foreground uppercase border border-border/60 shadow-xs">
                   {formatLabels[product.format]}
                 </span>
                 {product.bestseller ? (
-                  <span className="rounded-full bg-primary px-2.5 py-0.5 text-[10px] font-bold text-primary-foreground uppercase shadow-xs">
+                  <span className="rounded-full bg-primary px-2 py-0.5 text-[9px] sm:text-[10px] font-bold text-primary-foreground uppercase shadow-xs">
                     Bestseller
                   </span>
                 ) : null}
                 {product.glutenFree ? (
-                  <span className="rounded-full bg-amber-500 text-slate-950 px-2.5 py-0.5 text-[10px] font-bold uppercase shadow-xs">
+                  <span className="rounded-full bg-amber-500 text-slate-950 px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase shadow-xs">
                     Gluten-Free
                   </span>
                 ) : null}
               </div>
 
-              <div className="absolute bottom-3 right-3 bg-background/90 backdrop-blur px-2.5 py-1 rounded-lg border border-border text-[10px] text-muted-foreground flex items-center gap-1 shadow-xs">
+              <div className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 bg-background/90 backdrop-blur px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg border border-border text-[9px] sm:text-[10px] text-muted-foreground flex items-center gap-1 shadow-xs">
                 <Sparkles className="h-3 w-3 text-primary" />
                 <span>Stone-Compounded</span>
               </div>
@@ -313,7 +344,7 @@ function ProductPage() {
                     type="button"
                     onClick={() => setActiveImage(i)}
                     aria-label={`View photo ${i + 1}`}
-                    className={`h-16 w-16 shrink-0 overflow-hidden rounded-xl border-2 p-1 bg-secondary/30 transition-all ${
+                    className={`h-14 w-14 sm:h-16 sm:w-16 shrink-0 overflow-hidden rounded-xl border-2 p-1 bg-secondary/30 transition-all ${
                       activeImage === i
                         ? "border-primary shadow-xs scale-102"
                         : "border-border/70 hover:border-primary/40 opacity-75 hover:opacity-100"
@@ -329,48 +360,23 @@ function ProductPage() {
                 ))}
               </div>
             ) : null}
-
-            {/* Quick Culinary Profile Card */}
-            <div className="rounded-xl border border-border/80 bg-card p-3.5 space-y-2 text-xs">
-              <p className="font-bold text-foreground flex items-center gap-1.5 text-[11px] uppercase tracking-wider text-primary">
-                <Flame className="h-3.5 w-3.5" /> Culinary Characteristics
-              </p>
-              <div className="grid grid-cols-2 gap-2 text-muted-foreground">
-                <div className="rounded-lg bg-muted/40 p-2">
-                  <span className="block text-[10px] text-muted-foreground/80 font-medium">Aroma Strength</span>
-                  <span className="font-semibold text-foreground text-xs">
-                    {product.format === "cake" ? "Intense (5/5)" : product.format === "granules" ? "Roasted Nutty (4/5)" : "Sharp Classic (4.5/5)"}
-                  </span>
-                </div>
-                <div className="rounded-lg bg-muted/40 p-2">
-                  <span className="block text-[10px] text-muted-foreground/80 font-medium">Bloom Speed</span>
-                  <span className="font-semibold text-foreground text-xs">
-                    {product.format === "granules" ? "Slow-Release" : product.format === "cake" ? "Solid Dissolve" : "Instant in Hot Ghee"}
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* ======================================================== */}
           {/* RIGHT: BUYING DETAILS & ACTIONS */}
           {/* ======================================================== */}
-          <div className="lg:col-span-6 space-y-5">
-            <div>
+          <div className="lg:col-span-6 space-y-4 sm:space-y-5">
+            {/* Desktop Header Lockup */}
+            <div className="hidden lg:block">
               <div className="flex items-center justify-between gap-2">
                 <p className="eyebrow">{formatLabels[product.format]} · Estd. 1932</p>
                 <WishlistButton slug={product.slug} name={product.name} />
               </div>
 
-              <h1 className="mt-1 text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+              <h1 className="mt-1 text-3xl font-bold tracking-tight text-foreground">
                 {product.name}
               </h1>
 
-              <p className="mt-1 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                {product.tagline}
-              </p>
-
-              {/* Star Rating & Reviews */}
               <div className="mt-2.5 flex items-center gap-2 text-xs">
                 <div className="flex items-center text-amber-500">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -391,8 +397,13 @@ function ProductPage() {
               </div>
             </div>
 
+            {/* Mobile Tagline (shown under photos) */}
+            <p className="lg:hidden text-xs text-muted-foreground leading-relaxed">
+              {product.tagline}
+            </p>
+
             {/* Price Box */}
-            <div className="rounded-xl border border-border/80 bg-muted/20 p-3.5 flex items-baseline justify-between">
+            <div className="rounded-xl border border-border/80 bg-muted/20 p-3 sm:p-3.5 flex items-baseline justify-between">
               <div>
                 <div className="flex items-baseline gap-2">
                   <span className="text-2xl sm:text-3xl font-bold text-foreground">
@@ -481,21 +492,42 @@ function ProductPage() {
                     }}
                   >
                     <ShoppingBag className="h-4 w-4" />
-                    Add to Basket · {formatPrice(variant.price * qty)}
+                    Add to Basket
                   </Button>
 
                   <Button
                     size="sm"
-                    variant="secondary"
-                    className="h-10 px-4 font-bold text-slate-950 gap-1.5 shadow-xs"
+                    variant="outline"
+                    className="h-10 px-4 font-semibold text-primary border-primary/40 hover:bg-primary hover:text-primary-foreground transition-colors"
                     onClick={handleBuyNow}
                   >
-                    <Zap className="h-4 w-4 fill-current" />
+                    <Zap className="h-4 w-4" />
                     Buy Now
                   </Button>
                 </div>
               </div>
             )}
+
+            {/* Quick Culinary Profile Card */}
+            <div className="rounded-xl border border-border/80 bg-card p-3.5 space-y-2 text-xs">
+              <p className="font-bold text-foreground flex items-center gap-1.5 text-[11px] uppercase tracking-wider text-primary">
+                <Flame className="h-3.5 w-3.5" /> Culinary Characteristics
+              </p>
+              <div className="grid grid-cols-2 gap-2 text-muted-foreground">
+                <div className="rounded-lg bg-muted/40 p-2">
+                  <span className="block text-[10px] text-muted-foreground/80 font-medium">Aroma Strength</span>
+                  <span className="font-semibold text-foreground text-xs">
+                    {product.format === "cake" ? "Intense (5/5)" : product.format === "granules" ? "Roasted Nutty (4/5)" : "Sharp Classic (4.5/5)"}
+                  </span>
+                </div>
+                <div className="rounded-lg bg-muted/40 p-2">
+                  <span className="block text-[10px] text-muted-foreground/80 font-medium">Bloom Speed</span>
+                  <span className="font-semibold text-foreground text-xs">
+                    {product.format === "granules" ? "Slow-Release" : product.format === "cake" ? "Solid Dissolve" : "Instant in Hot Ghee"}
+                  </span>
+                </div>
+              </div>
+            </div>
 
             {/* Pincode Express Delivery Estimator */}
             <div className="rounded-xl border border-border/80 bg-card p-3.5 space-y-2">
