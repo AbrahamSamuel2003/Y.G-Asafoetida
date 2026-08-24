@@ -61,6 +61,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
 import { formatPrice } from "@/data/products";
+import { compressImage, compressMultipleImages } from "@/lib/image-compressor";
 
 // Server Functions
 import {
@@ -362,35 +363,56 @@ function AdminDashboardPage() {
     setProductDialogOpen(true);
   };
 
-  const handleImageFileUpload = (e: React.ChangeEvent<HTMLInputElement>, isGallery = false) => {
+  const handleImageFileUpload = async (
+    e: React.ChangeEvent<HTMLInputElement>,
+    isGallery = false
+  ) => {
     const files = e.target.files;
     if (!files || files.length === 0) return;
 
-    Array.from(files).forEach((file) => {
-      if (file.size > 8 * 1024 * 1024) {
-        toast.error(`File "${file.name}" exceeds 8MB limit`);
-        return;
+    const toastId = toast.loading("Compressing and optimizing image(s)...");
+    try {
+      if (!isGallery) {
+        const file = files[0];
+        if (!file) return;
+        const res = await compressImage(file, {
+          maxWidth: 1600,
+          maxHeight: 1600,
+          quality: 0.88,
+          mimeType: "image/webp",
+        });
+        setEditingProduct((prev) => (prev ? { ...prev, image: res.dataUrl } : null));
+        toast.success(
+          `Cover image compressed: ${(res.originalSize / 1024).toFixed(0)}KB → ${(res.compressedSize / 1024).toFixed(0)}KB (-${res.compressionRatio}%)`,
+          { id: toastId }
+        );
+      } else {
+        const results = await compressMultipleImages(files, {
+          maxWidth: 1600,
+          maxHeight: 1600,
+          quality: 0.88,
+          mimeType: "image/webp",
+        });
+        const newUrls = results.map((r) => r.dataUrl);
+        setEditingProduct((prev) => {
+          if (!prev) return null;
+          const current = Array.isArray(prev.gallery) ? prev.gallery : [];
+          return { ...prev, gallery: [...current, ...newUrls] };
+        });
+        const totalOriginal = results.reduce((acc, r) => acc + r.originalSize, 0);
+        const totalCompressed = results.reduce((acc, r) => acc + r.compressedSize, 0);
+        const savedKb = ((totalOriginal - totalCompressed) / 1024).toFixed(0);
+        toast.success(
+          `${results.length} gallery image(s) compressed & added (saved ${savedKb}KB)`,
+          { id: toastId }
+        );
       }
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const dataUrl = event.target?.result as string;
-        if (dataUrl) {
-          if (!isGallery) {
-            setEditingProduct((prev) => (prev ? { ...prev, image: dataUrl } : null));
-            toast.success("Main image updated");
-          } else {
-            setEditingProduct((prev) => {
-              if (!prev) return null;
-              const current = Array.isArray(prev.gallery) ? prev.gallery : [];
-              return { ...prev, gallery: [...current, dataUrl] };
-            });
-            toast.success("Image added to gallery");
-          }
-        }
-      };
-      reader.readAsDataURL(file);
-    });
-    e.target.value = "";
+    } catch (err) {
+      console.error("Image upload compression failed:", err);
+      toast.error("Failed to compress image", { id: toastId });
+    } finally {
+      e.target.value = "";
+    }
   };
 
   const handleSaveProduct = async () => {
