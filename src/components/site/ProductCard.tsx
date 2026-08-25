@@ -69,16 +69,22 @@ export function ProductCard({
           </div>
         </Link>
 
-        {/* Floating Wishlist & Quick View */}
-        <div className="pointer-events-none absolute top-2 right-2 flex flex-col gap-1.5">
-          <span className="pointer-events-auto scale-90 origin-top-right">
-            <WishlistButton slug={product.slug} name={product.name} />
-          </span>
+        {/* Floating Wishlist & Quick View Stack */}
+        <div className="pointer-events-none absolute top-2 right-2 flex flex-col items-center gap-1.5 z-10">
+          <WishlistButton
+            slug={product.slug}
+            name={product.name}
+            className="pointer-events-auto h-7.5 w-7.5 shadow-xs border-border/80 bg-white/95 text-muted-foreground hover:text-foreground transition-all hover:scale-105 active:scale-95"
+          />
           <button
             type="button"
-            onClick={() => setQuickView(true)}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setQuickView(true);
+            }}
             aria-label={`Quick view ${product.name}`}
-            className="pointer-events-auto grid h-7 w-7 place-items-center rounded-full border border-border bg-card/90 backdrop-blur text-muted-foreground hover:text-foreground transition-colors hover:bg-card shadow-xs"
+            className="pointer-events-auto grid h-7.5 w-7.5 place-items-center rounded-full border border-border/80 bg-white/95 backdrop-blur text-muted-foreground hover:text-foreground transition-all hover:scale-105 active:scale-95 shadow-xs"
           >
             <Eye className="h-3.5 w-3.5" aria-hidden />
           </button>
@@ -274,17 +280,24 @@ export function ProductCard({
         </div>
       </Link>
 
-      <div className="pointer-events-none absolute top-3 right-3 flex flex-col gap-1.5">
-        <span className="pointer-events-auto">
-          <WishlistButton slug={product.slug} name={product.name} />
-        </span>
+      {/* Floating Wishlist & Quick View Stack */}
+      <div className="pointer-events-none absolute top-3 right-3 flex flex-col items-center gap-1.5 z-10">
+        <WishlistButton
+          slug={product.slug}
+          name={product.name}
+          className="pointer-events-auto h-8.5 w-8.5 shadow-xs border-border/80 bg-white/95 text-muted-foreground hover:text-foreground transition-all hover:scale-105 active:scale-95"
+        />
         <button
           type="button"
-          onClick={() => setQuickView(true)}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setQuickView(true);
+          }}
           aria-label={`Quick view ${product.name}`}
-          className="pointer-events-auto grid h-8 w-8 place-items-center rounded-full border border-border bg-card/90 backdrop-blur transition-colors hover:bg-card shadow-xs"
+          className="pointer-events-auto grid h-8.5 w-8.5 place-items-center rounded-full border border-border/80 bg-white/95 backdrop-blur text-muted-foreground hover:text-foreground transition-all hover:scale-105 active:scale-95 shadow-xs"
         >
-          <Eye className="h-3.5 w-3.5" aria-hidden />
+          <Eye className="h-4 w-4" aria-hidden />
         </button>
       </div>
 
