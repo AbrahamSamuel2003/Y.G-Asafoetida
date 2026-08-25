@@ -35,7 +35,7 @@ export function ProductCard({
         <Link
           to="/product/$slug"
           params={{ slug: product.slug }}
-          className="relative block overflow-hidden bg-secondary/35 aspect-square w-full p-2.5 flex items-center justify-center"
+          className="relative block overflow-hidden bg-white aspect-square w-full p-2.5 flex items-center justify-center"
         >
           <SmartImage
             priority={priority ?? false}
@@ -150,7 +150,7 @@ export function ProductCard({
         <Link
           to="/product/$slug"
           params={{ slug: product.slug }}
-          className="relative block overflow-hidden rounded-lg bg-secondary/35 h-28 w-28 sm:h-36 sm:w-36 shrink-0 p-2 flex items-center justify-center"
+          className="relative block overflow-hidden rounded-lg bg-white h-28 w-28 sm:h-36 sm:w-36 shrink-0 p-2 flex items-center justify-center"
         >
           <SmartImage
             priority={priority ?? false}
@@ -242,7 +242,7 @@ export function ProductCard({
       <Link
         to="/product/$slug"
         params={{ slug: product.slug }}
-        className="relative block overflow-hidden bg-secondary/35 aspect-square w-full p-3.5 flex items-center justify-center"
+        className="relative block overflow-hidden bg-white aspect-square w-full p-3.5 flex items-center justify-center"
       >
         <SmartImage
           priority={priority ?? false}

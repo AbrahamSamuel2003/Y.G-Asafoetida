@@ -65,7 +65,7 @@ export function SmartImage({
   }, [src]);
 
   return (
-    <div className={cn("relative overflow-hidden bg-secondary", wrapperClassName)}>
+    <div className={cn("relative overflow-hidden bg-white", wrapperClassName)}>
       {/* Warm shimmer skeleton — never an empty box while bytes are in flight. */}
       {state === "loading" ? (
         <div

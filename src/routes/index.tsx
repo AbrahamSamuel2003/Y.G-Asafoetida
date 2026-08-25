@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
@@ -234,6 +234,36 @@ const verifiedReviews = [
 
 function HomePage() {
   const [activeCatalogTab, setActiveCatalogTab] = useState<Format | "all">("all");
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Start video playback
+    video.muted = true;
+    video.play().catch(() => {});
+
+    // Automatically unmute audio as soon as the user taps anywhere on screen
+    const activateSound = () => {
+      if (video) {
+        video.muted = false;
+        video.play().catch(() => {});
+      }
+    };
+
+    window.addEventListener("click", activateSound, { once: true });
+    window.addEventListener("touchstart", activateSound, { once: true });
+    window.addEventListener("pointerdown", activateSound, { once: true });
+    window.addEventListener("keydown", activateSound, { once: true });
+
+    return () => {
+      window.removeEventListener("click", activateSound);
+      window.removeEventListener("touchstart", activateSound);
+      window.removeEventListener("pointerdown", activateSound);
+      window.removeEventListener("keydown", activateSound);
+    };
+  }, []);
 
   const displayedProducts = products.filter((p) => {
     if (activeCatalogTab === "all") return true;
@@ -243,86 +273,67 @@ function HomePage() {
   return (
     <div className="space-y-0">
       {/* ======================================================== */}
-      {/* 1. COMPACT HERO SECTION */}
+      {/* 1. ELEGANT HERO SECTION WITH CINEMATIC VIDEO BACKGROUND   */}
       {/* ======================================================== */}
-      <section className="relative overflow-hidden gradient-warm border-b border-border py-8 sm:py-12">
-        <div className="container-page grid items-center gap-6 lg:grid-cols-12 lg:gap-8">
-          {/* Left Text */}
-          <div className="lg:col-span-7 space-y-4">
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-3 py-0.5 text-[11px] font-semibold text-primary uppercase">
-              <Sparkles className="h-3 w-3" />
+      <section className="relative overflow-hidden border-b border-border py-12 sm:py-20">
+        {/* Crystal Clear Background Video */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            playsInline
+            className="h-full w-full object-cover object-center"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+          {/* Cinema Contrast Gradient Wash — Keeps Video Clear with Sharp White Text */}
+          <div className="absolute inset-0 bg-black/5" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
+        </div>
+
+        <div className="container-page relative z-10 py-6 sm:py-12">
+          {/* Hero Content — Pure White Text */}
+          <div className="max-w-2xl space-y-4">
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/20 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-white uppercase shadow-xs">
+              <Sparkles className="h-3.5 w-3.5 text-amber-400" />
               <span>Tirunelveli · Est. 1932</span>
             </div>
 
-            <TypingHeadline className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground" />
+            <TypingHeadline className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight leading-tight text-white drop-shadow-md" />
 
-            <p className="max-w-lg text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Nine artisanal hing formulations compounded from mountain Ferula resin and natural carriers.
-              Stone-milled for the exact aroma your sambar, rasam, and tadka deserve.
+            <p className="max-w-xl text-xs sm:text-sm text-white/90 font-medium leading-relaxed drop-shadow-xs">
+              Authentic artisanal hing formulations compounded from mountain Ferula resin and traditional carrier starches.
+              Slow stone-milled for the exact bloom and aroma your cooking deserves.
             </p>
 
             <div className="flex flex-wrap items-center gap-2.5 pt-1">
-              <Button size="sm" className="h-9 px-4 font-semibold shadow-xs gap-1.5" asChild>
+              <Button size="sm" className="h-10 px-5 font-bold shadow-md gap-1.5" asChild>
                 <Link to="/shop">
-                  Shop All 9 Products <ArrowRight className="h-3.5 w-3.5" />
+                  Shop All Products <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </Button>
-              <Button size="sm" variant="outline" className="h-9 px-4 font-medium" asChild>
+              <Button size="sm" variant="outline" className="h-10 px-5 font-semibold bg-white/15 backdrop-blur-md border-white/40 hover:bg-white/30 text-white shadow-xs" asChild>
                 <Link to="/story">Our 1932 Story</Link>
               </Button>
             </div>
 
             {/* Social Proof & Rating Badge */}
-            <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-border/60 text-[11px] text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-white/20 text-[11px] text-white/90 font-medium">
               <div className="flex items-center gap-1">
-                <span className="flex text-amber-500">
+                <span className="flex text-amber-400">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3 w-3 fill-amber-500 text-amber-500" />
+                    <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                   ))}
                 </span>
-                <span className="font-bold text-foreground">4.9 / 5</span>
+                <span className="font-bold text-white">4.9 / 5</span>
               </div>
               <span>·</span>
-              <span>48,000+ Kitchens</span>
+              <span>1k+ Kitchens</span>
               <span>·</span>
-              <span className="text-primary font-medium flex items-center gap-1">
-                <CheckCircle2 className="h-3 w-3" /> 100% Pure Resin
+              <span className="text-emerald-300 font-bold flex items-center gap-1">
+                <CheckCircle2 className="h-3.5 w-3.5" /> 100% Pure Resin
               </span>
-            </div>
-          </div>
-
-          {/* Right Hero Image Card */}
-          <div className="lg:col-span-5 relative max-w-sm mx-auto lg:max-w-none w-full">
-            <div className="relative rounded-2xl overflow-hidden border border-border shadow-md bg-secondary/20 p-2 flex items-center justify-center">
-              <img
-                src="/products/all-product/img-1.jpg"
-                alt="Y.G Complete Heritage Asafoetida Box"
-                className="w-full h-auto aspect-4/3 object-contain transition-transform duration-500 hover:scale-103"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-
-              <div className="absolute bottom-2.5 left-2.5 right-2.5 bg-background/95 backdrop-blur-md rounded-xl p-2.5 border border-border flex items-center justify-between shadow-xs">
-                <div>
-                  <div className="flex items-center gap-1">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-primary">Featured Set</span>
-                    <span className="text-[9px] px-1 bg-primary/15 text-primary rounded font-semibold">4-in-1</span>
-                  </div>
-                  <p className="text-xs font-semibold text-foreground">Complete Heritage Box</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm font-bold text-foreground">₹999</p>
-                  <Button size="sm" className="h-6 text-[10px] font-semibold px-2.5" asChild>
-                    <Link to="/product/$slug" params={{ slug: "all-product-heritage-combo" }}>
-                      Buy Now
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Top Pill */}
-            <div className="absolute -top-2 -right-1 bg-primary text-primary-foreground px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-xs flex items-center gap-1">
-              <Sparkles className="h-3 w-3" /> Direct from Works
             </div>
           </div>
         </div>
@@ -365,7 +376,7 @@ function HomePage() {
               className="surface-card group relative flex flex-col justify-between overflow-hidden rounded-xl border border-border transition-all duration-300 hover:border-primary/40 hover:shadow-sm"
             >
               <div>
-                <div className="relative aspect-4/3 w-full overflow-hidden bg-secondary/35 p-2 flex items-center justify-center">
+                <div className="relative aspect-4/3 w-full overflow-hidden bg-white p-2 flex items-center justify-center">
                   <img
                     src={guide.image}
                     alt={guide.title}
@@ -528,7 +539,7 @@ function HomePage() {
       <section className="container-page py-10 sm:py-14">
         <SectionHeading
           eyebrow="Customer Testimonials"
-          title="Trusted Across 48,000+ Kitchens"
+          title="Trusted Across 1k+ Kitchens"
           description="Real verified experiences from traditional cooks and culinary enthusiasts."
           align="center"
         />

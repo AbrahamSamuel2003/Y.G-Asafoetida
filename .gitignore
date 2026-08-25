@@ -29,8 +29,19 @@ dist-ssr
 *.ntvs*
 *.sw?
 
-# Database & Raw PSDs
+# Database & Raw PSDs & Large Archives
 data/*.db
 data/*.sqlite
+data/*.db-wal
+data/*.db-shm
 *.psd
+*.zip
+*.crdownload
+Overall_Video_Direction_Create*.mp4
+200G BLACK SEASAME/
+200G IDLI PODI/
+MILLET PONGAL MIX/
+MILLET SAMBAR MIX/
+
+
 

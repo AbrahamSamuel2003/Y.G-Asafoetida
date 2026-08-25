@@ -53,7 +53,7 @@ export function QuickViewDialog({
             alt={product.name}
             sizes="180px"
             fallbackLabel={product.name}
-            wrapperClassName="aspect-square w-full rounded-xl bg-secondary/35 p-2 flex items-center justify-center"
+            wrapperClassName="aspect-square w-full rounded-xl bg-white border border-border/80 p-2 flex items-center justify-center"
             className="h-full w-full object-contain"
           />
 

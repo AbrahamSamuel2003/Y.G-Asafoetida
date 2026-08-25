@@ -299,7 +299,7 @@ function ProductPage() {
           {/* LEFT: COMPACT MEDIA GALLERY */}
           {/* ======================================================== */}
           <div className="lg:col-span-6 space-y-2.5 sm:space-y-3">
-            <div className="surface-card group relative overflow-hidden rounded-2xl border border-border bg-secondary/30 p-3 sm:p-6 flex items-center justify-center">
+            <div className="surface-card group relative overflow-hidden rounded-2xl border border-border bg-white p-3 sm:p-6 flex items-center justify-center">
               <SmartImage
                 src={product.gallery[activeImage] ?? product.image}
                 alt={product.name}
@@ -344,7 +344,7 @@ function ProductPage() {
                     type="button"
                     onClick={() => setActiveImage(i)}
                     aria-label={`View photo ${i + 1}`}
-                    className={`h-14 w-14 sm:h-16 sm:w-16 shrink-0 overflow-hidden rounded-xl border-2 p-1 bg-secondary/30 transition-all ${
+                    className={`h-14 w-14 sm:h-16 sm:w-16 shrink-0 overflow-hidden rounded-xl border-2 p-1 bg-white transition-all ${
                       activeImage === i
                         ? "border-primary shadow-xs scale-102"
                         : "border-border/70 hover:border-primary/40 opacity-75 hover:opacity-100"
