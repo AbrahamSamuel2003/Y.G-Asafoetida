@@ -13,6 +13,7 @@ const SearchDialog = lazy(() =>
 
 const nav = [
   { to: "/shop", label: "Shop" },
+  { to: "/custom-branding", label: "Custom Branding" },
   { to: "/story", label: "Our Story" },
   { to: "/contact", label: "Contact" },
   { to: "/account", label: "Orders" },

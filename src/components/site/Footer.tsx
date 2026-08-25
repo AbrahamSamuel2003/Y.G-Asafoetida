@@ -67,6 +67,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link to="/custom-branding" className="opacity-80 transition-opacity hover:opacity-100">
+                White Labelling & Branding
+              </Link>
+            </li>
+            <li>
               <Link to="/contact" className="opacity-80 transition-opacity hover:opacity-100">
                 Contact & support
               </Link>

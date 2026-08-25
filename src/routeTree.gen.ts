@@ -14,6 +14,7 @@ import { Route as AccountRouteImport } from './routes/account'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CustomBrandingRouteImport } from './routes/custom-branding'
 import { Route as OrderConfirmedRouteImport } from './routes/order-confirmed'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as StoryRouteImport } from './routes/story'
@@ -46,6 +47,11 @@ const CheckoutRoute = CheckoutRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomBrandingRoute = CustomBrandingRouteImport.update({
+  id: '/custom-branding',
+  path: '/custom-branding',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OrderConfirmedRoute = OrderConfirmedRouteImport.update({
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/custom-branding': typeof CustomBrandingRoute
   '/order-confirmed': typeof OrderConfirmedRoute
   '/shop': typeof ShopRoute
   '/story': typeof StoryRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/custom-branding': typeof CustomBrandingRoute
   '/order-confirmed': typeof OrderConfirmedRoute
   '/shop': typeof ShopRoute
   '/story': typeof StoryRoute
@@ -126,6 +134,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/custom-branding': typeof CustomBrandingRoute
   '/order-confirmed': typeof OrderConfirmedRoute
   '/shop': typeof ShopRoute
   '/story': typeof StoryRoute
@@ -143,6 +152,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/checkout'
     | '/contact'
+    | '/custom-branding'
     | '/order-confirmed'
     | '/shop'
     | '/story'
@@ -158,6 +168,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/checkout'
     | '/contact'
+    | '/custom-branding'
     | '/order-confirmed'
     | '/shop'
     | '/story'
@@ -173,6 +184,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/checkout'
     | '/contact'
+    | '/custom-branding'
     | '/order-confirmed'
     | '/shop'
     | '/story'
@@ -189,6 +201,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   CheckoutRoute: typeof CheckoutRoute
   ContactRoute: typeof ContactRoute
+  CustomBrandingRoute: typeof CustomBrandingRoute
   OrderConfirmedRoute: typeof OrderConfirmedRoute
   ShopRoute: typeof ShopRoute
   StoryRoute: typeof StoryRoute
@@ -234,6 +247,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/custom-branding': {
+      id: '/custom-branding'
+      path: '/custom-branding'
+      fullPath: '/custom-branding'
+      preLoaderRoute: typeof CustomBrandingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/order-confirmed': {
@@ -301,6 +321,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRoute,
   CheckoutRoute: CheckoutRoute,
   ContactRoute: ContactRoute,
+  CustomBrandingRoute: CustomBrandingRoute,
   OrderConfirmedRoute: OrderConfirmedRoute,
   ShopRoute: ShopRoute,
   StoryRoute: StoryRoute,
