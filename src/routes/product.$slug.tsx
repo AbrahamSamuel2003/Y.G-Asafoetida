@@ -1,9 +1,10 @@
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
 import {
   ArrowRight,
   Check,
   CheckCircle2,
+  ChevronLeft,
   ChevronRight,
   Clock,
   Flame,
@@ -166,6 +167,65 @@ function ProductPage() {
   const [variantId, setVariantId] = useState(product.variants[0]!.id);
   const [qty, setQty] = useState(1);
   const [activeImage, setActiveImage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const thumbContainerRef = useRef<HTMLDivElement>(null);
+
+  const gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
+
+  // Auto-scroll through product images (every 3.8s)
+  useEffect(() => {
+    if (gallery.length <= 1 || isPaused) return;
+    const interval = setInterval(() => {
+      setActiveImage((prev) => (prev + 1) % gallery.length);
+    }, 3800);
+    return () => clearInterval(interval);
+  }, [gallery.length, isPaused]);
+
+  // Keep active thumbnail centered in view
+  useEffect(() => {
+    if (thumbContainerRef.current) {
+      const activeThumb = thumbContainerRef.current.children[activeImage] as HTMLElement | undefined;
+      if (activeThumb) {
+        activeThumb.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
+    }
+  }, [activeImage]);
+
+  const nextImage = () => {
+    setActiveImage((prev) => (prev + 1) % gallery.length);
+  };
+
+  const prevImage = () => {
+    setActiveImage((prev) => (prev - 1 + gallery.length) % gallery.length);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0]?.clientX ?? null;
+    setIsPaused(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0]?.clientX ?? null;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current !== null && touchEndX.current !== null) {
+      const diff = touchStartX.current - touchEndX.current;
+      const minSwipeDistance = 35;
+      if (diff > minSwipeDistance) {
+        // Swiped Left -> Show next image
+        nextImage();
+      } else if (diff < -minSwipeDistance) {
+        // Swiped Right -> Show previous image
+        prevImage();
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+    setTimeout(() => setIsPaused(false), 3000);
+  };
 
   // Pincode lookup state
   const [pinInput, setPinInput] = useState("");
@@ -296,25 +356,33 @@ function ProductPage() {
 
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-12 items-start">
           {/* ======================================================== */}
-          {/* LEFT: COMPACT MEDIA GALLERY */}
+          {/* LEFT: COMPACT MEDIA GALLERY WITH SWIPE & AUTO-SCROLL */}
           {/* ======================================================== */}
           <div className="lg:col-span-6 space-y-2.5 sm:space-y-3">
-            <div className="surface-card group relative overflow-hidden rounded-2xl border border-border bg-white p-3 sm:p-6 flex items-center justify-center">
+            <div
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              className="surface-card group relative overflow-hidden rounded-2xl border border-border bg-white p-3 sm:p-6 flex items-center justify-center touch-pan-y select-none"
+            >
               <SmartImage
-                src={product.gallery[activeImage] ?? product.image}
-                alt={product.name}
+                key={gallery[activeImage] ?? product.image}
+                src={gallery[activeImage] ?? product.image}
+                alt={`${product.name} - View ${activeImage + 1}`}
                 width={800}
                 height={800}
                 priority
                 sizes="(min-width: 1024px) 45vw, 100vw"
                 fallbackLabel={product.name}
-                wrapperClassName="aspect-4/3 sm:aspect-square max-h-[300px] sm:max-h-none w-full flex items-center justify-center"
-                className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                wrapperClassName="aspect-square sm:aspect-4/3 max-h-[340px] sm:max-h-[460px] w-full flex items-center justify-center"
+                className="h-full w-full object-contain transition-all duration-300 group-hover:scale-103"
               />
 
-              {/* Floating Badges */}
-              <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 flex flex-wrap gap-1.5">
-                <span className="rounded-full bg-card/90 backdrop-blur px-2 py-0.5 text-[9px] sm:text-[10px] font-bold text-foreground uppercase border border-border/60 shadow-xs">
+              {/* Floating Badges (Top Left) */}
+              <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 flex flex-wrap gap-1.5 z-10">
+                <span className="rounded-full bg-card/95 backdrop-blur px-2 py-0.5 text-[9px] sm:text-[10px] font-bold text-foreground uppercase border border-border/60 shadow-xs">
                   {formatLabels[product.format]}
                 </span>
                 {product.bestseller ? (
@@ -329,16 +397,76 @@ function ProductPage() {
                 ) : null}
               </div>
 
-              <div className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 bg-background/90 backdrop-blur px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg border border-border text-[9px] sm:text-[10px] text-muted-foreground flex items-center gap-1 shadow-xs">
-                <Sparkles className="h-3 w-3 text-primary" />
-                <span>Stone-Compounded</span>
+              {/* Image Counter Badge (Top Right) */}
+              {gallery.length > 1 ? (
+                <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 bg-foreground/80 backdrop-blur-md text-background px-2 py-0.5 rounded-full text-[10px] font-bold shadow-xs z-10">
+                  {activeImage + 1} / {gallery.length}
+                </div>
+              ) : null}
+
+              {/* Prev / Next Swipe Navigation Arrows */}
+              {gallery.length > 1 ? (
+                <>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      prevImage();
+                    }}
+                    aria-label="Previous image"
+                    className="absolute left-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-white/95 border border-border/80 text-foreground flex items-center justify-center shadow-md transition-all hover:bg-white hover:scale-110 active:scale-95 z-10 opacity-80 sm:opacity-0 group-hover:opacity-100"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      nextImage();
+                    }}
+                    aria-label="Next image"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8 rounded-full bg-white/95 border border-border/80 text-foreground flex items-center justify-center shadow-md transition-all hover:bg-white hover:scale-110 active:scale-95 z-10 opacity-80 sm:opacity-0 group-hover:opacity-100"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                </>
+              ) : null}
+
+              {/* Dot Indicators & Stone Compounded Badge */}
+              <div className="absolute bottom-2.5 inset-x-2.5 sm:bottom-3 sm:inset-x-3 flex items-center justify-between pointer-events-none z-10">
+                {/* Dots indicator */}
+                {gallery.length > 1 ? (
+                  <div className="flex items-center gap-1 bg-white/90 backdrop-blur-md px-2 py-1 rounded-full border border-border/70 shadow-xs pointer-events-auto">
+                    {gallery.map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setActiveImage(i)}
+                        aria-label={`Go to slide ${i + 1}`}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          activeImage === i ? "w-4 bg-primary" : "w-1.5 bg-foreground/25 hover:bg-foreground/40"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                ) : <div />}
+
+                <div className="bg-background/90 backdrop-blur px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg border border-border text-[9px] sm:text-[10px] text-muted-foreground flex items-center gap-1 shadow-xs">
+                  <Sparkles className="h-3 w-3 text-primary" />
+                  <span>Stone-Compounded</span>
+                </div>
               </div>
             </div>
 
-            {/* Thumbnail Gallery Grid */}
-            {product.gallery.length > 1 ? (
-              <div className="flex gap-2 overflow-x-auto pb-1" role="group" aria-label="Product images">
-                {product.gallery.map((img, i) => (
+            {/* Thumbnail Gallery Grid with Ref for Smooth Auto-Scroll */}
+            {gallery.length > 1 ? (
+              <div
+                ref={thumbContainerRef}
+                className="flex gap-2 overflow-x-auto pb-1 scrollbar-none scroll-smooth"
+                role="group"
+                aria-label="Product images"
+              >
+                {gallery.map((img, i) => (
                   <button
                     key={img + i}
                     type="button"
@@ -346,8 +474,8 @@ function ProductPage() {
                     aria-label={`View photo ${i + 1}`}
                     className={`h-14 w-14 sm:h-16 sm:w-16 shrink-0 overflow-hidden rounded-xl border-2 p-1 bg-white transition-all ${
                       activeImage === i
-                        ? "border-primary shadow-xs scale-102"
-                        : "border-border/70 hover:border-primary/40 opacity-75 hover:opacity-100"
+                        ? "border-primary shadow-xs scale-102 ring-2 ring-primary/20"
+                        : "border-border/70 hover:border-primary/40 opacity-70 hover:opacity-100"
                     }`}
                   >
                     <SmartImage
