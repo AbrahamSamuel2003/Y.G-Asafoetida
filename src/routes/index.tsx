@@ -16,8 +16,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { ProductCard } from "@/components/site/ProductCard";
+import { SmartImage } from "@/components/site/SmartImage";
 import { products, type Format } from "@/data/products";
 import { TypingHeadline } from "@/components/site/TypingHeadline";
+import { storyShopImage } from "@/assets/images";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -484,10 +486,14 @@ function HomePage() {
       <section className="border-y border-border bg-clove text-clove-foreground py-10 sm:py-14">
         <div className="container-page grid items-center gap-8 lg:grid-cols-12">
           <div className="lg:col-span-5 relative max-w-sm mx-auto lg:max-w-none w-full">
-            <div className="aspect-4/3 rounded-2xl overflow-hidden border border-white/10 shadow-lg">
-              <img
-                src="/products/bottle-jar/img-1.jpg"
-                alt="Y.G Heritage Glass Bottle Jar"
+            <div className="aspect-4/3 rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-black/20">
+              <SmartImage
+                src={storyShopImage}
+                alt="Shri P. Subramanian compounding artisanal hing in 1932 Tirunelveli"
+                width={1200}
+                height={900}
+                sizes="(min-width: 1024px) 40vw, 95vw"
+                fallbackLabel="Estd. 1932"
                 className="h-full w-full object-cover"
               />
             </div>
