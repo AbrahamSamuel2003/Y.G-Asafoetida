@@ -174,12 +174,12 @@ function ProductPage() {
 
   const gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
 
-  // Auto-scroll through product images (every 3.8s)
+  // Auto-scroll through product images (every 2s)
   useEffect(() => {
     if (gallery.length <= 1 || isPaused) return;
     const interval = setInterval(() => {
       setActiveImage((prev) => (prev + 1) % gallery.length);
-    }, 3800);
+    }, 2000);
     return () => clearInterval(interval);
   }, [gallery.length, isPaused]);
 
@@ -224,7 +224,7 @@ function ProductPage() {
     }
     touchStartX.current = null;
     touchEndX.current = null;
-    setTimeout(() => setIsPaused(false), 3000);
+    setTimeout(() => setIsPaused(false), 2000);
   };
 
   // Pincode lookup state
