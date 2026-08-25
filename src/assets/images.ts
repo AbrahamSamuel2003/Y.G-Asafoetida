@@ -8,9 +8,6 @@
 import hero640 from "@/assets/hero-hing-640.webp";
 import hero1000 from "@/assets/hero-hing-1000.webp";
 import hero1600 from "@/assets/hero-hing-1600.webp";
-import heritage560 from "@/assets/heritage-1932-560.webp";
-import heritage900 from "@/assets/heritage-1932-900.webp";
-import heritage1408 from "@/assets/heritage-1932-1408.webp";
 import story1a from "@/assets/story-1-shop-560.webp";
 import story1b from "@/assets/story-1-shop-900.webp";
 import story1c from "@/assets/story-1-shop-1200.webp";
@@ -37,23 +34,13 @@ function register(sources: Array<[string, number]>): string {
   return largest;
 }
 
-export const heroImage = register([
-  [hero640, 640],
-  [hero1000, 1000],
-  [hero1600, 1600],
-]);
-
-export const heritageImage = register([
-  [heritage560, 560],
-  [heritage900, 900],
-  [heritage1408, 1408],
-]);
-
 export const storyShopImage = register([
   [story1a, 560],
   [story1b, 900],
   [story1c, 1200],
 ]);
+
+export const heritageImage = storyShopImage;
 
 export const storyKitchenImage = register([
   [story2a, 560],

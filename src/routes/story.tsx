@@ -106,7 +106,7 @@ const chapters: StoryChapter[] = [
     badge: "Culinary Formula",
     title: "Tuning the Recipe to Sing in South Indian Kitchens",
     image: chapter2,
-    alt: "A traditional 1960s Tamil kitchen with a mother tempering sambar",
+    alt: "A traditional 1960s Tamil kitchen with a mother tempering sambar with pure hing",
     lead:
       "Subramanian's son realized that South Indian cooking demanded immediate, blooming heat without scorching.",
     paragraphs: [
@@ -118,32 +118,16 @@ const chapters: StoryChapter[] = [
   },
   {
     no: "Chapter III",
-    year: "1995",
-    badge: "Texture Craft",
-    title: "The Four Textures & Certified Gluten-Free",
-    image: "/products/bottle-jar/img-1.jpg",
-    alt: "Y.G Heritage glass bottle jar and variety of hing preparations",
-    lead:
-      "Pioneering allergen-conscious compounding without sacrificing a single note of traditional potency.",
-    paragraphs: [
-      "Y.G developed India's first dedicated 100% Certified Gluten-Free hing on a pure rice-starch carrier base.",
-      "Concurrently, the house perfected its 4 distinct textures: Fine Instant Powder, Sun-Dried Chips, Pellets for curd rice, and Raw Lump for gourmet Ayurvedic broths.",
-    ],
-    highlight:
-      "A dedicated allergen-free production line ensures zero wheat cross-contamination.",
-  },
-  {
-    no: "Chapter IV",
     year: "Today",
     badge: "Modern Legacy",
-    title: "Third Generation, Same Integrity",
+    title: "Third Generation, Same Uncompromising Integrity",
     image: chapter3,
     alt: "The third generation in Tirunelveli packing fresh jars with modern quality controls",
     lead:
       "Ninety-two years later, Shri Subramanian's grandchildren still oversee the works in Tirunelveli with modern FSSAI laboratory standards.",
     paragraphs: [
       "While tamper-evident seals and climate-controlled packing rooms have modernized the facility, every batch of resin is still organoleptically inspected by family elders before compounding.",
-      "Over 48,000 jars dispatch annually to kitchens across India and worldwide.",
+      "Over 48,000 jars dispatch annually to kitchens across India and worldwide, including dedicated gluten-free lines and traditional roasted podis.",
     ],
     highlight:
       "Over 48,000 jars delivered annually to passionate cooks who refuse to compromise on culinary truth.",
