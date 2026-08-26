@@ -110,18 +110,7 @@ export function Footer() {
       <div className="border-t border-clove-foreground/10">
         <div className="container-page flex flex-col gap-3 py-5 text-xs opacity-75 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-0.5">
-            <p>© {new Date().getFullYear()} Y.G Asafoetida. All rights reserved.</p>
-            <p className="text-[11px] opacity-80">
-              Developed by{" "}
-              <a
-                href="https://www.ss40network.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-amber-300 hover:text-amber-200 underline underline-offset-2 transition-colors"
-              >
-                SS40 NETWORK PRIVATE LIMITED
-              </a>
-            </p>
+            <p>© {new Date().getFullYear()} Y.G Asafoetida. All rights reserved.</p>           
           </div>
           <nav aria-label="Policies" className="flex flex-wrap gap-x-4 gap-y-1">
             <Link to="/policies/$slug" params={{ slug: "shipping" }} className="hover:opacity-100 transition-opacity">

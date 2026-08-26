@@ -237,19 +237,22 @@ const verifiedReviews = [
 function HomePage() {
   const [activeCatalogTab, setActiveCatalogTab] = useState<Format | "all">("all");
   const videoRef = useRef<HTMLVideoElement>(null);
+  const soundPlayCountRef = useRef(0);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Start video playback
+    // Start playback initially muted for browser autoplay compliance
     video.muted = true;
     video.play().catch(() => {});
 
-    // Automatically unmute audio as soon as the user taps anywhere on screen
+    // Automatically unmute sound when the user interacts on the page
     const activateSound = () => {
-      if (video) {
+      if (video && soundPlayCountRef.current < 2) {
         video.muted = false;
+        setIsMuted(false);
         video.play().catch(() => {});
       }
     };
@@ -267,6 +270,23 @@ function HomePage() {
     };
   }, []);
 
+  const handleVideoEnded = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (!video.muted) {
+      soundPlayCountRef.current += 1;
+      // After playing sound 2 times, automatically mute
+      if (soundPlayCountRef.current >= 2) {
+        video.muted = true;
+        setIsMuted(true);
+      }
+    }
+
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  };
+
   const displayedProducts = products.filter((p) => {
     if (activeCatalogTab === "all") return true;
     return p.format === activeCatalogTab;
@@ -283,8 +303,9 @@ function HomePage() {
           <video
             ref={videoRef}
             autoPlay
-            loop
             playsInline
+            muted={isMuted}
+            onEnded={handleVideoEnded}
             className="h-full w-full object-cover object-center"
           >
             <source src="/hero-video.mp4" type="video/mp4" />

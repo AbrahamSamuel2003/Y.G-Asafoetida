@@ -19,6 +19,7 @@ import { Footer } from "@/components/site/Footer";
 import { CartDrawer } from "@/components/site/CartDrawer";
 import { MobileCartBar } from "@/components/site/MobileCartBar";
 import { Toaster } from "@/components/ui/sonner";
+import { initAntiTamperProtection } from "@/lib/anti-tamper";
 // The FAQ bot is a floating helper: keep it out of the first paint bundle.
 const FaqBot = lazy(() =>
   import("@/components/site/FaqBot").then((m) => ({ default: m.FaqBot })),
@@ -130,7 +131,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Y.G Asafoetida, YG Hing, buy hing online, asafoetida powder, pure bandhani hing, hing cake, gluten free hing, traditional health mix, sathu maavu, pure benzoin sambrani, loban, Tirunelveli hing, authentic Indian spices",
       },
-      { name: "author", content: "Y.G Asafoetida" },
+      { name: "author", content: "SS40 NETWORK PRIVATE LIMITED" },
+      { name: "developer", content: "SS40 NETWORK PRIVATE LIMITED (https://www.ss40network.com)" },
+      { name: "designer", content: "SS40 NETWORK PRIVATE LIMITED" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "theme-color", content: "#c25e00" },
       // Open Graph
@@ -171,6 +174,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/logo.png" },
+      { rel: "author", href: "/humans.txt" },
     ],
     scripts: [
       {
@@ -206,7 +210,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "sameAs": [
             "https://www.facebook.com/ygasafoetida",
             "https://www.instagram.com/ygasafoetida"
-          ]
+          ],
+          "creator": {
+            "@type": "Organization",
+            "name": "SS40 NETWORK PRIVATE LIMITED",
+            "url": "https://www.ss40network.com"
+          }
         }),
       },
     ],
@@ -233,6 +242,18 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      console.log(
+        "%c Engineered & Designed by SS40 NETWORK PRIVATE LIMITED %c https://www.ss40network.com ",
+        "background: #c25e00; color: #ffffff; font-weight: bold; font-size: 11px; padding: 4px 8px; border-radius: 4px 0 0 4px;",
+        "background: #1e293b; color: #38bdf8; font-weight: bold; font-size: 11px; padding: 4px 8px; border-radius: 0 4px 4px 0;"
+      );
+    }
+    const cleanup = initAntiTamperProtection();
+    return cleanup;
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

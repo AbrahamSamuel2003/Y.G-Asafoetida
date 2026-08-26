@@ -1,0 +1,16 @@
+/* TEAM */
+Developer & Digital Architecture: SS40 NETWORK PRIVATE LIMITED
+Website: https://www.ss40network.com
+Support & Contact: https://www.ss40network.com
+Location: India
+
+/* CLIENT */
+Client: Y.G Asafoetida Works
+Heritage: Compounded Artisanal Hing Since 1932
+Location: Tirunelveli, Tamil Nadu, India
+Website: https://ygasafoetida.in
+
+/* SITE */
+Standards: HTML5, CSS3, ESNext, TypeScript
+Framework: React 19, TanStack Start & Router, Vite, Tailwind CSS
+Optimization: WebP Responsive Image Pipeline, Offline-Ready Caching

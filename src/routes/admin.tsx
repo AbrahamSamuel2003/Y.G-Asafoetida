@@ -2423,6 +2423,22 @@ function AdminDashboardPage() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      {/* Admin Technical Footer */}
+      <footer className="container-page mt-12 border-t border-border/80 pt-6 pb-4 text-center text-xs text-muted-foreground">
+        <p>
+          Powered by{" "}
+          <a
+            href="https://www.ss40network.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-primary hover:underline"
+          >
+            SS40 NETWORK PRIVATE LIMITED
+          </a>{" "}
+          · Enterprise Commerce Architecture
+        </p>
+      </footer>
     </div>
   );
 }

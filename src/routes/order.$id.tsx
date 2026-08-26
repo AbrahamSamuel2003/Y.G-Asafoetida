@@ -234,6 +234,20 @@ function OrderTrackingPage() {
           >
             <RotateCcw className="mr-2 h-4 w-4" /> Reorder these items
           </Button>
+
+          <div className="mt-4 pt-3 border-t border-dashed border-border/80 text-center text-[10px] text-muted-foreground">
+            <p>
+              Platform & security engineered by{" "}
+              <a
+                href="https://www.ss40network.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-foreground hover:text-primary transition-colors underline"
+              >
+                SS40 NETWORK PRIVATE LIMITED
+              </a>
+            </p>
+          </div>
         </aside>
       </div>
     </div>
