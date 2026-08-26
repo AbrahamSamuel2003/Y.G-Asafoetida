@@ -19,7 +19,6 @@ import { Footer } from "@/components/site/Footer";
 import { CartDrawer } from "@/components/site/CartDrawer";
 import { MobileCartBar } from "@/components/site/MobileCartBar";
 import { Toaster } from "@/components/ui/sonner";
-import { initAntiTamperProtection } from "@/lib/anti-tamper";
 // The FAQ bot is a floating helper: keep it out of the first paint bundle.
 const FaqBot = lazy(() =>
   import("@/components/site/FaqBot").then((m) => ({ default: m.FaqBot })),
@@ -234,11 +233,6 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
-  useEffect(() => {
-    const cleanup = initAntiTamperProtection();
-    return cleanup;
-  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
