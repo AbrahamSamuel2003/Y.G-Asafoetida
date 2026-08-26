@@ -237,20 +237,20 @@ const verifiedReviews = [
 
 const HERO_VIDEOS = [
   {
-    src: "/hero-video.mp4",
-    title: "Artisanal Compounding",
-  },
-  {
-    src: "/hero-video-gold.mp4",
-    title: "Gold Hing Collection",
+    src: "/hero-video-slide2.mp4",
+    title: "Heritage Tradition",
   },
   {
     src: "/hero-video-factory.mp4",
     title: "Generational Works",
   },
   {
-    src: "/hero-video-slide2.mp4",
-    title: "Heritage Tradition",
+    src: "/hero-video-gold.mp4",
+    title: "Gold Hing Collection",
+  },
+  {
+    src: "/hero-video.mp4",
+    title: "Artisanal Compounding",
   },
 ];
 
