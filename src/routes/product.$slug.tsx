@@ -167,31 +167,11 @@ function ProductPage() {
   const [variantId, setVariantId] = useState(product.variants[0]!.id);
   const [qty, setQty] = useState(1);
   const [activeImage, setActiveImage] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
   const thumbContainerRef = useRef<HTMLDivElement>(null);
 
   const gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
-
-  // Auto-scroll through product images (every 2s)
-  useEffect(() => {
-    if (gallery.length <= 1 || isPaused) return;
-    const interval = setInterval(() => {
-      setActiveImage((prev) => (prev + 1) % gallery.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, [gallery.length, isPaused]);
-
-  // Keep active thumbnail centered in view
-  useEffect(() => {
-    if (thumbContainerRef.current) {
-      const activeThumb = thumbContainerRef.current.children[activeImage] as HTMLElement | undefined;
-      if (activeThumb) {
-        activeThumb.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-      }
-    }
-  }, [activeImage]);
 
   const nextImage = () => {
     setActiveImage((prev) => (prev + 1) % gallery.length);
@@ -203,7 +183,6 @@ function ProductPage() {
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.targetTouches[0]?.clientX ?? null;
-    setIsPaused(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -224,7 +203,6 @@ function ProductPage() {
     }
     touchStartX.current = null;
     touchEndX.current = null;
-    setTimeout(() => setIsPaused(false), 2000);
   };
 
   // Pincode lookup state
@@ -356,15 +334,13 @@ function ProductPage() {
 
         <div className="grid gap-6 lg:gap-8 lg:grid-cols-12 items-start">
           {/* ======================================================== */}
-          {/* LEFT: COMPACT MEDIA GALLERY WITH SWIPE & AUTO-SCROLL */}
+          {/* LEFT: COMPACT MEDIA GALLERY (MANUAL USER CONTROL) */}
           {/* ======================================================== */}
           <div className="lg:col-span-6 space-y-2.5 sm:space-y-3">
             <div
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
               className="surface-card group relative overflow-hidden rounded-2xl border border-border bg-white p-3 sm:p-6 flex items-center justify-center touch-pan-y select-none"
             >
               <SmartImage

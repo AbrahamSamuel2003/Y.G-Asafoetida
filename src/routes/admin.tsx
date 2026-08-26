@@ -14,10 +14,13 @@ import {
   Edit,
   Eye,
   HelpCircle,
+  KeyRound,
   Layers,
   LayoutDashboard,
   LifeBuoy,
   Loader2,
+  Lock,
+  LogOut,
   Package,
   Plus,
   RefreshCw,
@@ -209,6 +212,41 @@ function AdminDashboardPage() {
     isActive: true,
   });
 
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+    if (typeof window !== "undefined") {
+      return sessionStorage.getItem("yg_admin_auth") === "true";
+    }
+    return false;
+  });
+  const [loginUsername, setLoginUsername] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [loginError, setLoginError] = useState("");
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoginError("");
+    if (loginUsername.trim() === "admin" && loginPassword === "admin123") {
+      if (typeof window !== "undefined") {
+        sessionStorage.setItem("yg_admin_auth", "true");
+      }
+      setIsAuthenticated(true);
+      toast.success("Welcome, Administrator!");
+    } else {
+      setLoginError("Invalid username or password. Please try again.");
+      toast.error("Invalid administrator credentials");
+    }
+  };
+
+  const handleLogout = () => {
+    if (typeof window !== "undefined") {
+      sessionStorage.removeItem("yg_admin_auth");
+    }
+    setIsAuthenticated(false);
+    setLoginPassword("");
+    setLoginError("");
+    toast.info("Logged out from Admin Panel");
+  };
+
   const loadAllData = async () => {
     setLoading(true);
     try {
@@ -249,8 +287,10 @@ function AdminDashboardPage() {
   };
 
   useEffect(() => {
-    loadAllData();
-  }, []);
+    if (isAuthenticated) {
+      loadAllData();
+    }
+  }, [isAuthenticated]);
 
   // --- Order Actions ---
   const handleUpdateOrderStatus = async (id: string, newStatus: string) => {
@@ -606,6 +646,71 @@ function AdminDashboardPage() {
     return matchesStatus && matchesSearch;
   });
 
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-[85vh] flex items-center justify-center px-4 py-12 bg-muted/20">
+        <div className="w-full max-w-md bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
+          <div className="text-center space-y-2">
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary mb-2 shadow-inner">
+              <Lock className="h-6 w-6 text-primary" />
+            </div>
+            <h1 className="text-2xl font-bold tracking-tight text-foreground">Admin Access</h1>
+            <p className="text-xs sm:text-sm text-muted-foreground">
+              Please enter your administrator credentials to manage Y.G Asafoetida works.
+            </p>
+          </div>
+
+          <form onSubmit={handleLogin} className="space-y-4">
+            {loginError && (
+              <div className="flex items-center gap-2 p-3 rounded-lg bg-destructive/10 text-destructive text-xs font-medium border border-destructive/20">
+                <AlertCircle className="h-4 w-4 shrink-0" />
+                <span>{loginError}</span>
+              </div>
+            )}
+
+            <div className="space-y-1.5 text-left">
+              <Label htmlFor="admin-username">Username</Label>
+              <Input
+                id="admin-username"
+                type="text"
+                placeholder="admin"
+                value={loginUsername}
+                onChange={(e) => setLoginUsername(e.target.value)}
+                required
+                autoFocus
+                className="bg-background"
+              />
+            </div>
+
+            <div className="space-y-1.5 text-left">
+              <Label htmlFor="admin-password">Password</Label>
+              <Input
+                id="admin-password"
+                type="password"
+                placeholder="••••••••"
+                value={loginPassword}
+                onChange={(e) => setLoginPassword(e.target.value)}
+                required
+                className="bg-background"
+              />
+            </div>
+
+            <Button type="submit" className="w-full font-semibold shadow-md mt-2">
+              <KeyRound className="h-4 w-4 mr-2" />
+              Sign In to Admin Panel
+            </Button>
+          </form>
+
+          <div className="pt-2 text-center border-t border-border">
+            <Button variant="ghost" size="sm" asChild className="text-xs text-muted-foreground hover:text-foreground">
+              <Link to="/">← Return to Storefront</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-muted/20 pb-20">
       {/* Admin Top Header */}
@@ -633,6 +738,10 @@ function AdminDashboardPage() {
             </Button>
             <Button variant="outline" size="sm" asChild>
               <Link to="/">View Storefront</Link>
+            </Button>
+            <Button variant="outline" size="sm" onClick={handleLogout} className="gap-1.5 text-destructive hover:bg-destructive hover:text-destructive-foreground">
+              <LogOut className="h-3.5 w-3.5" />
+              Log Out
             </Button>
           </div>
         </div>

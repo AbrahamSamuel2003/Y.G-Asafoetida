@@ -6,7 +6,7 @@ const ASSETS_DIR = path.resolve("src/assets");
 
 const IMAGES = [
   {
-    src: path.join(ASSETS_DIR, "ChatGPT Image Aug 25, 2026, 03_08_24 PM.png"),
+    src: path.join(ASSETS_DIR, "ygstory.png"),
     prefix: "story-1-shop",
   },
   {

@@ -86,11 +86,6 @@ export function Footer() {
                 Your saved list
               </Link>
             </li>
-            <li>
-              <Link to="/admin" className="opacity-80 transition-opacity hover:opacity-100 font-medium text-amber-200">
-                Admin portal
-              </Link>
-            </li>
           </ul>
         </div>
 
@@ -113,22 +108,35 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-clove-foreground/10">
-        <div className="container-page flex flex-col gap-2 py-5 text-xs opacity-60 sm:flex-row sm:justify-between">
-          <span>© {new Date().getFullYear()} Y.G Asafoetida. All rights reserved.</span>
+        <div className="container-page flex flex-col gap-3 py-5 text-xs opacity-75 sm:flex-row sm:items-center sm:justify-between">
+          <div className="space-y-0.5">
+            <p>© {new Date().getFullYear()} Y.G Asafoetida. All rights reserved.</p>
+            <p className="text-[11px] opacity-80">
+              Developed by{" "}
+              <a
+                href="https://www.ss40network.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-amber-300 hover:text-amber-200 underline underline-offset-2 transition-colors"
+              >
+                SS40 NETWORK PRIVATE LIMITED
+              </a>
+            </p>
+          </div>
           <nav aria-label="Policies" className="flex flex-wrap gap-x-4 gap-y-1">
-            <Link to="/policies/$slug" params={{ slug: "shipping" }} className="hover:opacity-100">
+            <Link to="/policies/$slug" params={{ slug: "shipping" }} className="hover:opacity-100 transition-opacity">
               Shipping
             </Link>
-            <Link to="/policies/$slug" params={{ slug: "returns" }} className="hover:opacity-100">
+            <Link to="/policies/$slug" params={{ slug: "returns" }} className="hover:opacity-100 transition-opacity">
               Returns & refunds
             </Link>
-            <Link to="/policies/$slug" params={{ slug: "privacy" }} className="hover:opacity-100">
+            <Link to="/policies/$slug" params={{ slug: "privacy" }} className="hover:opacity-100 transition-opacity">
               Privacy
             </Link>
-            <Link to="/policies/$slug" params={{ slug: "terms" }} className="hover:opacity-100">
+            <Link to="/policies/$slug" params={{ slug: "terms" }} className="hover:opacity-100 transition-opacity">
               Terms
             </Link>
-            <span>FSSAI licensed</span>
+            <span className="opacity-60">FSSAI licensed</span>
           </nav>
         </div>
       </div>

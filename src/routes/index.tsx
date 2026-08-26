@@ -494,6 +494,7 @@ function HomePage() {
                 height={900}
                 sizes="(min-width: 1024px) 40vw, 95vw"
                 fallbackLabel="Estd. 1932"
+                wrapperClassName="h-full w-full"
                 className="h-full w-full object-cover"
               />
             </div>
