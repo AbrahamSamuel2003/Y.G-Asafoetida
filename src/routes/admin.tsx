@@ -1500,7 +1500,7 @@ function AdminDashboardPage() {
                         </div>
                         <p className="text-xs text-muted-foreground line-clamp-2">{t.message}</p>
                         <div className="text-[11px] text-muted-foreground">
-                          Contact: <span className="font-medium text-foreground">{t.contact}</span> · Raised on {new Date(t.created_at).toLocaleString("en-IN")}
+                          Contact: <span className="font-medium text-foreground">{t.contact}</span> · Raised on {t.created_at ? new Date(t.created_at).toLocaleString("en-IN") : "Recent"}
                         </div>
                         {t.reply && (
                           <div className="text-xs bg-muted/60 p-2 rounded mt-2 border border-border">
@@ -1686,7 +1686,7 @@ function AdminDashboardPage() {
                   </Badge>
                 </div>
                 <DialogDescription>
-                  Placed on {new Date(selectedOrder.createdAt).toLocaleString("en-IN")} · {selectedOrder.delivery} shipping
+                  Placed on {selectedOrder.createdAt ? new Date(selectedOrder.createdAt).toLocaleString("en-IN") : "Recent"} · {selectedOrder.delivery} shipping
                 </DialogDescription>
               </DialogHeader>
 

@@ -141,7 +141,7 @@ export function ProductReviews({ product }: { product: Product }) {
             </div>
 
             <p className="text-xs text-muted-foreground pt-1">
-              Based on <span className="font-bold text-foreground">{product.reviews.toLocaleString("en-IN")}</span> verified buyers across India
+              Based on <span className="font-bold text-foreground">{(product.reviews ?? 0).toLocaleString("en-IN")}</span> verified buyers across India
             </p>
           </div>
 

@@ -480,6 +480,10 @@ export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
 }
 
-export function formatPrice(paise: number) {
-  return `₹${paise.toLocaleString("en-IN")}`;
+export function formatPrice(paise?: number | string | null) {
+  if (paise === undefined || paise === null || isNaN(Number(paise))) {
+    return "₹0";
+  }
+  const num = Number(paise);
+  return `₹${num.toLocaleString("en-IN")}`;
 }
