@@ -140,12 +140,12 @@ function OrderTrackingPage() {
                   </p>
                   <p className="text-xs text-muted-foreground">{step.description}</p>
                   <p className="mt-1 text-[11px] text-muted-foreground">
-                    {new Date(step.at).toLocaleString("en-IN", {
+                    {step.at ? new Date(step.at).toLocaleString("en-IN", {
                       day: "numeric",
                       month: "short",
                       hour: "numeric",
                       minute: "2-digit",
-                    })}
+                    }) : ""}
                   </p>
                 </div>
               </li>

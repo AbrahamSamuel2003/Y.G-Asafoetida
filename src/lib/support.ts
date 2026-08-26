@@ -78,13 +78,13 @@ export function orderDigest(order: Order): string {
   const items = order.items
     .map((i) => `• ${i.qty} × ${i.name} (${i.variantLabel}) — ${formatPrice(i.price * i.qty)}`)
     .join("\n");
-  const placed = new Date(order.createdAt).toLocaleString("en-IN", {
+  const placed = order.createdAt ? new Date(order.createdAt).toLocaleString("en-IN", {
     day: "numeric",
     month: "short",
     year: "numeric",
     hour: "numeric",
     minute: "2-digit",
-  });
+  }) : "Recent";
   const resolution = order.resolution
     ? `\nOpen request: ${order.resolution.type === "cancellation" ? "Cancellation" : "Refund"} — ${order.resolution.reason}`
     : "";
