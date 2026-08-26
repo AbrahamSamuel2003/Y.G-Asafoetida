@@ -184,11 +184,6 @@ function initSchema(db: DatabaseSync) {
 }
 
 function seedInitialData(db: DatabaseSync) {
-  const checkReal = db.prepare("SELECT slug FROM products WHERE slug = 'gold-asafoetida-powder'").get();
-  if (!checkReal) {
-    db.exec("DELETE FROM product_variants; DELETE FROM products;");
-  }
-
   const now = Date.now();
 
   // Products seed
