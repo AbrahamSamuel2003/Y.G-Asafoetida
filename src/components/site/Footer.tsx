@@ -110,7 +110,7 @@ export function Footer() {
       <div className="border-t border-clove-foreground/10">
         <div className="container-page flex flex-col gap-3 py-5 text-xs opacity-75 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-0.5">
-            <p>© {new Date().getFullYear()} Y.G Asafoetida. All rights reserved.</p>           
+            <p>© {new Date().getFullYear()} Y.G Asafoetida. All rights reserved.</p>
           </div>
           <nav aria-label="Policies" className="flex flex-wrap gap-x-4 gap-y-1">
             <Link to="/policies/$slug" params={{ slug: "shipping" }} className="hover:opacity-100 transition-opacity">

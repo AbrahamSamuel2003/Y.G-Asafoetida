@@ -96,45 +96,10 @@ export function initAntiTamperProtection(): () => void {
     }
   };
 
-  // 5. DOM MutationObserver Self-Healing Guard for Developer Attribution
-  let observer: MutationObserver | null = null;
-  const initSelfHealingGuard = () => {
-    const checkAttribution = () => {
-      const el = document.getElementById("ss40-attribution");
-      if (el) {
-        // Ensure not hidden via inline styles or CSS tampering
-        if (
-          el.style.display === "none" ||
-          el.style.visibility === "hidden" ||
-          el.style.opacity === "0"
-        ) {
-          el.style.display = "block";
-          el.style.visibility = "visible";
-          el.style.opacity = "0.8";
-        }
-      }
-    };
-
-    if (typeof MutationObserver !== "undefined") {
-      observer = new MutationObserver(() => {
-        checkAttribution();
-      });
-
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ["style", "class", "hidden"],
-      });
-    }
-
-    checkAttribution();
-  };
-
-  // 6. Print Security Notice in Console
+  // 5. Print Security Notice in Console
   const printSecurityBanner = (): void => {
     console.log(
-      "%c STOP! %c Proprietary Application Code & Digital Assets %c All source code, designs, and assets are protected by SS40 NETWORK PRIVATE LIMITED and Y.G Asafoetida. Unauthorized scraping, extraction, decompilation, or duplication is strictly prohibited.",
+      "%c STOP! %c Proprietary Application Code & Digital Assets %c All source code, designs, and assets are protected by Y.G Asafoetida. Unauthorized scraping, extraction, decompilation, or duplication is strictly prohibited.",
       "background: #dc2626; color: #ffffff; font-size: 16px; font-weight: bold; padding: 6px 12px; border-radius: 4px;",
       "background: #1e293b; color: #f59e0b; font-size: 13px; font-weight: bold; padding: 6px 12px;",
       "color: #64748b; font-size: 11px; padding: 4px;"
@@ -145,12 +110,10 @@ export function initAntiTamperProtection(): () => void {
   window.addEventListener("keydown", handleKeyDown, { capture: true });
   document.addEventListener("dragstart", handleDragStart, { capture: true });
   printSecurityBanner();
-  initSelfHealingGuard();
 
   return () => {
     document.removeEventListener("contextmenu", handleContextMenu, { capture: true });
     window.removeEventListener("keydown", handleKeyDown, { capture: true });
     document.removeEventListener("dragstart", handleDragStart, { capture: true });
-    observer?.disconnect();
   };
 }
