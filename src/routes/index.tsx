@@ -4,6 +4,8 @@ import {
   ArrowRight,
   Award,
   CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
   Clock,
   Heart,
   Leaf,
@@ -233,11 +235,36 @@ const verifiedReviews = [
   },
 ];
 
+const HERO_VIDEOS = [
+  {
+    src: "/hero-video.mp4",
+    title: "Artisanal Compounding",
+  },
+  {
+    src: "/hero-video-gold.mp4",
+    title: "Gold Hing Collection",
+  },
+  {
+    src: "/hero-video-factory.mp4",
+    title: "Generational Works",
+  },
+];
+
 function HomePage() {
   const [activeCatalogTab, setActiveCatalogTab] = useState<Format | "all">("all");
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const soundPlayCountRef = useRef(0);
   const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = isMuted;
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  }, [currentVideoIndex]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -282,8 +309,16 @@ function HomePage() {
       }
     }
 
-    video.currentTime = 0;
-    video.play().catch(() => {});
+    // Automatically advance to the next video in sequence
+    setCurrentVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
+  };
+
+  const nextVideo = () => {
+    setCurrentVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
+  };
+
+  const prevVideo = () => {
+    setCurrentVideoIndex((prev) => (prev - 1 + HERO_VIDEOS.length) % HERO_VIDEOS.length);
   };
 
   const displayedProducts = products.filter((p) => {
@@ -294,10 +329,11 @@ function HomePage() {
   return (
     <div className="space-y-0">
       {/* ======================================================== */}
-      {/* 1. CINEMATIC HERO VIDEO BANNER                           */}
+      {/* 1. CINEMATIC MULTI-VIDEO HERO BANNER                     */}
       {/* ======================================================== */}
-      <section className="relative overflow-hidden border-b border-border aspect-[16/9] sm:aspect-[21/9] max-h-[75vh] w-full bg-black">
+      <section className="group relative overflow-hidden border-b border-border aspect-[16/9] sm:aspect-[21/9] max-h-[75vh] w-full bg-black select-none">
         <video
+          key={HERO_VIDEOS[currentVideoIndex].src}
           ref={videoRef}
           autoPlay
           playsInline
@@ -305,8 +341,45 @@ function HomePage() {
           onEnded={handleVideoEnded}
           className="h-full w-full object-cover object-center"
         >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src={HERO_VIDEOS[currentVideoIndex].src} type="video/mp4" />
         </video>
+
+        {/* Navigation Arrow Left */}
+        <button
+          type="button"
+          onClick={prevVideo}
+          aria-label="Previous video"
+          className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 h-9 w-9 sm:h-11 sm:w-11 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center justify-center shadow-lg transition-all hover:bg-black/70 hover:scale-110 active:scale-95 z-20 opacity-80 sm:opacity-0 group-hover:opacity-100"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+
+        {/* Navigation Arrow Right */}
+        <button
+          type="button"
+          onClick={nextVideo}
+          aria-label="Next video"
+          className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 h-9 w-9 sm:h-11 sm:w-11 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white flex items-center justify-center shadow-lg transition-all hover:bg-black/70 hover:scale-110 active:scale-95 z-20 opacity-80 sm:opacity-0 group-hover:opacity-100"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+
+        {/* Video Indicator Indicators */}
+        <div className="absolute bottom-3 sm:bottom-4 inset-x-0 flex justify-center items-center gap-2 z-20 pointer-events-auto">
+          {HERO_VIDEOS.map((v, i) => (
+            <button
+              key={v.src}
+              type="button"
+              onClick={() => setCurrentVideoIndex(i)}
+              aria-label={`Switch to video ${i + 1}`}
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+                currentVideoIndex === i
+                  ? "w-8 sm:w-10 bg-amber-400 shadow-md"
+                  : "w-2 sm:w-2.5 bg-white/40 hover:bg-white/70"
+              }`}
+            />
+          ))}
+        </div>
       </section>
 
       {/* ======================================================== */}
