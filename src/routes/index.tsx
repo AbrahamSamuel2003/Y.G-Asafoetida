@@ -248,6 +248,10 @@ const HERO_VIDEOS = [
     src: "/hero-video-factory.mp4",
     title: "Generational Works",
   },
+  {
+    src: "/hero-video-slide2.mp4",
+    title: "Heritage Tradition",
+  },
 ];
 
 function HomePage() {
