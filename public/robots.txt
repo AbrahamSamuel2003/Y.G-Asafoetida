@@ -1,4 +1,3 @@
-# Engineered & Maintained by SS40 NETWORK PRIVATE LIMITED (https://www.ss40network.com)
 User-agent: *
 Allow: /
 Disallow: /admin
