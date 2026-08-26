@@ -241,7 +241,7 @@ function CustomBrandingPage() {
 
           <div className="max-w-3xl space-y-3.5">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground leading-[1.15]">
-              Private Label & Custom White Labelling for Global Spice & Gourmet Brands
+              Custom Branding & White Labelling 
             </h1>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Harness 92 years of generational stone-milling heritage. We formulate, lab-certify, package,

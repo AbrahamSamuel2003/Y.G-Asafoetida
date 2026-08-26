@@ -18,7 +18,6 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { ProductCard } from "@/components/site/ProductCard";
 import { SmartImage } from "@/components/site/SmartImage";
 import { products, type Format } from "@/data/products";
-import { TypingHeadline } from "@/components/site/TypingHeadline";
 import { storyShopImage } from "@/assets/images";
 
 export const Route = createFileRoute("/")({
@@ -295,71 +294,19 @@ function HomePage() {
   return (
     <div className="space-y-0">
       {/* ======================================================== */}
-      {/* 1. ELEGANT HERO SECTION WITH CINEMATIC VIDEO BACKGROUND   */}
+      {/* 1. CINEMATIC HERO VIDEO BANNER                           */}
       {/* ======================================================== */}
-      <section className="relative overflow-hidden border-b border-border py-12 sm:py-20">
-        {/* Crystal Clear Background Video */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-          <video
-            ref={videoRef}
-            autoPlay
-            playsInline
-            muted={isMuted}
-            onEnded={handleVideoEnded}
-            className="h-full w-full object-cover object-center"
-          >
-            <source src="/hero-video.mp4" type="video/mp4" />
-          </video>
-          {/* Cinema Contrast Gradient Wash — Keeps Video Clear with Sharp White Text */}
-          <div className="absolute inset-0 bg-black/5" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-transparent" />
-        </div>
-
-        <div className="container-page relative z-10 py-6 sm:py-12">
-          {/* Hero Content — Pure White Text */}
-          <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/20 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-white uppercase shadow-xs">
-              <Sparkles className="h-3.5 w-3.5 text-amber-400" />
-              <span>Tirunelveli · Est. 1932</span>
-            </div>
-
-            <TypingHeadline className="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight leading-tight text-white drop-shadow-md" />
-
-            <p className="max-w-xl text-xs sm:text-sm text-white/90 font-medium leading-relaxed drop-shadow-xs">
-              Authentic artisanal hing formulations compounded from mountain Ferula resin and traditional carrier starches.
-              Slow stone-milled for the exact bloom and aroma your cooking deserves.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-2.5 pt-1">
-              <Button size="sm" className="h-10 px-5 font-bold shadow-md gap-1.5" asChild>
-                <Link to="/shop">
-                  Shop All Products <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </Button>
-              <Button size="sm" variant="outline" className="h-10 px-5 font-semibold bg-white/15 backdrop-blur-md border-white/40 hover:bg-white/30 text-white shadow-xs" asChild>
-                <Link to="/story">Our 1932 Story</Link>
-              </Button>
-            </div>
-
-            {/* Social Proof & Rating Badge */}
-            <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-white/20 text-[11px] text-white/90 font-medium">
-              <div className="flex items-center gap-1">
-                <span className="flex text-amber-400">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                  ))}
-                </span>
-                <span className="font-bold text-white">4.9 / 5</span>
-              </div>
-              <span>·</span>
-              <span>1k+ Kitchens</span>
-              <span>·</span>
-              <span className="text-emerald-300 font-bold flex items-center gap-1">
-                <CheckCircle2 className="h-3.5 w-3.5" /> 100% Pure Resin
-              </span>
-            </div>
-          </div>
-        </div>
+      <section className="relative overflow-hidden border-b border-border aspect-[16/9] sm:aspect-[21/9] max-h-[75vh] w-full bg-black">
+        <video
+          ref={videoRef}
+          autoPlay
+          playsInline
+          muted={isMuted}
+          onEnded={handleVideoEnded}
+          className="h-full w-full object-cover object-center"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
       </section>
 
       {/* ======================================================== */}
