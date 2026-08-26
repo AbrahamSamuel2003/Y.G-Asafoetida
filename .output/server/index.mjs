@@ -55,268 +55,268 @@ var public_assets_data_default = {
 	"/assets/accordion-yGyqgK2u.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1c09-iHuVncUx5saNW51IhA/KZ66g5Fw\"",
-		"mtime": "2026-08-26T15:46:49.457Z",
+		"mtime": "2026-08-26T15:58:03.703Z",
 		"size": 7177,
 		"path": "../public/assets/accordion-yGyqgK2u.js"
 	},
-	"/assets/account-CXwCjaqg.js": {
+	"/assets/account-D0230WWW.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1a1d-EnxC4nocrJdy1hEu2G38X+FzGqQ\"",
-		"mtime": "2026-08-26T15:46:49.457Z",
+		"etag": "\"1a1d-hhqUsuHMEa4qxC3b+Uwj6yXD2y0\"",
+		"mtime": "2026-08-26T15:58:03.704Z",
 		"size": 6685,
-		"path": "../public/assets/account-CXwCjaqg.js"
+		"path": "../public/assets/account-D0230WWW.js"
 	},
 	"/assets/arrow-right-DNJwBKfT.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"a5-cJv0Zc38qmmtLmGVnGQsCsl3w44\"",
-		"mtime": "2026-08-26T15:46:49.458Z",
+		"mtime": "2026-08-26T15:58:03.704Z",
 		"size": 165,
 		"path": "../public/assets/arrow-right-DNJwBKfT.js"
 	},
 	"/assets/award-B1b0mtob.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"112-zbGkAeZDZVfLxYKbIf92AKv7H8Q\"",
-		"mtime": "2026-08-26T15:46:49.458Z",
+		"mtime": "2026-08-26T15:58:03.705Z",
 		"size": 274,
 		"path": "../public/assets/award-B1b0mtob.js"
 	},
-	"/assets/admin-C3VZ4n7c.js": {
+	"/assets/admin-D9QHyb63.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"126b2-3e8MFPKXpbvAhmdzga0eNHOIdYk\"",
-		"mtime": "2026-08-26T15:46:49.458Z",
+		"etag": "\"126b2-FSjcc8/eIUhxsR/sz95gmJzh//A\"",
+		"mtime": "2026-08-26T15:58:03.704Z",
 		"size": 75442,
-		"path": "../public/assets/admin-C3VZ4n7c.js"
+		"path": "../public/assets/admin-D9QHyb63.js"
+	},
+	"/assets/button-BHo6p2Ug.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"7ce7-VQjlHMlK3xBagQGMo6mfsTCSKVE\"",
+		"mtime": "2026-08-26T15:58:03.705Z",
+		"size": 31975,
+		"path": "../public/assets/button-BHo6p2Ug.js"
 	},
 	"/assets/check-sllhmnVN.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"7c-no3O9T+dzTO+2u7mK2ERTeklAaw\"",
-		"mtime": "2026-08-26T15:46:49.459Z",
+		"mtime": "2026-08-26T15:58:03.705Z",
 		"size": 124,
 		"path": "../public/assets/check-sllhmnVN.js"
 	},
 	"/assets/chevron-down-BfkJGXcS.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"80-yB8iCtsCmrPzJAq3hN/CmCxuofQ\"",
-		"mtime": "2026-08-26T15:46:49.459Z",
+		"mtime": "2026-08-26T15:58:03.706Z",
 		"size": 128,
 		"path": "../public/assets/chevron-down-BfkJGXcS.js"
+	},
+	"/assets/checkout-C1u0CU7W.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"72a2-dSrppTDypIsg4Y/LZHJJovq0DZE\"",
+		"mtime": "2026-08-26T15:58:03.706Z",
+		"size": 29346,
+		"path": "../public/assets/checkout-C1u0CU7W.js"
 	},
 	"/assets/chevron-right-Bj_KW_iD.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"82-16xHjx7RMEM17WVhsBa/0pfi17k\"",
-		"mtime": "2026-08-26T15:46:49.460Z",
+		"mtime": "2026-08-26T15:58:03.706Z",
 		"size": 130,
 		"path": "../public/assets/chevron-right-Bj_KW_iD.js"
-	},
-	"/assets/checkout-2apwHFIE.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"72a2-l9azYHKSSF8O516Poj+E0WDeksY\"",
-		"mtime": "2026-08-26T15:46:49.459Z",
-		"size": 29346,
-		"path": "../public/assets/checkout-2apwHFIE.js"
-	},
-	"/assets/button-BHo6p2Ug.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"7ce7-VQjlHMlK3xBagQGMo6mfsTCSKVE\"",
-		"mtime": "2026-08-26T15:46:49.458Z",
-		"size": 31975,
-		"path": "../public/assets/button-BHo6p2Ug.js"
 	},
 	"/assets/circle-check-CRQN4vvI.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"b2-wLjMGqav0OPYKaA4TxBuBdBcegA\"",
-		"mtime": "2026-08-26T15:46:49.460Z",
+		"mtime": "2026-08-26T15:58:03.706Z",
 		"size": 178,
 		"path": "../public/assets/circle-check-CRQN4vvI.js"
-	},
-	"/assets/contact-0Wbn9MYe.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"21f8-z9VxBrzPkdWBZte77Ba/R7kEA7s\"",
-		"mtime": "2026-08-26T15:46:49.460Z",
-		"size": 8696,
-		"path": "../public/assets/contact-0Wbn9MYe.js"
 	},
 	"/assets/createLucideIcon-Qk0VrUvi.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"32f1-YcgSnbeHPGUm7KIGejOIRD4fj3Y\"",
-		"mtime": "2026-08-26T15:46:49.461Z",
+		"mtime": "2026-08-26T15:58:03.708Z",
 		"size": 13041,
 		"path": "../public/assets/createLucideIcon-Qk0VrUvi.js"
 	},
-	"/assets/dialog-C3VYPESd.js": {
+	"/assets/contact-DC7MgDrh.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"841-CGP0kRHlMV5s9uhTraRt0qSikiA\"",
-		"mtime": "2026-08-26T15:46:49.462Z",
-		"size": 2113,
-		"path": "../public/assets/dialog-C3VYPESd.js"
+		"etag": "\"21f8-nbVnIZ4+SF004rn1kk0CJWPsmRI\"",
+		"mtime": "2026-08-26T15:58:03.707Z",
+		"size": 8696,
+		"path": "../public/assets/contact-DC7MgDrh.js"
 	},
-	"/assets/custom-branding-iHXghPH-.js": {
+	"/assets/dialog-CpcUqBjc.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"5d36-Ae2oQeL0HYxnEk6hdiYHiDmtZCc\"",
-		"mtime": "2026-08-26T15:46:49.462Z",
-		"size": 23862,
-		"path": "../public/assets/custom-branding-iHXghPH-.js"
+		"etag": "\"841-KvX4aohA3/kyRchBZ2AgRF/WB8U\"",
+		"mtime": "2026-08-26T15:58:03.708Z",
+		"size": 2113,
+		"path": "../public/assets/dialog-CpcUqBjc.js"
 	},
 	"/assets/dist-Bn4LlgGU.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1356-N5ZZ+cm594UN7aP8I+TK/ruM1XU\"",
-		"mtime": "2026-08-26T15:46:49.462Z",
+		"mtime": "2026-08-26T15:58:03.708Z",
 		"size": 4950,
 		"path": "../public/assets/dist-Bn4LlgGU.js"
+	},
+	"/assets/custom-branding-D4CtvqBF.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"5d36-cwNsNSdwAM6hud3Z8QblPhMkv9g\"",
+		"mtime": "2026-08-26T15:58:03.708Z",
+		"size": 23862,
+		"path": "../public/assets/custom-branding-D4CtvqBF.js"
 	},
 	"/assets/createServerFn-Cgt2qLK-.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"94ed-J0fwDj5NsaWWKd5jiKOGlecNmO0\"",
-		"mtime": "2026-08-26T15:46:49.461Z",
+		"mtime": "2026-08-26T15:58:03.708Z",
 		"size": 38125,
 		"path": "../public/assets/createServerFn-Cgt2qLK-.js"
 	},
 	"/assets/dist-BuOGcenG.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"29b-WIbeVYzyHr1KIvkGl151ZQyTpc0\"",
-		"mtime": "2026-08-26T15:46:49.462Z",
+		"mtime": "2026-08-26T15:58:03.709Z",
 		"size": 667,
 		"path": "../public/assets/dist-BuOGcenG.js"
 	},
 	"/assets/dist-CcMZzHWY.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"284-hmwICHsLOsv3I2by6K6ovyB4rfc\"",
-		"mtime": "2026-08-26T15:46:49.463Z",
+		"mtime": "2026-08-26T15:58:03.709Z",
 		"size": 644,
 		"path": "../public/assets/dist-CcMZzHWY.js"
 	},
 	"/assets/dist-CSg9brrI.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1c28-CSVudwfMkgAvMxDDGINmA/47fG8\"",
-		"mtime": "2026-08-26T15:46:49.463Z",
+		"mtime": "2026-08-26T15:58:03.709Z",
 		"size": 7208,
 		"path": "../public/assets/dist-CSg9brrI.js"
 	},
 	"/assets/dist-jwIiqr1T.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1c9f-u4GPs7/IvwJmyFVWIslVn3rpH1s\"",
-		"mtime": "2026-08-26T15:46:49.464Z",
+		"mtime": "2026-08-26T15:58:03.711Z",
 		"size": 7327,
 		"path": "../public/assets/dist-jwIiqr1T.js"
 	},
 	"/assets/dist-SosQ1KXr.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"129-tyHeHPAdBrIb8iZJ2c3GBFvglCo\"",
-		"mtime": "2026-08-26T15:46:49.464Z",
+		"mtime": "2026-08-26T15:58:03.711Z",
 		"size": 297,
 		"path": "../public/assets/dist-SosQ1KXr.js"
 	},
 	"/assets/faq-DZ_WL7C1.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1d97-YYfdas79m7uBSMNABJ4HbqZ20Tc\"",
-		"mtime": "2026-08-26T15:46:49.464Z",
+		"mtime": "2026-08-26T15:58:03.711Z",
 		"size": 7575,
 		"path": "../public/assets/faq-DZ_WL7C1.js"
 	},
-	"/assets/FaqBot-DlLi7qsb.js": {
+	"/assets/FaqBot-BB5JiYK-.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"134d-1ImaWlAvuaTTO4ulNfwCk9ESmec\"",
-		"mtime": "2026-08-26T15:46:49.453Z",
+		"etag": "\"134d-kHZbsqBlsEAiCPvFt9x6fWvyw18\"",
+		"mtime": "2026-08-26T15:58:03.700Z",
 		"size": 4941,
-		"path": "../public/assets/FaqBot-DlLi7qsb.js"
+		"path": "../public/assets/FaqBot-BB5JiYK-.js"
 	},
 	"/assets/gift-DNq5BBQe.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"15d-nBLgaLkJbwvpiuFfZwT6a/yHHEw\"",
-		"mtime": "2026-08-26T15:46:49.465Z",
+		"mtime": "2026-08-26T15:58:03.712Z",
 		"size": 349,
 		"path": "../public/assets/gift-DNq5BBQe.js"
 	},
 	"/assets/history-Bp4cwO0E.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"ed-T/o1Zbdn0iCWKz4iTZ3VVNm03cU\"",
-		"mtime": "2026-08-26T15:46:49.465Z",
+		"mtime": "2026-08-26T15:58:03.712Z",
 		"size": 237,
 		"path": "../public/assets/history-Bp4cwO0E.js"
 	},
 	"/assets/input-bBJa4LxQ.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"2b4-jQZSlIm0ap5DbEhCy8zHFB8aOlM\"",
-		"mtime": "2026-08-26T15:46:49.465Z",
+		"mtime": "2026-08-26T15:58:03.712Z",
 		"size": 692,
 		"path": "../public/assets/input-bBJa4LxQ.js"
 	},
 	"/assets/invariant-DEEwAagU.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"3c-eVh/3DMi1s3cxf4N/OJar+ew1jA\"",
-		"mtime": "2026-08-26T15:46:49.466Z",
+		"mtime": "2026-08-26T15:58:03.713Z",
 		"size": 60,
 		"path": "../public/assets/invariant-DEEwAagU.js"
 	},
 	"/assets/label-BSTgYtqt.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"2b3-v96lgUWsOrxk+VAkwy8m9A1u6JM\"",
-		"mtime": "2026-08-26T15:46:49.466Z",
+		"mtime": "2026-08-26T15:58:03.713Z",
 		"size": 691,
 		"path": "../public/assets/label-BSTgYtqt.js"
 	},
 	"/assets/link-CahZZY15.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"5af6-hYr+cUDLN6UIpeDXwVxuIfLNEvM\"",
-		"mtime": "2026-08-26T15:46:49.467Z",
+		"mtime": "2026-08-26T15:58:03.713Z",
 		"size": 23286,
 		"path": "../public/assets/link-CahZZY15.js"
 	},
 	"/assets/loader-circle-BAhHYJnl.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"90-xGUV0vXI0NHTPsHCQo2BE2ZBzXQ\"",
-		"mtime": "2026-08-26T15:46:49.467Z",
+		"mtime": "2026-08-26T15:58:03.713Z",
 		"size": 144,
 		"path": "../public/assets/loader-circle-BAhHYJnl.js"
+	},
+	"/assets/index-CZVCPOW-.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"68acf-m1l5Re772Izc/VXNRB/bwZXMm9o\"",
+		"mtime": "2026-08-26T15:58:03.699Z",
+		"size": 428751,
+		"path": "../public/assets/index-CZVCPOW-.js"
 	},
 	"/assets/lock-BVsDF5gZ.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"ce-dosszMG7CQWdHor0vzL62vwaXrE\"",
-		"mtime": "2026-08-26T15:46:49.467Z",
+		"mtime": "2026-08-26T15:58:03.714Z",
 		"size": 206,
 		"path": "../public/assets/lock-BVsDF5gZ.js"
 	},
 	"/assets/message-square-l2Tyzf61.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"e9-3LjcSy2fVAKdzX4XKRQECDM2s3k\"",
-		"mtime": "2026-08-26T15:46:49.467Z",
+		"mtime": "2026-08-26T15:58:03.714Z",
 		"size": 233,
 		"path": "../public/assets/message-square-l2Tyzf61.js"
-	},
-	"/assets/index-CNnxSMUu.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"68acf-4svQgP8tcaA31R7EC0LiBRT6Ru0\"",
-		"mtime": "2026-08-26T15:46:49.452Z",
-		"size": 428751,
-		"path": "../public/assets/index-CNnxSMUu.js"
 	},
 	"/assets/not-found-i5RsCZif.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"76-Trmr7GZIBZuvfg4uM18tBiRtOXg\"",
-		"mtime": "2026-08-26T15:46:49.468Z",
+		"mtime": "2026-08-26T15:58:03.714Z",
 		"size": 118,
 		"path": "../public/assets/not-found-i5RsCZif.js"
 	},
-	"/assets/order-confirmed-BwlWrqUC.js": {
+	"/assets/order-confirmed-Buj_xTqG.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"7df-I3OC6O0sl/KZrc/X1P7qFu9dcwo\"",
-		"mtime": "2026-08-26T15:46:49.468Z",
+		"etag": "\"7df-Eh8unw4M46RSP2yrazAIx4sTpD4\"",
+		"mtime": "2026-08-26T15:58:03.714Z",
 		"size": 2015,
-		"path": "../public/assets/order-confirmed-BwlWrqUC.js"
+		"path": "../public/assets/order-confirmed-Buj_xTqG.js"
 	},
-	"/assets/order._id-2bweHTRM.js": {
+	"/assets/order._id-BbzHLjbL.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1bf8-vdTOh6dAZ4mCcmNaJe3a8NoBoBk\"",
-		"mtime": "2026-08-26T15:46:49.469Z",
+		"etag": "\"1bf8-p/Bax3nLu+VykRtGG4Ir3IHOduM\"",
+		"mtime": "2026-08-26T15:58:03.714Z",
 		"size": 7160,
-		"path": "../public/assets/order._id-2bweHTRM.js"
+		"path": "../public/assets/order._id-BbzHLjbL.js"
 	},
-	"/assets/OrderResolutionDialog-Cb7Ytmyf.js": {
+	"/assets/OrderResolutionDialog-BysL_Cxs.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"27e5-1oncCDaHXAFclSpJpReiRLMS/iI\"",
-		"mtime": "2026-08-26T15:46:49.454Z",
+		"etag": "\"27e5-KHSxd4NwNAmLIMWIW9AD5iyEVg0\"",
+		"mtime": "2026-08-26T15:58:03.700Z",
 		"size": 10213,
-		"path": "../public/assets/OrderResolutionDialog-Cb7Ytmyf.js"
+		"path": "../public/assets/OrderResolutionDialog-BysL_Cxs.js"
 	},
 	"/hero-video-gold.mp4": {
 		"type": "video/mp4",
@@ -349,317 +349,317 @@ var public_assets_data_default = {
 	"/assets/package-BP5brPu7.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"174-y6kcMBaUpHERgIv08fNGaWaoUoo\"",
-		"mtime": "2026-08-26T15:46:49.469Z",
+		"mtime": "2026-08-26T15:58:03.715Z",
 		"size": 372,
 		"path": "../public/assets/package-BP5brPu7.js"
 	},
 	"/assets/pincode.functions-CsMUP8KA.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"282-y4Nqh2kNi5C9CYteVGCta0g4vEQ\"",
-		"mtime": "2026-08-26T15:46:49.469Z",
+		"mtime": "2026-08-26T15:58:03.715Z",
 		"size": 642,
 		"path": "../public/assets/pincode.functions-CsMUP8KA.js"
 	},
-	"/assets/policies._slug-DCnxPRHj.js": {
+	"/assets/policies._slug-DuweueQ-.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"a4b-Rt0gxaa7ez7BDWV/0zqjAYu43xc\"",
-		"mtime": "2026-08-26T15:46:49.469Z",
+		"etag": "\"a4b-Dkex/NXaBK2US5CwUEHLCS3OL2A\"",
+		"mtime": "2026-08-26T15:58:03.715Z",
 		"size": 2635,
-		"path": "../public/assets/policies._slug-DCnxPRHj.js"
+		"path": "../public/assets/policies._slug-DuweueQ-.js"
 	},
 	"/assets/product-cake-400-IyNQ7Qca.webp": {
 		"type": "image/webp",
 		"etag": "\"231a-XZXTs8DL9WIV0wM06ILR+TyXGyw\"",
-		"mtime": "2026-08-26T15:46:49.477Z",
+		"mtime": "2026-08-26T15:58:03.724Z",
 		"size": 8986,
 		"path": "../public/assets/product-cake-400-IyNQ7Qca.webp"
 	},
 	"/assets/product-cake-800-D7p8IG0h.webp": {
 		"type": "image/webp",
 		"etag": "\"8a9c-FUEv5wy89JF3N/Xi4FPDGq0Oa6A\"",
-		"mtime": "2026-08-26T15:46:49.478Z",
+		"mtime": "2026-08-26T15:58:03.724Z",
 		"size": 35484,
 		"path": "../public/assets/product-cake-800-D7p8IG0h.webp"
 	},
 	"/assets/product-glutenfree-400-dtzpdwMq.webp": {
 		"type": "image/webp",
 		"etag": "\"191c-0160DxdXvd1Ez2qyK+5Edn8kPHk\"",
-		"mtime": "2026-08-26T15:46:49.478Z",
+		"mtime": "2026-08-26T15:58:03.725Z",
 		"size": 6428,
 		"path": "../public/assets/product-glutenfree-400-dtzpdwMq.webp"
 	},
 	"/assets/product-glutenfree-800-BRbglSHw.webp": {
 		"type": "image/webp",
 		"etag": "\"4be2-4ZuVdoh9vc8SIcRNeniPXSXBpG4\"",
-		"mtime": "2026-08-26T15:46:49.478Z",
+		"mtime": "2026-08-26T15:58:03.725Z",
 		"size": 19426,
 		"path": "../public/assets/product-glutenfree-800-BRbglSHw.webp"
 	},
 	"/assets/product-granules-400-D98wWv4R.webp": {
 		"type": "image/webp",
 		"etag": "\"1986-pW4Tw+bAfTFuVQjtOVNXaLBbG3M\"",
-		"mtime": "2026-08-26T15:46:49.478Z",
+		"mtime": "2026-08-26T15:58:03.726Z",
 		"size": 6534,
 		"path": "../public/assets/product-granules-400-D98wWv4R.webp"
 	},
 	"/assets/product-granules-800-WWT9xaKD.webp": {
 		"type": "image/webp",
 		"etag": "\"4c94-ndAVPibr7RpoSMK3WBGSbMGTCM0\"",
-		"mtime": "2026-08-26T15:46:49.479Z",
+		"mtime": "2026-08-26T15:58:03.726Z",
 		"size": 19604,
 		"path": "../public/assets/product-granules-800-WWT9xaKD.webp"
 	},
 	"/assets/product-powder-400-BzZ6QhiJ.webp": {
 		"type": "image/webp",
 		"etag": "\"1484-G3RIQC0/RrkZqXpVf02Q9xEmMns\"",
-		"mtime": "2026-08-26T15:46:49.479Z",
+		"mtime": "2026-08-26T15:58:03.726Z",
 		"size": 5252,
 		"path": "../public/assets/product-powder-400-BzZ6QhiJ.webp"
 	},
 	"/assets/product-powder-800-DcdU81cH.webp": {
 		"type": "image/webp",
 		"etag": "\"3770-kg0m3WIrBgEFb276hCgR5PeaH1w\"",
-		"mtime": "2026-08-26T15:46:49.480Z",
+		"mtime": "2026-08-26T15:58:03.727Z",
 		"size": 14192,
 		"path": "../public/assets/product-powder-800-DcdU81cH.webp"
 	},
-	"/assets/product._slug-BTtl6ooZ.js": {
+	"/assets/product._slug-BOxqaiSf.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"968d-9tDz2cefDg/X8MWufKH4382JQcs\"",
-		"mtime": "2026-08-26T15:46:49.470Z",
+		"etag": "\"968d-QeF6BO7ndwaVTU0Ys+8qdyKHV1I\"",
+		"mtime": "2026-08-26T15:58:03.715Z",
 		"size": 38541,
-		"path": "../public/assets/product._slug-BTtl6ooZ.js"
+		"path": "../public/assets/product._slug-BOxqaiSf.js"
 	},
-	"/assets/ProductCard-B4LjTZCU.js": {
+	"/assets/ProductCard-49wMYOOB.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"3162-6Hk+Iq22stWdSdSVyY82ykMJGZA\"",
-		"mtime": "2026-08-26T15:46:49.454Z",
+		"etag": "\"3162-gtRovmeTbawBaRNIW8AdgnxUcQg\"",
+		"mtime": "2026-08-26T15:58:03.701Z",
 		"size": 12642,
-		"path": "../public/assets/ProductCard-B4LjTZCU.js"
+		"path": "../public/assets/ProductCard-49wMYOOB.js"
 	},
 	"/assets/questions-BMKTHLWt.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"3fe-NC4vglgo0vzgARRm59ts3s6E8O8\"",
-		"mtime": "2026-08-26T15:46:49.470Z",
+		"mtime": "2026-08-26T15:58:03.716Z",
 		"size": 1022,
 		"path": "../public/assets/questions-BMKTHLWt.js"
 	},
-	"/assets/QuickViewDialog-CFD7kFF0.js": {
+	"/assets/QuickViewDialog-BcDDPL6W.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"b67-cFrpkga5YDRC5FZoa5ytfXuuX5w\"",
-		"mtime": "2026-08-26T15:46:49.454Z",
+		"etag": "\"b67-DNDe2wjdPlGGrT6Sw61vY2LCr2M\"",
+		"mtime": "2026-08-26T15:58:03.701Z",
 		"size": 2919,
-		"path": "../public/assets/QuickViewDialog-CFD7kFF0.js"
+		"path": "../public/assets/QuickViewDialog-BcDDPL6W.js"
 	},
 	"/assets/radio-group-D93ZxI0q.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1856-60tugdsmXqkhJn7MyEKuIZnlDUs\"",
-		"mtime": "2026-08-26T15:46:49.471Z",
+		"mtime": "2026-08-26T15:58:03.716Z",
 		"size": 6230,
 		"path": "../public/assets/radio-group-D93ZxI0q.js"
 	},
-	"/assets/RecentlyViewed-1Xg8WGEP.js": {
+	"/assets/RecentlyViewed-zWtmuhBU.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"981-TlneGOARZTaNg8bG2EuZcz2kowY\"",
-		"mtime": "2026-08-26T15:46:49.456Z",
+		"etag": "\"981-Yv9VaCLsiE14Cd2YC2WCWqTwjwI\"",
+		"mtime": "2026-08-26T15:58:03.703Z",
 		"size": 2433,
-		"path": "../public/assets/RecentlyViewed-1Xg8WGEP.js"
+		"path": "../public/assets/RecentlyViewed-zWtmuhBU.js"
 	},
 	"/assets/redirect-Dhm19zUi.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1f4-ePZWCXP5uehkmkGMkMl5xDch+/Y\"",
-		"mtime": "2026-08-26T15:46:49.471Z",
+		"mtime": "2026-08-26T15:58:03.718Z",
 		"size": 500,
 		"path": "../public/assets/redirect-Dhm19zUi.js"
 	},
 	"/assets/rotate-ccw-D_TOQcIJ.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"c8-tAwsEz/QTQBMGPoh8jMzU1gr5iI\"",
-		"mtime": "2026-08-26T15:46:49.471Z",
+		"mtime": "2026-08-26T15:58:03.718Z",
 		"size": 200,
 		"path": "../public/assets/rotate-ccw-D_TOQcIJ.js"
 	},
-	"/assets/routes-Dz0f75tC.js": {
+	"/assets/routes-CJFSE601.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"43eb-DT273EXCca1IbH6MKs1RMyIrAxU\"",
-		"mtime": "2026-08-26T15:46:49.471Z",
+		"etag": "\"43eb-8cOcH5RaW4bIVTTlPkCg3tc6g48\"",
+		"mtime": "2026-08-26T15:58:03.718Z",
 		"size": 17387,
-		"path": "../public/assets/routes-Dz0f75tC.js"
+		"path": "../public/assets/routes-CJFSE601.js"
 	},
-	"/assets/SearchDialog-BCHJztBD.js": {
+	"/assets/SearchDialog-Dfdqzk7s.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"5064-s3dXAv+zvy/ag7cl+NJvuDMYYp8\"",
-		"mtime": "2026-08-26T15:46:49.456Z",
+		"etag": "\"5064-HmjLa7dW50HXeeOusQcr3Df9b6g\"",
+		"mtime": "2026-08-26T15:58:03.703Z",
 		"size": 20580,
-		"path": "../public/assets/SearchDialog-BCHJztBD.js"
+		"path": "../public/assets/SearchDialog-Dfdqzk7s.js"
+	},
+	"/assets/select-BH-X4sCU.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"bafd-ykbHNx93yEQM6tvy9HPT00/InQY\"",
+		"mtime": "2026-08-26T15:58:03.719Z",
+		"size": 47869,
+		"path": "../public/assets/select-BH-X4sCU.js"
 	},
 	"/assets/shield-check-BRyfGHB7.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"140-7bIyAgIaSc4NwHVpdeIW1USyzOI\"",
-		"mtime": "2026-08-26T15:46:49.472Z",
+		"mtime": "2026-08-26T15:58:03.719Z",
 		"size": 320,
 		"path": "../public/assets/shield-check-BRyfGHB7.js"
 	},
-	"/assets/select-D94ny6aP.js": {
+	"/assets/shop-9ojsT858.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"bafd-lp7fs2EzbHZcwyvNJ3mn/cfZIEY\"",
-		"mtime": "2026-08-26T15:46:49.472Z",
-		"size": 47869,
-		"path": "../public/assets/select-D94ny6aP.js"
-	},
-	"/assets/shop-D_wQLVew.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"18d0-zurDWgMPfgSH6Quk0SA0xaXj8+U\"",
-		"mtime": "2026-08-26T15:46:49.472Z",
+		"etag": "\"18d0-rMaWB+eCWYd24qlK8ZI+o54Q3A8\"",
+		"mtime": "2026-08-26T15:58:03.719Z",
 		"size": 6352,
-		"path": "../public/assets/shop-D_wQLVew.js"
+		"path": "../public/assets/shop-9ojsT858.js"
 	},
 	"/assets/sparkles-YJipJYOr.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1ee-zyZ1oSDWz3P+iC/JPdiWM51tjCo\"",
-		"mtime": "2026-08-26T15:46:49.473Z",
+		"mtime": "2026-08-26T15:58:03.719Z",
 		"size": 494,
 		"path": "../public/assets/sparkles-YJipJYOr.js"
 	},
 	"/assets/star-BEAUIMql.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"2a3-qHAQP8YapWh/M975LgcgT3DXX84\"",
-		"mtime": "2026-08-26T15:46:49.473Z",
+		"mtime": "2026-08-26T15:58:03.720Z",
 		"size": 675,
 		"path": "../public/assets/star-BEAUIMql.js"
+	},
+	"/assets/story-1-shop-1200-KH6P15Oz.webp": {
+		"type": "image/webp",
+		"etag": "\"2d50c-+x+NV7ahJwD6K2FAnVqBqXzkqnk\"",
+		"mtime": "2026-08-26T15:58:03.727Z",
+		"size": 185612,
+		"path": "../public/assets/story-1-shop-1200-KH6P15Oz.webp"
 	},
 	"/assets/story-1-shop-560-C9AOS04y.webp": {
 		"type": "image/webp",
 		"etag": "\"d3c2-Mg5/P4UXbq5SBypO4cN/MbDdotw\"",
-		"mtime": "2026-08-26T15:46:49.481Z",
+		"mtime": "2026-08-26T15:58:03.727Z",
 		"size": 54210,
 		"path": "../public/assets/story-1-shop-560-C9AOS04y.webp"
 	},
 	"/assets/story-1-shop-900-C1hKWfWP.webp": {
 		"type": "image/webp",
 		"etag": "\"1c524-wJ5rCMaRqEWBHHJPFRlStv2Bbz4\"",
-		"mtime": "2026-08-26T15:46:49.481Z",
+		"mtime": "2026-08-26T15:58:03.728Z",
 		"size": 116004,
 		"path": "../public/assets/story-1-shop-900-C1hKWfWP.webp"
-	},
-	"/assets/story-2-kitchen-560-BwiFpku4.webp": {
-		"type": "image/webp",
-		"etag": "\"f778-fzVX+5ecgwmKIWcIN6n2HJ4ElJU\"",
-		"mtime": "2026-08-26T15:46:49.483Z",
-		"size": 63352,
-		"path": "../public/assets/story-2-kitchen-560-BwiFpku4.webp"
-	},
-	"/assets/story-1-shop-1200-KH6P15Oz.webp": {
-		"type": "image/webp",
-		"etag": "\"2d50c-+x+NV7ahJwD6K2FAnVqBqXzkqnk\"",
-		"mtime": "2026-08-26T15:46:49.480Z",
-		"size": 185612,
-		"path": "../public/assets/story-1-shop-1200-KH6P15Oz.webp"
 	},
 	"/assets/story-2-kitchen-1200-B0XrR51h.webp": {
 		"type": "image/webp",
 		"etag": "\"3a14e-w3i/7SDu4WeVbSIwWEuZaPVpkt8\"",
-		"mtime": "2026-08-26T15:46:49.482Z",
+		"mtime": "2026-08-26T15:58:03.728Z",
 		"size": 237902,
 		"path": "../public/assets/story-2-kitchen-1200-B0XrR51h.webp"
 	},
-	"/assets/story-3-today-560-BqodebNV.webp": {
+	"/assets/story-2-kitchen-560-BwiFpku4.webp": {
 		"type": "image/webp",
-		"etag": "\"100b2-SEV1Se0DY2Exhgul/oj4yrRrjow\"",
-		"mtime": "2026-08-26T15:46:49.484Z",
-		"size": 65714,
-		"path": "../public/assets/story-3-today-560-BqodebNV.webp"
-	},
-	"/assets/story-uYGGQQTy.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"2d32-DxSl/33qtld2/llb74PvasB9zkA\"",
-		"mtime": "2026-08-26T15:46:49.473Z",
-		"size": 11570,
-		"path": "../public/assets/story-uYGGQQTy.js"
+		"etag": "\"f778-fzVX+5ecgwmKIWcIN6n2HJ4ElJU\"",
+		"mtime": "2026-08-26T15:58:03.728Z",
+		"size": 63352,
+		"path": "../public/assets/story-2-kitchen-560-BwiFpku4.webp"
 	},
 	"/assets/story-2-kitchen-900-D9xPH5h3.webp": {
 		"type": "image/webp",
 		"etag": "\"24d44-pFv3Ceyn3Qyk+v4gcbBCsMhbClU\"",
-		"mtime": "2026-08-26T15:46:49.483Z",
+		"mtime": "2026-08-26T15:58:03.729Z",
 		"size": 150852,
 		"path": "../public/assets/story-2-kitchen-900-D9xPH5h3.webp"
+	},
+	"/assets/story-3-today-560-BqodebNV.webp": {
+		"type": "image/webp",
+		"etag": "\"100b2-SEV1Se0DY2Exhgul/oj4yrRrjow\"",
+		"mtime": "2026-08-26T15:58:03.730Z",
+		"size": 65714,
+		"path": "../public/assets/story-3-today-560-BqodebNV.webp"
+	},
+	"/assets/story-DWOSEFvG.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"2d32-BmI5pTPjME8avXcEdukxOANeDnw\"",
+		"mtime": "2026-08-26T15:58:03.720Z",
+		"size": 11570,
+		"path": "../public/assets/story-DWOSEFvG.js"
+	},
+	"/assets/story-3-today-900-CoQyFYq-.webp": {
+		"type": "image/webp",
+		"etag": "\"2642e-PrnboRpJqv4QYtJLSs+oAYMBQx8\"",
+		"mtime": "2026-08-26T15:58:03.730Z",
+		"size": 156718,
+		"path": "../public/assets/story-3-today-900-CoQyFYq-.webp"
 	},
 	"/assets/story-3-today-1200-COgTFLEH.webp": {
 		"type": "image/webp",
 		"etag": "\"3b3e0-IgpgxUNMre1gLuXTJ/BXAXKOeR8\"",
-		"mtime": "2026-08-26T15:46:49.484Z",
+		"mtime": "2026-08-26T15:58:03.729Z",
 		"size": 242656,
 		"path": "../public/assets/story-3-today-1200-COgTFLEH.webp"
 	},
-	"/assets/support-Ch9HcGGH.js": {
+	"/assets/support-BpOyaPBc.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"872-ZKqhx7WY/oVuhOt/9pZz8jCnnls\"",
-		"mtime": "2026-08-26T15:46:49.474Z",
+		"etag": "\"872-76/X6Lf6kgrHVlg+UNwtUSi4diI\"",
+		"mtime": "2026-08-26T15:58:03.721Z",
 		"size": 2162,
-		"path": "../public/assets/support-Ch9HcGGH.js"
+		"path": "../public/assets/support-BpOyaPBc.js"
+	},
+	"/assets/styles-B9UDE8fw.css": {
+		"type": "text/css; charset=utf-8",
+		"etag": "\"1d628-ffckyUzicyVSfjjn+M56TPFdrtg\"",
+		"mtime": "2026-08-26T15:58:03.730Z",
+		"size": 120360,
+		"path": "../public/assets/styles-B9UDE8fw.css"
 	},
 	"/assets/textarea-CXAqO8kY.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"24e-HyRAzIKE5xZ14tMS+3/BrTcK7rY\"",
-		"mtime": "2026-08-26T15:46:49.474Z",
+		"mtime": "2026-08-26T15:58:03.721Z",
 		"size": 590,
 		"path": "../public/assets/textarea-CXAqO8kY.js"
 	},
 	"/assets/tickets-5sBLbMRC.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"17f-JwnZIYEjB4+nMZF50kd5H+SGy9E\"",
-		"mtime": "2026-08-26T15:46:49.474Z",
+		"mtime": "2026-08-26T15:58:03.721Z",
 		"size": 383,
 		"path": "../public/assets/tickets-5sBLbMRC.js"
+	},
+	"/assets/track-7HMOu2Os.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"ed7-T6kC+VGtB9rEXPzSifJhPYu5VFQ\"",
+		"mtime": "2026-08-26T15:58:03.721Z",
+		"size": 3799,
+		"path": "../public/assets/track-7HMOu2Os.js"
 	},
 	"/assets/triangle-alert-CTQiK_Cu.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"251-s7a6SLXh33q2F5cfy6Zk8nN9LpM\"",
-		"mtime": "2026-08-26T15:46:49.475Z",
+		"mtime": "2026-08-26T15:58:03.722Z",
 		"size": 593,
 		"path": "../public/assets/triangle-alert-CTQiK_Cu.js"
-	},
-	"/assets/track-CSftQovi.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"ed7-7voJuU3zJDar2oEzwQvts2utidk\"",
-		"mtime": "2026-08-26T15:46:49.475Z",
-		"size": 3799,
-		"path": "../public/assets/track-CSftQovi.js"
-	},
-	"/assets/useRouter-D7Fmf6Jm.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"9c-hPvxQFuMBFv4OrkqvTQ9w93NQW4\"",
-		"mtime": "2026-08-26T15:46:49.476Z",
-		"size": 156,
-		"path": "../public/assets/useRouter-D7Fmf6Jm.js"
 	},
 	"/assets/truck-BfP6IyW0.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1e3-KfgVjbwVk3gTkggzdlTqXGpdH3w\"",
-		"mtime": "2026-08-26T15:46:49.475Z",
+		"mtime": "2026-08-26T15:58:03.723Z",
 		"size": 483,
 		"path": "../public/assets/truck-BfP6IyW0.js"
 	},
-	"/assets/wishlist-DsV5vpWp.js": {
+	"/assets/useRouter-D7Fmf6Jm.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"df5-x9g+3f1cc7XVoWpyO4a2HJEH5Ho\"",
-		"mtime": "2026-08-26T15:46:49.477Z",
+		"etag": "\"9c-hPvxQFuMBFv4OrkqvTQ9w93NQW4\"",
+		"mtime": "2026-08-26T15:58:03.723Z",
+		"size": 156,
+		"path": "../public/assets/useRouter-D7Fmf6Jm.js"
+	},
+	"/assets/wishlist-o07DiskK.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"df5-TmTnPj6BJAHCSTXrQvgUu9WcgMA\"",
+		"mtime": "2026-08-26T15:58:03.724Z",
 		"size": 3573,
-		"path": "../public/assets/wishlist-DsV5vpWp.js"
-	},
-	"/assets/story-3-today-900-CoQyFYq-.webp": {
-		"type": "image/webp",
-		"etag": "\"2642e-PrnboRpJqv4QYtJLSs+oAYMBQx8\"",
-		"mtime": "2026-08-26T15:46:49.485Z",
-		"size": 156718,
-		"path": "../public/assets/story-3-today-900-CoQyFYq-.webp"
-	},
-	"/assets/styles-DaAN4jNt.css": {
-		"type": "text/css; charset=utf-8",
-		"etag": "\"1d602-4Qug35YsZ8XnKaKXN6rrjobBR/k\"",
-		"mtime": "2026-08-26T15:46:49.485Z",
-		"size": 120322,
-		"path": "../public/assets/styles-DaAN4jNt.css"
+		"path": "../public/assets/wishlist-o07DiskK.js"
 	},
 	"/products/100g-asafoetida-gold-cake/img-1.jpg": {
 		"type": "image/jpeg",
@@ -689,19 +689,19 @@ var public_assets_data_default = {
 		"size": 312357,
 		"path": "../public/products/100g-asafoetida-gold-cake/img-5.jpg"
 	},
-	"/products/100g-asafoetida-gold-cake/img-4.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"61f28-8Ft0dQ2msQmT24QiT/pBzi5L/yY\"",
-		"mtime": "2026-08-24T05:52:13.171Z",
-		"size": 401192,
-		"path": "../public/products/100g-asafoetida-gold-cake/img-4.jpg"
-	},
 	"/products/100g-asafoetida-gold-cake/img-6.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"4ba83-1vNQPCdts4FVFBqvzOlpr+CQaPo\"",
 		"mtime": "2026-08-24T05:52:16.093Z",
 		"size": 309891,
 		"path": "../public/products/100g-asafoetida-gold-cake/img-6.jpg"
+	},
+	"/products/100g-asafoetida-gold-cake/img-4.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"61f28-8Ft0dQ2msQmT24QiT/pBzi5L/yY\"",
+		"mtime": "2026-08-24T05:52:13.171Z",
+		"size": 401192,
+		"path": "../public/products/100g-asafoetida-gold-cake/img-4.jpg"
 	},
 	"/products/100g-asafoetida-gold-cake/img-7.jpg": {
 		"type": "image/jpeg",
@@ -710,19 +710,19 @@ var public_assets_data_default = {
 		"size": 367243,
 		"path": "../public/products/100g-asafoetida-gold-cake/img-7.jpg"
 	},
-	"/products/100g-asafoetida-gold-cake/img-8.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"57508-5g22zO3ClQ8BtCq46AigyZuf/4M\"",
-		"mtime": "2026-08-24T05:52:18.648Z",
-		"size": 357640,
-		"path": "../public/products/100g-asafoetida-gold-cake/img-8.jpg"
-	},
 	"/products/100g-gold-asafoetida-powder/img-1.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"40b6f-DqcC3CwSYJHqHWw3gFDvXdJ5YWA\"",
 		"mtime": "2026-08-24T05:52:19.570Z",
 		"size": 265071,
 		"path": "../public/products/100g-gold-asafoetida-powder/img-1.jpg"
+	},
+	"/products/100g-asafoetida-gold-cake/img-8.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"57508-5g22zO3ClQ8BtCq46AigyZuf/4M\"",
+		"mtime": "2026-08-24T05:52:18.648Z",
+		"size": 357640,
+		"path": "../public/products/100g-asafoetida-gold-cake/img-8.jpg"
 	},
 	"/products/100g-gold-asafoetida-powder/img-2.jpg": {
 		"type": "image/jpeg",
@@ -738,314 +738,6 @@ var public_assets_data_default = {
 		"size": 261809,
 		"path": "../public/products/100g-gold-asafoetida-powder/img-3.jpg"
 	},
-	"/products/100g-gold-asafoetida-powder/img-4.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"3c185-xBiFCRltQUwymA1I9ba76TYKHXc\"",
-		"mtime": "2026-08-24T05:52:22.265Z",
-		"size": 246149,
-		"path": "../public/products/100g-gold-asafoetida-powder/img-4.jpg"
-	},
-	"/products/100g-premium-asafoetida-powder/img-1.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"49698-W78bt1jokoffR3KKRYOiyL+XnqQ\"",
-		"mtime": "2026-08-24T05:52:23.392Z",
-		"size": 300696,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-1.jpg"
-	},
-	"/products/100g-premium-asafoetida-powder/img-11.png": {
-		"type": "image/png",
-		"etag": "\"7d86a-gcRKQXaCja34gfM+Dy3AMo+ksPw\"",
-		"mtime": "2026-08-24T05:48:52.586Z",
-		"size": 514154,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-11.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-2.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"4cd08-pWGkaWR2/BwaWjEh1IgfM2vcifY\"",
-		"mtime": "2026-08-24T05:52:40.707Z",
-		"size": 314632,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-2.jpg"
-	},
-	"/products/100g-premium-asafoetida-powder/img-10.png": {
-		"type": "image/png",
-		"etag": "\"d26c0-+mgknT+sAVtvGbUFt9DufcXxzUI\"",
-		"mtime": "2026-08-24T05:48:48.356Z",
-		"size": 861888,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-10.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-12.png": {
-		"type": "image/png",
-		"etag": "\"de1f7-mZSHOfwgbEOdxGECoR19wvRc+iQ\"",
-		"mtime": "2026-08-24T05:48:59.363Z",
-		"size": 909815,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-12.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-13.png": {
-		"type": "image/png",
-		"etag": "\"d933b-ZXeFmXu/5O4OV1W2e6B5+B+L2pM\"",
-		"mtime": "2026-08-24T05:49:05.602Z",
-		"size": 889659,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-13.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-14.png": {
-		"type": "image/png",
-		"etag": "\"e7501-CdACz/xhh+Vn2BtpKKPX74w6MqM\"",
-		"mtime": "2026-08-24T05:49:09.648Z",
-		"size": 947457,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-14.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-17.png": {
-		"type": "image/png",
-		"etag": "\"dcfa9-mR3MqcClKp49cymitQ08jKAMggg\"",
-		"mtime": "2026-08-24T05:52:36.565Z",
-		"size": 905129,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-17.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-18.png": {
-		"type": "image/png",
-		"etag": "\"df8db-7PG7ls7lK+vm5vV4fkN2NmfqOX0\"",
-		"mtime": "2026-08-24T05:52:38.005Z",
-		"size": 915675,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-18.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-19.png": {
-		"type": "image/png",
-		"etag": "\"8ff7c-KQpsRpFsRDr/oF76w/iZAIaahv8\"",
-		"mtime": "2026-08-24T05:52:39.231Z",
-		"size": 589692,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-19.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-20.png": {
-		"type": "image/png",
-		"etag": "\"8cff5-ctN+nam5UFz3O609nKt+yPrxqq8\"",
-		"mtime": "2026-08-24T05:52:41.941Z",
-		"size": 577525,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-20.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-15.png": {
-		"type": "image/png",
-		"etag": "\"113c05-4EW0zWIGkq2/X92/X280Z3sRH5s\"",
-		"mtime": "2026-08-24T05:52:33.306Z",
-		"size": 1129477,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-15.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-21.png": {
-		"type": "image/png",
-		"etag": "\"baf6f-aQrGBI2JtEM0l2N6pnfcs9dNcOw\"",
-		"mtime": "2026-08-24T05:52:43.446Z",
-		"size": 765807,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-21.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-16.png": {
-		"type": "image/png",
-		"etag": "\"12420d-JZnCGh7ypZdOubO8+TokJW2kQJw\"",
-		"mtime": "2026-08-24T05:49:18.891Z",
-		"size": 1196557,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-16.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-22.png": {
-		"type": "image/png",
-		"etag": "\"ac405-8hQqi7n+A0bW31uuccCsy/C3s3M\"",
-		"mtime": "2026-08-24T05:52:45.044Z",
-		"size": 705541,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-22.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-23.png": {
-		"type": "image/png",
-		"etag": "\"c7a34-6+BpaIko5lQ0wYkUk1ZFI0kZil4\"",
-		"mtime": "2026-08-24T05:52:46.489Z",
-		"size": 817716,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-23.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"4c2a9-mE1yZMiu8c7ZsAK/n0u8nTuqZvo\"",
-		"mtime": "2026-08-24T05:52:57.201Z",
-		"size": 311977,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-3.jpg"
-	},
-	"/products/100g-premium-asafoetida-powder/img-25.png": {
-		"type": "image/png",
-		"etag": "\"9a1b8-+K2NoSySeScO5H7makOODgyBKUE\"",
-		"mtime": "2026-08-24T05:52:49.240Z",
-		"size": 631224,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-25.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-26.png": {
-		"type": "image/png",
-		"etag": "\"a21fd-A8NWdRXjk1mjQq5V01IVxMkh2cc\"",
-		"mtime": "2026-08-24T05:52:50.596Z",
-		"size": 664061,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-26.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-24.png": {
-		"type": "image/png",
-		"etag": "\"bbbe2-o0QHLiCzSsV1ewizB49Err/Iiag\"",
-		"mtime": "2026-08-24T05:52:47.752Z",
-		"size": 768994,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-24.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-29.png": {
-		"type": "image/png",
-		"etag": "\"c3043-Wykm8dX9PEgFox9Mk0XOoD9A2p0\"",
-		"mtime": "2026-08-24T05:52:55.408Z",
-		"size": 798787,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-29.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-30.png": {
-		"type": "image/png",
-		"etag": "\"d0b04-EmFUGAoGBLwmKh2GHXBGwlhZxz4\"",
-		"mtime": "2026-08-24T05:52:59.014Z",
-		"size": 854788,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-30.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-31.png": {
-		"type": "image/png",
-		"etag": "\"e9324-UpzjEBlak7732l8q2zE6X3yr2+M\"",
-		"mtime": "2026-08-24T05:53:00.857Z",
-		"size": 955172,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-31.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-32.png": {
-		"type": "image/png",
-		"etag": "\"de78e-qmvwMsjEwD0t/MmcFkoItVJPyY0\"",
-		"mtime": "2026-08-24T05:53:02.682Z",
-		"size": 911246,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-32.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-4.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"479ed-nwq4tZ4Ndb5bMObF+/2+3sWJQM8\"",
-		"mtime": "2026-08-24T05:53:12.692Z",
-		"size": 293357,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-4.jpg"
-	},
-	"/products/100g-premium-asafoetida-powder/img-27.png": {
-		"type": "image/png",
-		"etag": "\"107842-y9OrWkTBzyhCQJfq4oTuTB5omKw\"",
-		"mtime": "2026-08-24T05:52:52.360Z",
-		"size": 1079362,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-27.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-28.png": {
-		"type": "image/png",
-		"etag": "\"110db6-YqtsdWIErigcNHeeFXQmLUdXFMI\"",
-		"mtime": "2026-08-24T05:52:54.051Z",
-		"size": 1117622,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-28.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-35.png": {
-		"type": "image/png",
-		"etag": "\"c7031-q4pnFSFBpRsGin9xjHE0BGxytp8\"",
-		"mtime": "2026-08-24T05:53:07.464Z",
-		"size": 815153,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-35.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-33.png": {
-		"type": "image/png",
-		"etag": "\"139fc4-U4B3Je2w4/W1lSeX1p1w7GgUD48\"",
-		"mtime": "2026-08-24T05:53:04.185Z",
-		"size": 1286084,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-33.png"
-	},
-	"/products/500g-gold-asafoetida-powder/img-1.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"3e58f-CnY1+4BAsSUAmJXl0Ko2ZuPdhYE\"",
-		"mtime": "2026-08-24T05:53:23.269Z",
-		"size": 255375,
-		"path": "../public/products/500g-gold-asafoetida-powder/img-1.jpg"
-	},
-	"/products/500g-gold-asafoetida-powder/img-2.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"395ed-oS2PKHuKNR8opSaONdw57Y9cPQM\"",
-		"mtime": "2026-08-24T05:53:24.896Z",
-		"size": 234989,
-		"path": "../public/products/500g-gold-asafoetida-powder/img-2.jpg"
-	},
-	"/products/100g-premium-asafoetida-powder/img-37.png": {
-		"type": "image/png",
-		"etag": "\"fc902-0/cG+wdtERX/X7RRQvb3K7+YCfk\"",
-		"mtime": "2026-08-24T05:50:39.510Z",
-		"size": 1034498,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-37.png"
-	},
-	"/products/500g-gold-asafoetida-powder/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"387bd-tZq98i7O9hTwxx11l3HAcsOIdfc\"",
-		"mtime": "2026-08-24T05:53:26.609Z",
-		"size": 231357,
-		"path": "../public/products/500g-gold-asafoetida-powder/img-3.jpg"
-	},
-	"/products/50g-gluten-free-asafoetida-powder/img-1.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"3b19e-jaBTWcmYgaWnSY6n21vJ1u+4hsI\"",
-		"mtime": "2026-08-24T05:53:42.347Z",
-		"size": 242078,
-		"path": "../public/products/50g-gluten-free-asafoetida-powder/img-1.jpg"
-	},
-	"/products/100g-premium-asafoetida-powder/img-34.png": {
-		"type": "image/png",
-		"etag": "\"13907d-ycwwzfj90tSNJP7BtXBy7Wi/FyI\"",
-		"mtime": "2026-08-24T05:53:05.831Z",
-		"size": 1282173,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-34.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-7.png": {
-		"type": "image/png",
-		"etag": "\"e40b6-VnM8aP3B1NVKMduETkYI5oz2AUE\"",
-		"mtime": "2026-08-24T05:53:18.491Z",
-		"size": 934070,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-7.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-36.png": {
-		"type": "image/png",
-		"etag": "\"1054f2-eyg4iT+GkP/pux2N+zA0Kb8BZlc\"",
-		"mtime": "2026-08-24T05:50:34.531Z",
-		"size": 1070322,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-36.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-5.png": {
-		"type": "image/png",
-		"etag": "\"14d0fd-6aPT46ZCjYT6U0DvupQwlgrrqY0\"",
-		"mtime": "2026-08-24T05:50:47.697Z",
-		"size": 1364221,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-5.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-8.png": {
-		"type": "image/png",
-		"etag": "\"eb9c9-QrLZzbXkJ2o21tFraWAisWZzlSc\"",
-		"mtime": "2026-08-24T05:51:06.351Z",
-		"size": 965065,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-8.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-9.png": {
-		"type": "image/png",
-		"etag": "\"ec65c-My/01AWsJ+75Nc+4bjQL5of3tdc\"",
-		"mtime": "2026-08-24T05:53:21.783Z",
-		"size": 968284,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-9.png"
-	},
-	"/products/50g-gluten-free-asafoetida-powder/img-2.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"39186-7aKllXwWl3d9G9R6Ci5pQzipWig\"",
-		"mtime": "2026-08-24T05:53:44.129Z",
-		"size": 233862,
-		"path": "../public/products/50g-gluten-free-asafoetida-powder/img-2.jpg"
-	},
-	"/products/100g-premium-asafoetida-powder/img-6.png": {
-		"type": "image/png",
-		"etag": "\"152f2c-34umO1l41NDFJlAcWop/nV5VJ7M\"",
-		"mtime": "2026-08-24T05:50:53.475Z",
-		"size": 1388332,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-6.png"
-	},
-	"/products/50g-gluten-free-asafoetida-powder/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"3c9b1-Y0JAWxVMMxM3/nMWAqxWdj41zc0\"",
-		"mtime": "2026-08-24T05:53:45.864Z",
-		"size": 248241,
-		"path": "../public/products/50g-gluten-free-asafoetida-powder/img-3.jpg"
-	},
 	"/products/50g-asafoetida-gold-cake/img-1.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"3a0ca-aVPDF9cdGvAVy4P07Ngsn6kZb5c\"",
@@ -1053,12 +745,12 @@ var public_assets_data_default = {
 		"size": 237770,
 		"path": "../public/products/50g-asafoetida-gold-cake/img-1.jpg"
 	},
-	"/products/50g-gluten-free-asafoetida-powder/img-4.jpg": {
+	"/products/100g-gold-asafoetida-powder/img-4.jpg": {
 		"type": "image/jpeg",
-		"etag": "\"3c875-fJ1l84P1DT2lKx2277Ro31TwySI\"",
-		"mtime": "2026-08-24T05:53:47.617Z",
-		"size": 247925,
-		"path": "../public/products/50g-gluten-free-asafoetida-powder/img-4.jpg"
+		"etag": "\"3c185-xBiFCRltQUwymA1I9ba76TYKHXc\"",
+		"mtime": "2026-08-24T05:52:22.265Z",
+		"size": 246149,
+		"path": "../public/products/100g-gold-asafoetida-powder/img-4.jpg"
 	},
 	"/products/50g-asafoetida-gold-cake/img-2.jpg": {
 		"type": "image/jpeg",
@@ -1081,26 +773,12 @@ var public_assets_data_default = {
 		"size": 316677,
 		"path": "../public/products/50g-asafoetida-gold-cake/img-5.jpg"
 	},
-	"/products/50g-asafoetida-gold-cake/img-4.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"64086-cHiED41lc9fe37TCFcwvn5+xoFo\"",
-		"mtime": "2026-08-24T05:53:33.053Z",
-		"size": 409734,
-		"path": "../public/products/50g-asafoetida-gold-cake/img-4.jpg"
-	},
 	"/products/50g-asafoetida-gold-cake/img-6.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"5600d-gr6Bf0tg/eOLxZWoIc6+cYJsV00\"",
 		"mtime": "2026-08-24T05:53:35.905Z",
 		"size": 352269,
 		"path": "../public/products/50g-asafoetida-gold-cake/img-6.jpg"
-	},
-	"/products/50g-asafoetida-gold-cake/img-7.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"5d4d6-V3Wy4GEy1JeM/CJ6dLIc3CSzaI8\"",
-		"mtime": "2026-08-24T05:53:37.589Z",
-		"size": 382166,
-		"path": "../public/products/50g-asafoetida-gold-cake/img-7.jpg"
 	},
 	"/products/50g-asafoetida-gold-cake/img-9.jpg": {
 		"type": "image/jpeg",
@@ -1109,12 +787,285 @@ var public_assets_data_default = {
 		"size": 60803,
 		"path": "../public/products/50g-asafoetida-gold-cake/img-9.jpg"
 	},
+	"/products/50g-asafoetida-gold-cake/img-4.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"64086-cHiED41lc9fe37TCFcwvn5+xoFo\"",
+		"mtime": "2026-08-24T05:53:33.053Z",
+		"size": 409734,
+		"path": "../public/products/50g-asafoetida-gold-cake/img-4.jpg"
+	},
+	"/products/50g-asafoetida-gold-cake/img-7.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"5d4d6-V3Wy4GEy1JeM/CJ6dLIc3CSzaI8\"",
+		"mtime": "2026-08-24T05:53:37.589Z",
+		"size": 382166,
+		"path": "../public/products/50g-asafoetida-gold-cake/img-7.jpg"
+	},
 	"/products/50g-asafoetida-gold-cake/img-8.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"58b7b-xgDMPtQS/PU25EWRxroL67ald2Y\"",
 		"mtime": "2026-08-24T05:53:39.510Z",
 		"size": 363387,
 		"path": "../public/products/50g-asafoetida-gold-cake/img-8.jpg"
+	},
+	"/products/500g-gold-asafoetida-powder/img-2.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"395ed-oS2PKHuKNR8opSaONdw57Y9cPQM\"",
+		"mtime": "2026-08-24T05:53:24.896Z",
+		"size": 234989,
+		"path": "../public/products/500g-gold-asafoetida-powder/img-2.jpg"
+	},
+	"/products/500g-gold-asafoetida-powder/img-3.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"387bd-tZq98i7O9hTwxx11l3HAcsOIdfc\"",
+		"mtime": "2026-08-24T05:53:26.609Z",
+		"size": 231357,
+		"path": "../public/products/500g-gold-asafoetida-powder/img-3.jpg"
+	},
+	"/products/500g-gold-asafoetida-powder/img-1.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"3e58f-CnY1+4BAsSUAmJXl0Ko2ZuPdhYE\"",
+		"mtime": "2026-08-24T05:53:23.269Z",
+		"size": 255375,
+		"path": "../public/products/500g-gold-asafoetida-powder/img-1.jpg"
+	},
+	"/products/100g-premium-asafoetida-powder/img-1.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"49698-W78bt1jokoffR3KKRYOiyL+XnqQ\"",
+		"mtime": "2026-08-24T05:52:23.392Z",
+		"size": 300696,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-1.jpg"
+	},
+	"/products/100g-premium-asafoetida-powder/img-11.png": {
+		"type": "image/png",
+		"etag": "\"7d86a-gcRKQXaCja34gfM+Dy3AMo+ksPw\"",
+		"mtime": "2026-08-24T05:48:52.586Z",
+		"size": 514154,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-11.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-10.png": {
+		"type": "image/png",
+		"etag": "\"d26c0-+mgknT+sAVtvGbUFt9DufcXxzUI\"",
+		"mtime": "2026-08-24T05:48:48.356Z",
+		"size": 861888,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-10.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-12.png": {
+		"type": "image/png",
+		"etag": "\"de1f7-mZSHOfwgbEOdxGECoR19wvRc+iQ\"",
+		"mtime": "2026-08-24T05:48:59.363Z",
+		"size": 909815,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-12.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-2.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"4cd08-pWGkaWR2/BwaWjEh1IgfM2vcifY\"",
+		"mtime": "2026-08-24T05:52:40.707Z",
+		"size": 314632,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-2.jpg"
+	},
+	"/products/100g-premium-asafoetida-powder/img-3.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"4c2a9-mE1yZMiu8c7ZsAK/n0u8nTuqZvo\"",
+		"mtime": "2026-08-24T05:52:57.201Z",
+		"size": 311977,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-3.jpg"
+	},
+	"/products/100g-premium-asafoetida-powder/img-13.png": {
+		"type": "image/png",
+		"etag": "\"d933b-ZXeFmXu/5O4OV1W2e6B5+B+L2pM\"",
+		"mtime": "2026-08-24T05:49:05.602Z",
+		"size": 889659,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-13.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-14.png": {
+		"type": "image/png",
+		"etag": "\"e7501-CdACz/xhh+Vn2BtpKKPX74w6MqM\"",
+		"mtime": "2026-08-24T05:49:09.648Z",
+		"size": 947457,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-14.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-17.png": {
+		"type": "image/png",
+		"etag": "\"dcfa9-mR3MqcClKp49cymitQ08jKAMggg\"",
+		"mtime": "2026-08-24T05:52:36.565Z",
+		"size": 905129,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-17.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-19.png": {
+		"type": "image/png",
+		"etag": "\"8ff7c-KQpsRpFsRDr/oF76w/iZAIaahv8\"",
+		"mtime": "2026-08-24T05:52:39.231Z",
+		"size": 589692,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-19.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-20.png": {
+		"type": "image/png",
+		"etag": "\"8cff5-ctN+nam5UFz3O609nKt+yPrxqq8\"",
+		"mtime": "2026-08-24T05:52:41.941Z",
+		"size": 577525,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-20.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-18.png": {
+		"type": "image/png",
+		"etag": "\"df8db-7PG7ls7lK+vm5vV4fkN2NmfqOX0\"",
+		"mtime": "2026-08-24T05:52:38.005Z",
+		"size": 915675,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-18.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-22.png": {
+		"type": "image/png",
+		"etag": "\"ac405-8hQqi7n+A0bW31uuccCsy/C3s3M\"",
+		"mtime": "2026-08-24T05:52:45.044Z",
+		"size": 705541,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-22.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-21.png": {
+		"type": "image/png",
+		"etag": "\"baf6f-aQrGBI2JtEM0l2N6pnfcs9dNcOw\"",
+		"mtime": "2026-08-24T05:52:43.446Z",
+		"size": 765807,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-21.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-24.png": {
+		"type": "image/png",
+		"etag": "\"bbbe2-o0QHLiCzSsV1ewizB49Err/Iiag\"",
+		"mtime": "2026-08-24T05:52:47.752Z",
+		"size": 768994,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-24.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-23.png": {
+		"type": "image/png",
+		"etag": "\"c7a34-6+BpaIko5lQ0wYkUk1ZFI0kZil4\"",
+		"mtime": "2026-08-24T05:52:46.489Z",
+		"size": 817716,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-23.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-25.png": {
+		"type": "image/png",
+		"etag": "\"9a1b8-+K2NoSySeScO5H7makOODgyBKUE\"",
+		"mtime": "2026-08-24T05:52:49.240Z",
+		"size": 631224,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-25.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-26.png": {
+		"type": "image/png",
+		"etag": "\"a21fd-A8NWdRXjk1mjQq5V01IVxMkh2cc\"",
+		"mtime": "2026-08-24T05:52:50.596Z",
+		"size": 664061,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-26.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-29.png": {
+		"type": "image/png",
+		"etag": "\"c3043-Wykm8dX9PEgFox9Mk0XOoD9A2p0\"",
+		"mtime": "2026-08-24T05:52:55.408Z",
+		"size": 798787,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-29.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-31.png": {
+		"type": "image/png",
+		"etag": "\"e9324-UpzjEBlak7732l8q2zE6X3yr2+M\"",
+		"mtime": "2026-08-24T05:53:00.857Z",
+		"size": 955172,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-31.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-16.png": {
+		"type": "image/png",
+		"etag": "\"12420d-JZnCGh7ypZdOubO8+TokJW2kQJw\"",
+		"mtime": "2026-08-24T05:49:18.891Z",
+		"size": 1196557,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-16.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-15.png": {
+		"type": "image/png",
+		"etag": "\"113c05-4EW0zWIGkq2/X92/X280Z3sRH5s\"",
+		"mtime": "2026-08-24T05:52:33.306Z",
+		"size": 1129477,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-15.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-30.png": {
+		"type": "image/png",
+		"etag": "\"d0b04-EmFUGAoGBLwmKh2GHXBGwlhZxz4\"",
+		"mtime": "2026-08-24T05:52:59.014Z",
+		"size": 854788,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-30.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-32.png": {
+		"type": "image/png",
+		"etag": "\"de78e-qmvwMsjEwD0t/MmcFkoItVJPyY0\"",
+		"mtime": "2026-08-24T05:53:02.682Z",
+		"size": 911246,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-32.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-28.png": {
+		"type": "image/png",
+		"etag": "\"110db6-YqtsdWIErigcNHeeFXQmLUdXFMI\"",
+		"mtime": "2026-08-24T05:52:54.051Z",
+		"size": 1117622,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-28.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-27.png": {
+		"type": "image/png",
+		"etag": "\"107842-y9OrWkTBzyhCQJfq4oTuTB5omKw\"",
+		"mtime": "2026-08-24T05:52:52.360Z",
+		"size": 1079362,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-27.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-33.png": {
+		"type": "image/png",
+		"etag": "\"139fc4-U4B3Je2w4/W1lSeX1p1w7GgUD48\"",
+		"mtime": "2026-08-24T05:53:04.185Z",
+		"size": 1286084,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-33.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-35.png": {
+		"type": "image/png",
+		"etag": "\"c7031-q4pnFSFBpRsGin9xjHE0BGxytp8\"",
+		"mtime": "2026-08-24T05:53:07.464Z",
+		"size": 815153,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-35.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-4.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"479ed-nwq4tZ4Ndb5bMObF+/2+3sWJQM8\"",
+		"mtime": "2026-08-24T05:53:12.692Z",
+		"size": 293357,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-4.jpg"
+	},
+	"/products/100g-premium-asafoetida-powder/img-34.png": {
+		"type": "image/png",
+		"etag": "\"13907d-ycwwzfj90tSNJP7BtXBy7Wi/FyI\"",
+		"mtime": "2026-08-24T05:53:05.831Z",
+		"size": 1282173,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-34.png"
+	},
+	"/products/50g-gluten-free-asafoetida-powder/img-1.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"3b19e-jaBTWcmYgaWnSY6n21vJ1u+4hsI\"",
+		"mtime": "2026-08-24T05:53:42.347Z",
+		"size": 242078,
+		"path": "../public/products/50g-gluten-free-asafoetida-powder/img-1.jpg"
+	},
+	"/products/50g-gluten-free-asafoetida-powder/img-2.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"39186-7aKllXwWl3d9G9R6Ci5pQzipWig\"",
+		"mtime": "2026-08-24T05:53:44.129Z",
+		"size": 233862,
+		"path": "../public/products/50g-gluten-free-asafoetida-powder/img-2.jpg"
+	},
+	"/products/50g-gluten-free-asafoetida-powder/img-3.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"3c9b1-Y0JAWxVMMxM3/nMWAqxWdj41zc0\"",
+		"mtime": "2026-08-24T05:53:45.864Z",
+		"size": 248241,
+		"path": "../public/products/50g-gluten-free-asafoetida-powder/img-3.jpg"
+	},
+	"/products/50g-gluten-free-asafoetida-powder/img-4.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"3c875-fJ1l84P1DT2lKx2277Ro31TwySI\"",
+		"mtime": "2026-08-24T05:53:47.617Z",
+		"size": 247925,
+		"path": "../public/products/50g-gluten-free-asafoetida-powder/img-4.jpg"
 	},
 	"/products/50g-gold-asafoetida-powder/img-1.jpg": {
 		"type": "image/jpeg",
@@ -1136,6 +1087,13 @@ var public_assets_data_default = {
 		"mtime": "2026-08-24T05:53:52.811Z",
 		"size": 272448,
 		"path": "../public/products/50g-gold-asafoetida-powder/img-3.jpg"
+	},
+	"/products/100g-premium-asafoetida-powder/img-37.png": {
+		"type": "image/png",
+		"etag": "\"fc902-0/cG+wdtERX/X7RRQvb3K7+YCfk\"",
+		"mtime": "2026-08-24T05:50:39.510Z",
+		"size": 1034498,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-37.png"
 	},
 	"/products/50g-gold-asafoetida-powder/img-4.jpg": {
 		"type": "image/jpeg",
@@ -1165,6 +1123,34 @@ var public_assets_data_default = {
 		"size": 289401,
 		"path": "../public/products/50g-premium-asafoetida-powder/img-3.jpg"
 	},
+	"/products/100g-premium-asafoetida-powder/img-7.png": {
+		"type": "image/png",
+		"etag": "\"e40b6-VnM8aP3B1NVKMduETkYI5oz2AUE\"",
+		"mtime": "2026-08-24T05:53:18.491Z",
+		"size": 934070,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-7.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-8.png": {
+		"type": "image/png",
+		"etag": "\"eb9c9-QrLZzbXkJ2o21tFraWAisWZzlSc\"",
+		"mtime": "2026-08-24T05:51:06.351Z",
+		"size": 965065,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-8.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-9.png": {
+		"type": "image/png",
+		"etag": "\"ec65c-My/01AWsJ+75Nc+4bjQL5of3tdc\"",
+		"mtime": "2026-08-24T05:53:21.783Z",
+		"size": 968284,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-9.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-36.png": {
+		"type": "image/png",
+		"etag": "\"1054f2-eyg4iT+GkP/pux2N+zA0Kb8BZlc\"",
+		"mtime": "2026-08-24T05:50:34.531Z",
+		"size": 1070322,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-36.png"
+	},
 	"/products/50g-premium-asafoetida-powder/img-4.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"461de-oIQFwonG/rOA0WYiRAnVFv/d8ZY\"",
@@ -1172,33 +1158,12 @@ var public_assets_data_default = {
 		"size": 287198,
 		"path": "../public/products/50g-premium-asafoetida-powder/img-4.jpg"
 	},
-	"/products/black-sesame-seeds/img-1.jpg": {
+	"/products/all-product/img-1.jpg": {
 		"type": "image/jpeg",
-		"etag": "\"581c5-CxoSsCsJw/3aN1cREACWPpxeXOY\"",
-		"mtime": "2026-08-25T08:35:15.543Z",
-		"size": 360901,
-		"path": "../public/products/black-sesame-seeds/img-1.jpg"
-	},
-	"/products/black-sesame-seeds/img-2.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"506ac-dTVSnqWb/uJ2SLYKYkbu3UD7IP4\"",
-		"mtime": "2026-08-25T08:35:16.251Z",
-		"size": 329388,
-		"path": "../public/products/black-sesame-seeds/img-2.jpg"
-	},
-	"/products/black-sesame-seeds/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"5e071-EgJnT5N6N20dujLCzTtqGzUy2ME\"",
-		"mtime": "2026-08-25T08:35:16.962Z",
-		"size": 385137,
-		"path": "../public/products/black-sesame-seeds/img-3.jpg"
-	},
-	"/products/black-sesame-seeds/img-4.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"4fd86-WaBr2aEgLFBsltt6I6afldaggOg\"",
-		"mtime": "2026-08-25T08:35:17.903Z",
-		"size": 327046,
-		"path": "../public/products/black-sesame-seeds/img-4.jpg"
+		"etag": "\"4832f-qGxJ0DZlcK3Ojb6XTl+ZipnBQ1s\"",
+		"mtime": "2026-08-24T05:54:03.730Z",
+		"size": 295727,
+		"path": "../public/products/all-product/img-1.jpg"
 	},
 	"/products/all-product/img-2.jpg": {
 		"type": "image/jpeg",
@@ -1207,12 +1172,19 @@ var public_assets_data_default = {
 		"size": 265716,
 		"path": "../public/products/all-product/img-2.jpg"
 	},
-	"/products/all-product/img-1.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"4832f-qGxJ0DZlcK3Ojb6XTl+ZipnBQ1s\"",
-		"mtime": "2026-08-24T05:54:03.730Z",
-		"size": 295727,
-		"path": "../public/products/all-product/img-1.jpg"
+	"/products/100g-premium-asafoetida-powder/img-5.png": {
+		"type": "image/png",
+		"etag": "\"14d0fd-6aPT46ZCjYT6U0DvupQwlgrrqY0\"",
+		"mtime": "2026-08-24T05:50:47.697Z",
+		"size": 1364221,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-5.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-6.png": {
+		"type": "image/png",
+		"etag": "\"152f2c-34umO1l41NDFJlAcWop/nV5VJ7M\"",
+		"mtime": "2026-08-24T05:50:53.475Z",
+		"size": 1388332,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-6.png"
 	},
 	"/products/all-product/img-3.jpg": {
 		"type": "image/jpeg",
@@ -1263,6 +1235,34 @@ var public_assets_data_default = {
 		"size": 422142,
 		"path": "../public/products/all-product/img-8.jpg"
 	},
+	"/products/black-sesame-seeds/img-1.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"581c5-CxoSsCsJw/3aN1cREACWPpxeXOY\"",
+		"mtime": "2026-08-25T08:35:15.543Z",
+		"size": 360901,
+		"path": "../public/products/black-sesame-seeds/img-1.jpg"
+	},
+	"/products/black-sesame-seeds/img-2.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"506ac-dTVSnqWb/uJ2SLYKYkbu3UD7IP4\"",
+		"mtime": "2026-08-25T08:35:16.251Z",
+		"size": 329388,
+		"path": "../public/products/black-sesame-seeds/img-2.jpg"
+	},
+	"/products/black-sesame-seeds/img-3.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"5e071-EgJnT5N6N20dujLCzTtqGzUy2ME\"",
+		"mtime": "2026-08-25T08:35:16.962Z",
+		"size": 385137,
+		"path": "../public/products/black-sesame-seeds/img-3.jpg"
+	},
+	"/products/black-sesame-seeds/img-4.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"4fd86-WaBr2aEgLFBsltt6I6afldaggOg\"",
+		"mtime": "2026-08-25T08:35:17.903Z",
+		"size": 327046,
+		"path": "../public/products/black-sesame-seeds/img-4.jpg"
+	},
 	"/products/bottle-jar/img-1.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"5c525-tkorcAlQlF8YmeO8eJONqJou06A\"",
@@ -1277,19 +1277,19 @@ var public_assets_data_default = {
 		"size": 310950,
 		"path": "../public/products/bottle-jar/img-2.jpg"
 	},
-	"/products/bottle-jar/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"5ac48-6c+jFf8UxUBmV3O/D+FTvgtavAY\"",
-		"mtime": "2026-08-24T05:54:24.722Z",
-		"size": 371784,
-		"path": "../public/products/bottle-jar/img-3.jpg"
-	},
 	"/products/bottle-jar/img-4.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"46d12-wWfe80keBJSdIr1zj6ivkufLWcM\"",
 		"mtime": "2026-08-24T05:54:26.349Z",
 		"size": 290066,
 		"path": "../public/products/bottle-jar/img-4.jpg"
+	},
+	"/products/bottle-jar/img-3.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"5ac48-6c+jFf8UxUBmV3O/D+FTvgtavAY\"",
+		"mtime": "2026-08-24T05:54:24.722Z",
+		"size": 371784,
+		"path": "../public/products/bottle-jar/img-3.jpg"
 	},
 	"/products/bottle-jar/img-5.jpg": {
 		"type": "image/jpeg",
@@ -1319,6 +1319,13 @@ var public_assets_data_default = {
 		"size": 245810,
 		"path": "../public/products/hing/img-3.jpg"
 	},
+	"/products/hing/img-5.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"41f59-diElF2bGkacRPtS0X+A4sByKfKE\"",
+		"mtime": "2026-08-24T05:54:37.323Z",
+		"size": 270169,
+		"path": "../public/products/hing/img-5.jpg"
+	},
 	"/products/hing/img-4.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"3a709-fqld1y/MNoufGqX803BSo9VMu1M\"",
@@ -1332,48 +1339,6 @@ var public_assets_data_default = {
 		"mtime": "2026-08-24T05:54:38.925Z",
 		"size": 178607,
 		"path": "../public/products/hing/img-6.jpg"
-	},
-	"/products/hing/img-5.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"41f59-diElF2bGkacRPtS0X+A4sByKfKE\"",
-		"mtime": "2026-08-24T05:54:37.323Z",
-		"size": 270169,
-		"path": "../public/products/hing/img-5.jpg"
-	},
-	"/products/hing-pellets/img-1.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"6c226-Qs0lN2z5VR/CKixzdzrxMHB6HEw\"",
-		"mtime": "2026-08-24T05:54:44.277Z",
-		"size": 442918,
-		"path": "../public/products/hing-pellets/img-1.jpg"
-	},
-	"/products/hing-pellets/img-4.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"28c2d-xPJq2krVT8PO+bPfCDdzfViZclk\"",
-		"mtime": "2026-08-24T05:54:49.753Z",
-		"size": 166957,
-		"path": "../public/products/hing-pellets/img-4.jpg"
-	},
-	"/products/hing-pellets/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"38013-8j5b5l2+OI9oRvipmkSVEhiUYtQ\"",
-		"mtime": "2026-08-24T05:54:47.895Z",
-		"size": 229395,
-		"path": "../public/products/hing-pellets/img-3.jpg"
-	},
-	"/products/hing-pellets/img-5.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"20099-4CyNeARHukNXb+Mc7ZA72VhZno4\"",
-		"mtime": "2026-08-24T05:54:51.229Z",
-		"size": 131225,
-		"path": "../public/products/hing-pellets/img-5.jpg"
-	},
-	"/products/hing-pellets/img-2.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"6f30e-mAClqfvgDFREpPvO2kDUbnWuSl8\"",
-		"mtime": "2026-08-24T05:54:46.080Z",
-		"size": 455438,
-		"path": "../public/products/hing-pellets/img-2.jpg"
 	},
 	"/products/hing-chips/img-1.jpg": {
 		"type": "image/jpeg",
@@ -1389,19 +1354,47 @@ var public_assets_data_default = {
 		"size": 267634,
 		"path": "../public/products/hing-chips/img-2.jpg"
 	},
+	"/products/hing-pellets/img-1.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"6c226-Qs0lN2z5VR/CKixzdzrxMHB6HEw\"",
+		"mtime": "2026-08-24T05:54:44.277Z",
+		"size": 442918,
+		"path": "../public/products/hing-pellets/img-1.jpg"
+	},
+	"/products/hing-pellets/img-2.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"6f30e-mAClqfvgDFREpPvO2kDUbnWuSl8\"",
+		"mtime": "2026-08-24T05:54:46.080Z",
+		"size": 455438,
+		"path": "../public/products/hing-pellets/img-2.jpg"
+	},
+	"/products/hing-pellets/img-3.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"38013-8j5b5l2+OI9oRvipmkSVEhiUYtQ\"",
+		"mtime": "2026-08-24T05:54:47.895Z",
+		"size": 229395,
+		"path": "../public/products/hing-pellets/img-3.jpg"
+	},
+	"/products/hing-pellets/img-4.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"28c2d-xPJq2krVT8PO+bPfCDdzfViZclk\"",
+		"mtime": "2026-08-24T05:54:49.753Z",
+		"size": 166957,
+		"path": "../public/products/hing-pellets/img-4.jpg"
+	},
+	"/products/hing-pellets/img-5.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"20099-4CyNeARHukNXb+Mc7ZA72VhZno4\"",
+		"mtime": "2026-08-24T05:54:51.229Z",
+		"size": 131225,
+		"path": "../public/products/hing-pellets/img-5.jpg"
+	},
 	"/products/millet-pongal-mix/img-1.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"352a3-DiPUm8KNPOPu9NBxkkoJqLPzZsA\"",
 		"mtime": "2026-08-25T08:35:21.442Z",
 		"size": 217763,
 		"path": "../public/products/millet-pongal-mix/img-1.jpg"
-	},
-	"/products/millet-sambar-mix/img-1.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"37cfd-6Tk+cPsVsIb5w/J6g8Z0flkVAwA\"",
-		"mtime": "2026-08-25T08:35:22.582Z",
-		"size": 228605,
-		"path": "../public/products/millet-sambar-mix/img-1.jpg"
 	},
 	"/products/millet-pongal-mix/img-2.jpg": {
 		"type": "image/jpeg",
@@ -1410,61 +1403,12 @@ var public_assets_data_default = {
 		"size": 251422,
 		"path": "../public/products/millet-pongal-mix/img-2.jpg"
 	},
-	"/products/millet-sambar-mix/img-2.jpg": {
+	"/products/millet-sambar-mix/img-1.jpg": {
 		"type": "image/jpeg",
-		"etag": "\"407b2-DGpgPAUY8G1tZQkTAForAwbJwtg\"",
-		"mtime": "2026-08-25T08:35:23.335Z",
-		"size": 264114,
-		"path": "../public/products/millet-sambar-mix/img-2.jpg"
-	},
-	"/products/traditional-health-mix/img-1.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"5071b-Q+uvJfbA+kO7qmVf9mFJFoSmQ1g\"",
-		"mtime": "2026-08-24T05:54:59.878Z",
-		"size": 329499,
-		"path": "../public/products/traditional-health-mix/img-1.jpg"
-	},
-	"/products/traditional-health-mix/img-2.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"5b333-pd3VeW6KQ5N9oNoWVAKSYljoFJI\"",
-		"mtime": "2026-08-24T05:55:02.013Z",
-		"size": 373555,
-		"path": "../public/products/traditional-health-mix/img-2.jpg"
-	},
-	"/products/traditional-health-mix/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"5b333-pd3VeW6KQ5N9oNoWVAKSYljoFJI\"",
-		"mtime": "2026-08-24T05:55:04.336Z",
-		"size": 373555,
-		"path": "../public/products/traditional-health-mix/img-3.jpg"
-	},
-	"/products/traditional-health-mix/img-4.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"19871-xuA0fjYaDmD39I0adPnhpDDb07Q\"",
-		"mtime": "2026-08-24T05:55:05.922Z",
-		"size": 104561,
-		"path": "../public/products/traditional-health-mix/img-4.jpg"
-	},
-	"/products/traditional-health-mix/img-5.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"19279-b7QjF59AM7o1lv/etXiKKB9uOzE\"",
-		"mtime": "2026-08-24T05:55:07.334Z",
-		"size": 103033,
-		"path": "../public/products/traditional-health-mix/img-5.jpg"
-	},
-	"/products/traditional-health-mix/img-6.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"32253-Ol+HKfmJg6SukBOgJESUc1F4td4\"",
-		"mtime": "2026-08-24T05:55:09.275Z",
-		"size": 205395,
-		"path": "../public/products/traditional-health-mix/img-6.jpg"
-	},
-	"/products/traditional-health-mix/img-7.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"36bbc-BJ4zLr4B9q2bM0vBlDusoLPFcKI\"",
-		"mtime": "2026-08-24T05:55:11.519Z",
-		"size": 224188,
-		"path": "../public/products/traditional-health-mix/img-7.jpg"
+		"etag": "\"37cfd-6Tk+cPsVsIb5w/J6g8Z0flkVAwA\"",
+		"mtime": "2026-08-25T08:35:22.582Z",
+		"size": 228605,
+		"path": "../public/products/millet-sambar-mix/img-1.jpg"
 	},
 	"/products/pure-benzoin-sambrani/img-2.jpg": {
 		"type": "image/jpeg",
@@ -1480,6 +1424,13 @@ var public_assets_data_default = {
 		"size": 229056,
 		"path": "../public/products/pure-benzoin-sambrani/img-1.png"
 	},
+	"/products/millet-sambar-mix/img-2.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"407b2-DGpgPAUY8G1tZQkTAForAwbJwtg\"",
+		"mtime": "2026-08-25T08:35:23.335Z",
+		"size": 264114,
+		"path": "../public/products/millet-sambar-mix/img-2.jpg"
+	},
 	"/products/pure-benzoin-sambrani/img-3.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"27c45-tezhUyCwL5u4q2rzsDEay6z6GXo\"",
@@ -1493,6 +1444,55 @@ var public_assets_data_default = {
 		"mtime": "2026-08-24T05:54:57.779Z",
 		"size": 207847,
 		"path": "../public/products/pure-benzoin-sambrani/img-4.jpg"
+	},
+	"/products/traditional-health-mix/img-4.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"19871-xuA0fjYaDmD39I0adPnhpDDb07Q\"",
+		"mtime": "2026-08-24T05:55:05.922Z",
+		"size": 104561,
+		"path": "../public/products/traditional-health-mix/img-4.jpg"
+	},
+	"/products/traditional-health-mix/img-1.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"5071b-Q+uvJfbA+kO7qmVf9mFJFoSmQ1g\"",
+		"mtime": "2026-08-24T05:54:59.878Z",
+		"size": 329499,
+		"path": "../public/products/traditional-health-mix/img-1.jpg"
+	},
+	"/products/traditional-health-mix/img-5.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"19279-b7QjF59AM7o1lv/etXiKKB9uOzE\"",
+		"mtime": "2026-08-24T05:55:07.334Z",
+		"size": 103033,
+		"path": "../public/products/traditional-health-mix/img-5.jpg"
+	},
+	"/products/traditional-health-mix/img-2.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"5b333-pd3VeW6KQ5N9oNoWVAKSYljoFJI\"",
+		"mtime": "2026-08-24T05:55:02.013Z",
+		"size": 373555,
+		"path": "../public/products/traditional-health-mix/img-2.jpg"
+	},
+	"/products/traditional-health-mix/img-3.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"5b333-pd3VeW6KQ5N9oNoWVAKSYljoFJI\"",
+		"mtime": "2026-08-24T05:55:04.336Z",
+		"size": 373555,
+		"path": "../public/products/traditional-health-mix/img-3.jpg"
+	},
+	"/products/traditional-health-mix/img-6.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"32253-Ol+HKfmJg6SukBOgJESUc1F4td4\"",
+		"mtime": "2026-08-24T05:55:09.275Z",
+		"size": 205395,
+		"path": "../public/products/traditional-health-mix/img-6.jpg"
+	},
+	"/products/traditional-health-mix/img-7.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"36bbc-BJ4zLr4B9q2bM0vBlDusoLPFcKI\"",
+		"mtime": "2026-08-24T05:55:11.519Z",
+		"size": 224188,
+		"path": "../public/products/traditional-health-mix/img-7.jpg"
 	},
 	"/products/traditional-idli-podi/img-1.jpg": {
 		"type": "image/jpeg",

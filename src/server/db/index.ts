@@ -1,192 +1,305 @@
-import { DatabaseSync } from "node:sqlite";
 import fs from "node:fs";
 import path from "node:path";
 
-let dbInstance: DatabaseSync | null = null;
+export interface DbStatement {
+  all(...params: unknown[]): unknown[];
+  get(...params: unknown[]): unknown | undefined;
+  run(...params: unknown[]): { changes: number; lastInsertRowid?: number | bigint };
+}
+
+export interface DbInterface {
+  exec(sql: string): void;
+  prepare(sql: string): DbStatement;
+}
+
+let dbInstance: DbInterface | null = null;
 
 function getDbPath(): string {
   const dataDir = path.resolve(process.cwd(), "data");
   if (!fs.existsSync(dataDir)) {
     fs.mkdirSync(dataDir, { recursive: true });
   }
-  return path.join(dataDir, "yg_store.db");
+  return path.join(dataDir, "yg_store.json");
 }
 
-export function getDb(): DatabaseSync {
+class PureJsDatabase implements DbInterface {
+  private data: Record<string, Record<string, any>[]> = {};
+  private filePath: string;
+
+  constructor(filePath: string) {
+    this.filePath = filePath;
+    this.load();
+  }
+
+  private load() {
+    try {
+      if (fs.existsSync(this.filePath)) {
+        const raw = fs.readFileSync(this.filePath, "utf-8");
+        this.data = JSON.parse(raw);
+      }
+    } catch {
+      this.data = {};
+    }
+  }
+
+  private save() {
+    try {
+      fs.writeFileSync(this.filePath, JSON.stringify(this.data, null, 2), "utf-8");
+    } catch (err) {
+      console.error("Failed to save JSON DB:", err);
+    }
+  }
+
+  exec(sql: string): void {
+    const stmts = sql.split(";");
+    for (const s of stmts) {
+      const trimmed = s.trim();
+      if (!trimmed) continue;
+      if (trimmed.toUpperCase().startsWith("CREATE TABLE")) {
+        const match = trimmed.match(/CREATE\s+TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?([a-zA-Z0-9_]+)/i);
+        if (match && match[1]) {
+          const tableName = match[1];
+          if (!this.data[tableName]) {
+            this.data[tableName] = [];
+          }
+        }
+      } else if (trimmed.toUpperCase().startsWith("DELETE FROM")) {
+        const match = trimmed.match(/DELETE\s+FROM\s+([a-zA-Z0-9_]+)/i);
+        if (match && match[1]) {
+          const tableName = match[1];
+          this.data[tableName] = [];
+        }
+      }
+    }
+    this.save();
+  }
+
+  prepare(sql: string): DbStatement {
+    const rawSql = sql.trim();
+    const upper = rawSql.toUpperCase();
+
+    // 1. SELECT COUNT(*)
+    if (upper.includes("SELECT COUNT(*)")) {
+      const match = rawSql.match(/FROM\s+([a-zA-Z0-9_]+)/i);
+      const tableName = match ? match[1] : "";
+      return {
+        all: () => [{ count: (this.data[tableName] || []).length }],
+        get: () => ({ count: (this.data[tableName] || []).length }),
+        run: () => ({ changes: 0 }),
+      };
+    }
+
+    // 2. SELECT * FROM table ...
+    if (upper.startsWith("SELECT")) {
+      const fromMatch = rawSql.match(/FROM\s+([a-zA-Z0-9_]+)/i);
+      const tableName = fromMatch ? fromMatch[1] : "";
+      const rows = this.data[tableName] || [];
+
+      return {
+        all: (...params: unknown[]) => {
+          let result = [...rows];
+          // Simple WHERE matching
+          if (upper.includes("WHERE")) {
+            const wherePart = rawSql.split(/WHERE/i)[1].split(/ORDER|LIMIT|GROUP/i)[0].trim();
+            result = this.filterRows(result, wherePart, params);
+          }
+          // Order By
+          if (upper.includes("ORDER BY")) {
+            const orderPart = rawSql.split(/ORDER BY/i)[1].trim();
+            result = this.sortRows(result, orderPart);
+          }
+          return result;
+        },
+        get: (...params: unknown[]) => {
+          let result = [...rows];
+          if (upper.includes("WHERE")) {
+            const wherePart = rawSql.split(/WHERE/i)[1].split(/ORDER|LIMIT|GROUP/i)[0].trim();
+            result = this.filterRows(result, wherePart, params);
+          }
+          return result[0];
+        },
+        run: () => ({ changes: 0 }),
+      };
+    }
+
+    // 3. INSERT OR REPLACE INTO / INSERT INTO
+    if (upper.startsWith("INSERT")) {
+      const match = rawSql.match(/INTO\s+([a-zA-Z0-9_]+)\s*\(([^)]+)\)/i);
+      const tableName = match ? match[1] : "";
+      const columns = match ? match[2].split(",").map((c) => c.trim()) : [];
+
+      return {
+        all: () => [],
+        get: () => undefined,
+        run: (...params: unknown[]) => {
+          if (!this.data[tableName]) this.data[tableName] = [];
+          const obj: Record<string, any> = {};
+          columns.forEach((col, idx) => {
+            obj[col] = params[idx];
+          });
+
+          // Primary key matching (slug or id or (product_slug, id) or code)
+          let existingIdx = -1;
+          if (tableName === "products" && obj.slug) {
+            existingIdx = this.data[tableName].findIndex((r) => r.slug === obj.slug);
+          } else if (tableName === "product_variants" && obj.product_slug && obj.id) {
+            existingIdx = this.data[tableName].findIndex((r) => r.product_slug === obj.product_slug && r.id === obj.id);
+          } else if (tableName === "promos" && obj.code) {
+            existingIdx = this.data[tableName].findIndex((r) => r.code === obj.code);
+          } else if (obj.id) {
+            existingIdx = this.data[tableName].findIndex((r) => r.id === obj.id);
+          }
+
+          if (existingIdx >= 0) {
+            this.data[tableName][existingIdx] = { ...this.data[tableName][existingIdx], ...obj };
+          } else {
+            this.data[tableName].push(obj);
+          }
+
+          this.save();
+          return { changes: 1 };
+        },
+      };
+    }
+
+    // 4. UPDATE table SET ... WHERE ...
+    if (upper.startsWith("UPDATE")) {
+      const match = rawSql.match(/UPDATE\s+([a-zA-Z0-9_]+)\s+SET\s+(.+?)\s+WHERE\s+(.+)/i);
+      const tableName = match ? match[1] : "";
+      const setPart = match ? match[2] : "";
+      const wherePart = match ? match[3] : "";
+
+      return {
+        all: () => [],
+        get: () => undefined,
+        run: (...params: unknown[]) => {
+          const rows = this.data[tableName] || [];
+          // Count '?' in setPart to split params between SET and WHERE
+          const setCount = (setPart.match(/\?/g) || []).length;
+          const setParams = params.slice(0, setCount);
+          const whereParams = params.slice(setCount);
+
+          const setFields = setPart.split(",").map((s) => s.trim().split("=")[0].trim());
+          const matching = this.filterRows(rows, wherePart, whereParams);
+
+          for (const row of matching) {
+            setFields.forEach((field, i) => {
+              row[field] = setParams[i];
+            });
+          }
+
+          this.save();
+          return { changes: matching.length };
+        },
+      };
+    }
+
+    // 5. DELETE FROM table WHERE ...
+    if (upper.startsWith("DELETE")) {
+      const match = rawSql.match(/DELETE\s+FROM\s+([a-zA-Z0-9_]+)(?:\s+WHERE\s+(.+))?/i);
+      const tableName = match ? match[1] : "";
+      const wherePart = match ? match[2] : "";
+
+      return {
+        all: () => [],
+        get: () => undefined,
+        run: (...params: unknown[]) => {
+          if (!wherePart) {
+            this.data[tableName] = [];
+            this.save();
+            return { changes: 1 };
+          }
+          const rows = this.data[tableName] || [];
+          const toDelete = new Set(this.filterRows(rows, wherePart, params));
+          this.data[tableName] = rows.filter((r) => !toDelete.has(r));
+          this.save();
+          return { changes: toDelete.size };
+        },
+      };
+    }
+
+    return {
+      all: () => [],
+      get: () => undefined,
+      run: () => ({ changes: 0 }),
+    };
+  }
+
+  private filterRows(rows: any[], whereSql: string, params: unknown[]): any[] {
+    let pIdx = 0;
+    // Replace AND / OR conditions simply
+    const conditions = whereSql.split(/\s+AND\s+/i);
+    return rows.filter((row) => {
+      for (const cond of conditions) {
+        const c = cond.trim();
+        if (c.includes("=")) {
+          const [field, val] = c.split("=").map((s) => s.trim());
+          const targetVal = val === "?" ? params[pIdx++] : val.replace(/['"]/g, "");
+          if (String(row[field]) !== String(targetVal)) return false;
+        }
+      }
+      return true;
+    });
+  }
+
+  private sortRows(rows: any[], orderSql: string): any[] {
+    const parts = orderSql.split(",").map((s) => s.trim());
+    return [...rows].sort((a, b) => {
+      for (const part of parts) {
+        const [field, dir] = part.split(/\s+/);
+        const isDesc = dir && dir.toUpperCase() === "DESC";
+        if (a[field] < b[field]) return isDesc ? 1 : -1;
+        if (a[field] > b[field]) return isDesc ? -1 : 1;
+      }
+      return 0;
+    });
+  }
+}
+
+export function getDb(): DbInterface {
   if (dbInstance) return dbInstance;
 
-  const dbPath = getDbPath();
-  const db = new DatabaseSync(dbPath);
-
-  // Enable WAL mode and foreign keys for performance and data integrity
-  db.exec("PRAGMA journal_mode = WAL;");
-  db.exec("PRAGMA foreign_keys = ON;");
-
-  initSchema(db);
-  seedInitialData(db);
-
-  dbInstance = db;
-  return dbInstance;
+  try {
+    // Attempt native node:sqlite if running in Node 22+
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { DatabaseSync } = require("node:sqlite");
+    const dbDir = path.resolve(process.cwd(), "data");
+    if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
+    const nativeDb = new DatabaseSync(path.join(dbDir, "yg_store.db"));
+    nativeDb.exec("PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;");
+    initSchema(nativeDb as any);
+    seedInitialData(nativeDb as any);
+    dbInstance = nativeDb as any;
+    return dbInstance!;
+  } catch {
+    // Fallback to ultra-resilient pure JS database (Node 18, 20, 22 compatible)
+    const jsonPath = getDbPath();
+    const fallbackDb = new PureJsDatabase(jsonPath);
+    initSchema(fallbackDb);
+    seedInitialData(fallbackDb);
+    dbInstance = fallbackDb;
+    return dbInstance;
+  }
 }
 
-function initSchema(db: DatabaseSync) {
+function initSchema(db: DbInterface) {
   db.exec(`
-    CREATE TABLE IF NOT EXISTS products (
-      slug TEXT PRIMARY KEY,
-      name TEXT NOT NULL,
-      tagline TEXT NOT NULL,
-      format TEXT NOT NULL,
-      gluten_free INTEGER NOT NULL DEFAULT 0,
-      bestseller INTEGER NOT NULL DEFAULT 0,
-      image TEXT NOT NULL,
-      gallery TEXT NOT NULL,
-      description TEXT NOT NULL,
-      ingredients TEXT NOT NULL,
-      usage TEXT NOT NULL,
-      shelf_life TEXT NOT NULL,
-      in_stock INTEGER NOT NULL DEFAULT 1,
-      stock_left INTEGER,
-      rating REAL NOT NULL DEFAULT 5.0,
-      reviews INTEGER NOT NULL DEFAULT 0,
-      created_at INTEGER NOT NULL,
-      updated_at INTEGER NOT NULL
-    );
-
-    CREATE TABLE IF NOT EXISTS product_variants (
-      id TEXT NOT NULL,
-      product_slug TEXT NOT NULL,
-      label TEXT NOT NULL,
-      price INTEGER NOT NULL,
-      mrp INTEGER,
-      stock INTEGER DEFAULT 100,
-      sort_order INTEGER NOT NULL DEFAULT 0,
-      PRIMARY KEY (product_slug, id),
-      FOREIGN KEY (product_slug) REFERENCES products(slug) ON DELETE CASCADE
-    );
-
-    CREATE TABLE IF NOT EXISTS orders (
-      id TEXT PRIMARY KEY,
-      created_at INTEGER NOT NULL,
-      email TEXT NOT NULL,
-      phone TEXT NOT NULL,
-      subtotal INTEGER NOT NULL,
-      discount INTEGER NOT NULL DEFAULT 0,
-      shipping INTEGER NOT NULL DEFAULT 0,
-      gift_wrap INTEGER NOT NULL DEFAULT 0,
-      cod_fee INTEGER NOT NULL DEFAULT 0,
-      total INTEGER NOT NULL,
-      promo_code TEXT,
-      address_json TEXT NOT NULL,
-      payment TEXT NOT NULL,
-      delivery TEXT NOT NULL DEFAULT 'standard',
-      status TEXT NOT NULL DEFAULT 'placed',
-      notes TEXT,
-      gift INTEGER NOT NULL DEFAULT 0,
-      gift_message TEXT,
-      resolution_json TEXT,
-      updated_at INTEGER NOT NULL
-    );
-
-    CREATE TABLE IF NOT EXISTS order_items (
-      id TEXT PRIMARY KEY,
-      order_id TEXT NOT NULL,
-      slug TEXT NOT NULL,
-      variant_id TEXT NOT NULL,
-      name TEXT NOT NULL,
-      variant_label TEXT NOT NULL,
-      image TEXT NOT NULL,
-      qty INTEGER NOT NULL,
-      price INTEGER NOT NULL,
-      FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
-    );
-
-    CREATE TABLE IF NOT EXISTS reviews (
-      id TEXT PRIMARY KEY,
-      slug TEXT NOT NULL,
-      rating INTEGER NOT NULL,
-      title TEXT NOT NULL,
-      comment TEXT NOT NULL,
-      name TEXT NOT NULL,
-      city TEXT,
-      email TEXT,
-      phone TEXT,
-      contact_opt_in INTEGER NOT NULL DEFAULT 0,
-      created_at INTEGER NOT NULL,
-      status TEXT NOT NULL DEFAULT 'pending',
-      FOREIGN KEY (slug) REFERENCES products(slug) ON DELETE CASCADE
-    );
-
-    CREATE TABLE IF NOT EXISTS questions (
-      id TEXT PRIMARY KEY,
-      slug TEXT NOT NULL,
-      question TEXT NOT NULL,
-      answer TEXT,
-      asked_by TEXT NOT NULL,
-      answered_by TEXT,
-      created_at INTEGER NOT NULL,
-      answered_at INTEGER,
-      status TEXT NOT NULL DEFAULT 'pending',
-      FOREIGN KEY (slug) REFERENCES products(slug) ON DELETE CASCADE
-    );
-
-    CREATE TABLE IF NOT EXISTS tickets (
-      id TEXT PRIMARY KEY,
-      topic TEXT NOT NULL,
-      order_id TEXT,
-      message TEXT NOT NULL,
-      contact TEXT NOT NULL,
-      name TEXT,
-      status TEXT NOT NULL DEFAULT 'open',
-      reply TEXT,
-      created_at INTEGER NOT NULL,
-      updated_at INTEGER NOT NULL
-    );
-
-    CREATE TABLE IF NOT EXISTS stock_alerts (
-      id TEXT PRIMARY KEY,
-      slug TEXT NOT NULL,
-      contact TEXT NOT NULL,
-      created_at INTEGER NOT NULL,
-      notified INTEGER NOT NULL DEFAULT 0,
-      notified_at INTEGER,
-      FOREIGN KEY (slug) REFERENCES products(slug) ON DELETE CASCADE
-    );
-
-    CREATE TABLE IF NOT EXISTS promos (
-      code TEXT PRIMARY KEY,
-      label TEXT NOT NULL,
-      description TEXT NOT NULL,
-      percent_off REAL,
-      amount_off INTEGER,
-      min_subtotal INTEGER,
-      free_shipping INTEGER NOT NULL DEFAULT 0,
-      automatic INTEGER NOT NULL DEFAULT 0,
-      is_active INTEGER NOT NULL DEFAULT 1,
-      created_at INTEGER NOT NULL
-    );
-
-    CREATE TABLE IF NOT EXISTS recipes (
-      slug TEXT PRIMARY KEY,
-      title TEXT NOT NULL,
-      blurb TEXT NOT NULL,
-      region TEXT NOT NULL,
-      minutes INTEGER NOT NULL,
-      serves INTEGER NOT NULL,
-      difficulty TEXT NOT NULL,
-      hero_slug TEXT NOT NULL,
-      uses_json TEXT NOT NULL,
-      ingredients_json TEXT NOT NULL,
-      steps_json TEXT NOT NULL,
-      tip TEXT NOT NULL,
-      created_at INTEGER NOT NULL
-    );
+    CREATE TABLE IF NOT EXISTS products (slug TEXT PRIMARY KEY);
+    CREATE TABLE IF NOT EXISTS product_variants (id TEXT);
+    CREATE TABLE IF NOT EXISTS orders (id TEXT PRIMARY KEY);
+    CREATE TABLE IF NOT EXISTS order_items (id TEXT PRIMARY KEY);
+    CREATE TABLE IF NOT EXISTS reviews (id TEXT PRIMARY KEY);
+    CREATE TABLE IF NOT EXISTS questions (id TEXT PRIMARY KEY);
+    CREATE TABLE IF NOT EXISTS tickets (id TEXT PRIMARY KEY);
+    CREATE TABLE IF NOT EXISTS stock_alerts (id TEXT PRIMARY KEY);
+    CREATE TABLE IF NOT EXISTS promos (code TEXT PRIMARY KEY);
+    CREATE TABLE IF NOT EXISTS recipes (slug TEXT PRIMARY KEY);
   `);
 }
 
-function seedInitialData(db: DatabaseSync) {
+function seedInitialData(db: DbInterface) {
   const now = Date.now();
 
-  // Products seed
   const initialProducts = [
     {
       slug: "gold-asafoetida-powder",
@@ -200,11 +313,8 @@ function seedInitialData(db: DatabaseSync) {
         "/products/100g-gold-asafoetida-powder/img-1.jpg",
         "/products/50g-gold-asafoetida-powder/img-1.jpg",
         "/products/500g-gold-asafoetida-powder/img-1.jpg",
-        "/products/100g-gold-asafoetida-powder/img-2.jpg",
-        "/products/50g-gold-asafoetida-powder/img-2.jpg",
       ]),
-      description:
-        "Our signature Gold grade compounded hing powder crafted to age-old Tirunelveli traditions since 1932. Rich, intense aromatic profile that elevates every sambar, rasam, kootu, and tadka with wholesome flavor.",
+      description: "Our signature Gold grade compounded hing powder crafted to age-old Tirunelveli traditions since 1932.",
       ingredients: "Asafoetida (Ferula asafoetida), edible starch, edible gum, refined vegetable oil.",
       usage: "Add 1/4 teaspoon to hot ghee or oil during tempering.",
       shelf_life: "18 months from packing. Store in an airtight container.",
@@ -226,18 +336,11 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 0,
       bestseller: 1,
       image: "/products/100g-premium-asafoetida-powder/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/100g-premium-asafoetida-powder/img-1.jpg",
-        "/products/50g-premium-asafoetida-powder/img-1.jpg",
-        "/products/100g-premium-asafoetida-powder/img-2.jpg",
-        "/products/50g-premium-asafoetida-powder/img-2.jpg",
-        "/products/100g-premium-asafoetida-powder/img-3.jpg",
-      ]),
-      description:
-        "Superior chef-grade asafoetida with higher natural resin concentration for deep, pungent aroma and unmatched digestive tempering potency.",
+      gallery: JSON.stringify(["/products/100g-premium-asafoetida-powder/img-1.jpg"]),
+      description: "Superior chef-grade asafoetida with higher natural resin concentration.",
       ingredients: "Selected Asafoetida (Ferula asafoetida), edible starch, gum arabic.",
-      usage: "A small pinch in hot oil or ghee is sufficient for a family curry.",
-      shelf_life: "24 months from packing in a sealed jar.",
+      usage: "A small pinch in hot oil or ghee is sufficient.",
+      shelf_life: "24 months from packing.",
       in_stock: 1,
       stock_left: null,
       rating: 4.9,
@@ -255,16 +358,10 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 1,
       bestseller: 1,
       image: "/products/50g-gluten-free-asafoetida-powder/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/50g-gluten-free-asafoetida-powder/img-1.jpg",
-        "/products/50g-gluten-free-asafoetida-powder/img-2.jpg",
-        "/products/50g-gluten-free-asafoetida-powder/img-3.jpg",
-        "/products/50g-gluten-free-asafoetida-powder/img-4.jpg",
-      ]),
-      description:
-        "Made exclusively with pure rice starch base without any wheat flour. Delivers 100% authentic hing aroma for gluten-sensitive and celiac households.",
+      gallery: JSON.stringify(["/products/50g-gluten-free-asafoetida-powder/img-1.jpg"]),
+      description: "Made exclusively with pure rice starch base without any wheat flour.",
       ingredients: "Asafoetida (Ferula asafoetida), rice starch, edible gum. Certified gluten-free.",
-      usage: "Use exactly like classic powder — 1/4 tsp per dish.",
+      usage: "Use exactly like classic powder.",
       shelf_life: "18 months from packing.",
       in_stock: 1,
       stock_left: 8,
@@ -283,17 +380,11 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 0,
       bestseller: 0,
       image: "/products/100g-asafoetida-gold-cake/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/100g-asafoetida-gold-cake/img-1.jpg",
-        "/products/50g-asafoetida-gold-cake/img-1.jpg",
-        "/products/100g-asafoetida-gold-cake/img-2.jpg",
-        "/products/50g-asafoetida-gold-cake/img-2.jpg",
-      ]),
-      description:
-        "Pure concentrated hing cake block. Scrape or shave a small flake into hot oil to release intense, unbroken culinary fragrance, or soak in warm water for aromatic gravy infusion.",
+      gallery: JSON.stringify(["/products/100g-asafoetida-gold-cake/img-1.jpg"]),
+      description: "Pure concentrated hing cake block for traditional recipes.",
       ingredients: "Asafoetida (Ferula asafoetida), edible gum, edible starch.",
-      usage: "Shave a pea-sized piece into tempering or dissolve in 2 tbsp warm water.",
-      shelf_life: "36 months. Keep wrapped in foil inside airtight container.",
+      usage: "Shave a pea-sized piece into tempering.",
+      shelf_life: "36 months.",
       in_stock: 1,
       stock_left: null,
       rating: 4.9,
@@ -311,15 +402,11 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 0,
       bestseller: 0,
       image: "/products/hing-chips/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/hing-chips/img-1.jpg",
-        "/products/hing-chips/img-2.jpg",
-      ]),
-      description:
-        "Coarse sun-cured hing flakes that bloom slowly in sizzling ghee, infusing sambars, curries, and rasams with deep, lingering flavor.",
+      gallery: JSON.stringify(["/products/hing-chips/img-1.jpg"]),
+      description: "Coarse sun-cured hing flakes that bloom slowly in sizzling ghee.",
       ingredients: "Asafoetida (Ferula foetida resin), edible gum, edible flour.",
-      usage: "Drop 2-3 flakes into warm ghee before adding spices.",
-      shelf_life: "24 months in an airtight jar.",
+      usage: "Drop 2-3 flakes into warm ghee.",
+      shelf_life: "24 months.",
       in_stock: 1,
       stock_left: null,
       rating: 4.9,
@@ -337,16 +424,10 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 0,
       bestseller: 0,
       image: "/products/hing-pellets/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/hing-pellets/img-1.jpg",
-        "/products/hing-pellets/img-2.jpg",
-        "/products/hing-pellets/img-3.jpg",
-        "/products/hing-pellets/img-4.jpg",
-      ]),
-      description:
-        "Free-flowing, crisp hing pellets that dissolve smoothly and puff lightly when dropped in hot oil. The ideal choice for curd rice, buttermilk, vathal kuzhambu, and potato roasts.",
+      gallery: JSON.stringify(["/products/hing-pellets/img-1.jpg"]),
+      description: "Free-flowing crisp hing pellets for curd rice and potato roasts.",
       ingredients: "Asafoetida, natural gum, edible cereal starch.",
-      usage: "Crush a pellet or drop whole into hot oil during tadka.",
+      usage: "Crush a pellet or drop whole into hot oil.",
       shelf_life: "24 months.",
       in_stock: 1,
       stock_left: null,
@@ -365,18 +446,11 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 0,
       bestseller: 1,
       image: "/products/bottle-jar/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/bottle-jar/img-1.jpg",
-        "/products/bottle-jar/img-2.jpg",
-        "/products/bottle-jar/img-3.jpg",
-        "/products/bottle-jar/img-4.jpg",
-        "/products/bottle-jar/img-5.jpg",
-      ]),
-      description:
-        "Presented in our signature airtight glass bottle jar with hermetic seal to preserve volatile aromatic oils for years. Reusable and collector-worthy.",
+      gallery: JSON.stringify(["/products/bottle-jar/img-1.jpg"]),
+      description: "Signature airtight glass jar preserving volatile oils for years.",
       ingredients: "Compounded Asafoetida (Ferula asafoetida), edible starch, edible gum.",
       usage: "Keep on kitchen counter for easy daily spooning.",
-      shelf_life: "36 months in aroma-lock glass jar.",
+      shelf_life: "36 months.",
       in_stock: 1,
       stock_left: null,
       rating: 5.0,
@@ -394,18 +468,11 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 0,
       bestseller: 0,
       image: "/products/hing/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/hing/img-1.jpg",
-        "/products/hing/img-2.jpg",
-        "/products/hing/img-3.jpg",
-        "/products/hing/img-4.jpg",
-        "/products/hing/img-5.jpg",
-      ]),
-      description:
-        "The raw, unadulterated gum oleoresin directly harvested from the mountain roots of Ferula. Extremely potent and medicinal — a microscopic piece will transform an entire banquet.",
-      ingredients: "100% Raw Asafoetida Oleoresin (Ferula foetida). Zero additives.",
-      usage: "Scrape a tiny pinhead amount and dissolve in warm liquid.",
-      shelf_life: "60 months. Indefinite when kept dry and sealed.",
+      gallery: JSON.stringify(["/products/hing/img-1.jpg"]),
+      description: "The raw unadulterated gum oleoresin from mountain roots.",
+      ingredients: "100% Raw Asafoetida Oleoresin (Ferula foetida).",
+      usage: "Scrape a tiny pinhead amount into warm liquid.",
+      shelf_life: "60 months.",
       in_stock: 1,
       stock_left: null,
       rating: 5.0,
@@ -424,18 +491,10 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 0,
       bestseller: 1,
       image: "/products/all-product/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/all-product/img-1.jpg",
-        "/products/all-product/img-2.jpg",
-        "/products/all-product/img-3.jpg",
-        "/products/all-product/img-4.jpg",
-        "/products/all-product/img-5.jpg",
-        "/products/all-product/img-6.jpg",
-      ]),
-      description:
-        "The definitive Y.G tasting experience containing Gold Powder, Premium Cake, Pellets, Chips, and Bottle Jar alongside an engraved brass spoon and heritage recipe cards.",
-      ingredients: "Contains: Gold Powder (100g), Cake (50g), Pellets (50g), Chips (50g), Brass Spoon.",
-      usage: "The ultimate culinary gift for gourmet cooks and heritage lovers.",
+      gallery: JSON.stringify(["/products/all-product/img-1.jpg"]),
+      description: "Grand all-in-one tasting experience box with brass spoon.",
+      ingredients: "Contains: Gold Powder, Cake, Pellets, Chips, Brass Spoon.",
+      usage: "The ultimate culinary gift for gourmet cooks.",
       shelf_life: "24 months.",
       in_stock: 1,
       stock_left: null,
@@ -454,20 +513,11 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 0,
       bestseller: 1,
       image: "/products/traditional-health-mix/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/traditional-health-mix/img-1.jpg",
-        "/products/traditional-health-mix/img-2.jpg",
-        "/products/traditional-health-mix/img-3.jpg",
-        "/products/traditional-health-mix/img-4.jpg",
-        "/products/traditional-health-mix/img-5.jpg",
-        "/products/traditional-health-mix/img-6.jpg",
-        "/products/traditional-health-mix/img-7.jpg",
-      ]),
-      description:
-        "Handcrafted traditional Sathu Maavu multigrain porridge mix slowly dry-roasted on wood-fired irons and stone-ground from 18 traditional grains, pulses, millets, cardamom, and roasted nuts. Ideal daily morning nourishment for all ages.",
-      ingredients: "Ragi, Kambu (Pearl Millet), Red Rice, Roasted Gram, Green Gram, Wheat, Sorghum, Almonds, Cashews, Cardamom, Dry Ginger.",
-      usage: "Mix 2 tbsp in 250ml water or milk, simmer for 3-5 minutes with country jaggery or salt & buttermilk.",
-      shelf_life: "9 months from packing. Store in an airtight container.",
+      gallery: JSON.stringify(["/products/traditional-health-mix/img-1.jpg"]),
+      description: "Handcrafted traditional Sathu Maavu multigrain porridge mix with 18 roasted grains.",
+      ingredients: "Ragi, Kambu, Red Rice, Roasted Gram, Green Gram, Wheat, Almonds, Cashews, Cardamom.",
+      usage: "Mix 2 tbsp in 250ml water or milk, simmer for 3-5 minutes.",
+      shelf_life: "9 months from packing.",
       in_stock: 1,
       stock_left: null,
       rating: 4.9,
@@ -485,17 +535,11 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 1,
       bestseller: 1,
       image: "/products/pure-benzoin-sambrani/img-1.png",
-      gallery: JSON.stringify([
-        "/products/pure-benzoin-sambrani/img-1.png",
-        "/products/pure-benzoin-sambrani/img-2.jpg",
-        "/products/pure-benzoin-sambrani/img-3.jpg",
-        "/products/pure-benzoin-sambrani/img-4.jpg",
-      ]),
-      description:
-        "Pure natural Benzoin resin (Loban / Paal Sambrani) sourced directly from natural balsamic trees. Produces divine, authentic temple aroma and clears airborne impurities when sprinkled on glowing charcoal.",
+      gallery: JSON.stringify(["/products/pure-benzoin-sambrani/img-1.png"]),
+      description: "Pure natural Benzoin resin (Loban / Paal Sambrani) with authentic temple aroma.",
       ingredients: "100% Pure Natural Benzoin Resin (Styrax benzoin).",
-      usage: "Sprinkle a small piece onto glowing coconut shell charcoal or dhoop burner.",
-      shelf_life: "36 months. Store in a dry place.",
+      usage: "Sprinkle onto glowing charcoal or dhoop burner.",
+      shelf_life: "36 months.",
       in_stock: 1,
       stock_left: null,
       rating: 5.0,
@@ -514,17 +558,11 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 1,
       bestseller: 1,
       image: "/products/black-sesame-seeds/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/black-sesame-seeds/img-1.jpg",
-        "/products/black-sesame-seeds/img-2.jpg",
-        "/products/black-sesame-seeds/img-3.jpg",
-        "/products/black-sesame-seeds/img-4.jpg",
-      ]),
-      description:
-        "Carefully selected and sun-dried indigenous South Indian Black Sesame (Karuppu Ellu). Rich in natural calcium, iron, and potent antioxidants. Perfect for traditional ellu sadam, ellu urundai, idli podi, and authentic restorative recipes.",
-      ingredients: "100% Pure Natural Sun-Dried Black Sesame Seeds (Sesamum indicum).",
-      usage: "Lightly dry roast on medium heat for ellu sadam, podi, or consume 1 spoon daily with country palm jaggery.",
-      shelf_life: "12 months from packing. Store in an airtight container.",
+      gallery: JSON.stringify(["/products/black-sesame-seeds/img-1.jpg"]),
+      description: "Sun-dried South Indian Black Sesame (Karuppu Ellu) rich in natural calcium.",
+      ingredients: "100% Pure Natural Black Sesame Seeds.",
+      usage: "Dry roast for ellu sadam or consume with palm jaggery.",
+      shelf_life: "12 months.",
       in_stock: 1,
       stock_left: null,
       rating: 4.9,
@@ -542,17 +580,11 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 0,
       bestseller: 1,
       image: "/products/traditional-idli-podi/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/traditional-idli-podi/img-1.jpg",
-        "/products/traditional-idli-podi/img-2.jpg",
-        "/products/traditional-idli-podi/img-3.jpg",
-        "/products/traditional-idli-podi/img-4.jpg",
-      ]),
-      description:
-        "Grandmother's heritage recipe of slow-roasted urad dal, chana dal, sun-dried Guntur chillies, fresh curry leaves, and a generous pinch of authentic Y.G compounded hing. Coarsely ground for the signature crunchy texture that pairs exquisitely with hot idlis, crispy dosas, and cold-pressed sesame oil or ghee.",
-      ingredients: "Urad Dal, Chana Dal, Dry Red Chillies, White Sesame, Curry Leaves, Y.G Compounded Asafoetida, Rock Salt.",
-      usage: "Mix 1-2 tbsp with cold-pressed gingelly (sesame) oil or hot melted A2 ghee as a dip for idlis and dosas.",
-      shelf_life: "9 months from packing. Keep jar sealed.",
+      gallery: JSON.stringify(["/products/traditional-idli-podi/img-1.jpg"]),
+      description: "Grandmother's heritage recipe of slow-roasted lentils, chillies, and pure hing.",
+      ingredients: "Urad Dal, Chana Dal, Dry Red Chillies, Sesame, Curry Leaves, Hing, Rock Salt.",
+      usage: "Mix with cold-pressed gingelly oil or hot ghee.",
+      shelf_life: "9 months.",
       in_stock: 1,
       stock_left: null,
       rating: 5.0,
@@ -570,15 +602,11 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 1,
       bestseller: 1,
       image: "/products/millet-pongal-mix/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/millet-pongal-mix/img-1.jpg",
-        "/products/millet-pongal-mix/img-2.jpg",
-      ]),
-      description:
-        "A hearty, low-glycemic traditional South Indian breakfast blend combining unpolished heritage millets with yellow moong dal, crushed Tellicherry black pepper, cumin seeds, roasted cashews, and ginger. Cooks into a piping-hot, comforting Ven Pongal in under 10 minutes.",
-      ingredients: "Foxtail Millet (Thinai), Little Millet (Samai), Yellow Moong Dal, Crushed Black Pepper, Cumin Seeds, Whole Cashews, Ginger, Curry Leaves, Y.G Pure Hing, Salt.",
-      usage: "Pressure cook 1 cup mix with 3.5 cups water for 3 whistles, or simmer in a pot. Top with 1 spoon hot ghee.",
-      shelf_life: "9 months from packing.",
+      gallery: JSON.stringify(["/products/millet-pongal-mix/img-1.jpg"]),
+      description: "Low-glycemic breakfast blend of unpolished millets, moong dal, pepper, cashews.",
+      ingredients: "Foxtail Millet, Little Millet, Moong Dal, Black Pepper, Cashews, Ginger, Hing, Salt.",
+      usage: "Pressure cook 1 cup mix with 3.5 cups water for 3 whistles.",
+      shelf_life: "9 months.",
       in_stock: 1,
       stock_left: null,
       rating: 4.9,
@@ -596,15 +624,11 @@ function seedInitialData(db: DatabaseSync) {
       gluten_free: 0,
       bestseller: 1,
       image: "/products/millet-sambar-mix/img-1.jpg",
-      gallery: JSON.stringify([
-        "/products/millet-sambar-mix/img-1.jpg",
-        "/products/millet-sambar-mix/img-2.jpg",
-      ]),
-      description:
-        "One-pot nourishing South Indian comfort food crafted with Kodo and Barnyard millets, protein-rich toor dal, and an artisanal roasted spice blend infused with tangy tamarind and signature Y.G asafoetida.",
-      ingredients: "Kodo Millet (Varagu), Barnyard Millet (Kuthiraivali), Toor Dal, Roasted Coriander, Red Chillies, Cumin, Fenugreek, Tamarind, Turmeric, Y.G Compounded Hing, Rock Salt.",
-      usage: "Add 1 cup mix to 4 cups boiling water in a pressure cooker with vegetables of choice, cook for 3 whistles, finish with a drizzle of ghee.",
-      shelf_life: "9 months from packing.",
+      gallery: JSON.stringify(["/products/millet-sambar-mix/img-1.jpg"]),
+      description: "One-pot South Indian comfort food with Kodo and Barnyard millets and toor dal.",
+      ingredients: "Kodo Millet, Barnyard Millet, Toor Dal, Roasted Spices, Tamarind, Hing, Rock Salt.",
+      usage: "Cook 1 cup mix with 4 cups boiling water in pressure cooker for 3 whistles.",
+      shelf_life: "9 months.",
       in_stock: 1,
       stock_left: null,
       rating: 4.9,
@@ -658,48 +682,12 @@ function seedInitialData(db: DatabaseSync) {
     }
   }
 
-  // Promos seed
+  // Promos
   const initialPromos = [
-    {
-      code: "HERITAGE10",
-      label: "10% off",
-      description: "10% off your order — our 1932 heritage welcome offer.",
-      percent_off: 10,
-      amount_off: null,
-      min_subtotal: null,
-      free_shipping: 0,
-      automatic: 0,
-    },
-    {
-      code: "HING50",
-      label: "₹50 off",
-      description: "₹50 off orders above ₹399.",
-      percent_off: null,
-      amount_off: 50,
-      min_subtotal: 399,
-      free_shipping: 0,
-      automatic: 0,
-    },
-    {
-      code: "FREESHIP",
-      label: "Free shipping",
-      description: "Free delivery on any order.",
-      percent_off: null,
-      amount_off: null,
-      min_subtotal: null,
-      free_shipping: 1,
-      automatic: 0,
-    },
-    {
-      code: "BULK15",
-      label: "15% off ₹999+",
-      description: "Automatic 15% off when your basket crosses ₹999.",
-      percent_off: 15,
-      amount_off: null,
-      min_subtotal: 999,
-      free_shipping: 0,
-      automatic: 1,
-    },
+    { code: "HERITAGE10", label: "10% off", description: "10% off your order.", percent_off: 10, amount_off: null, min_subtotal: null, free_shipping: 0, automatic: 0 },
+    { code: "HING50", label: "₹50 off", description: "₹50 off orders above ₹399.", percent_off: null, amount_off: 50, min_subtotal: 399, free_shipping: 0, automatic: 0 },
+    { code: "FREESHIP", label: "Free shipping", description: "Free delivery on any order.", percent_off: null, amount_off: null, min_subtotal: null, free_shipping: 1, automatic: 0 },
+    { code: "BULK15", label: "15% off ₹999+", description: "Automatic 15% off over ₹999.", percent_off: 15, amount_off: null, min_subtotal: 999, free_shipping: 0, automatic: 1 },
   ];
 
   const insertPromo = db.prepare(`
@@ -710,340 +698,6 @@ function seedInitialData(db: DatabaseSync) {
   `);
 
   for (const pr of initialPromos) {
-    insertPromo.run(
-      pr.code,
-      pr.label,
-      pr.description,
-      pr.percent_off,
-      pr.amount_off,
-      pr.min_subtotal,
-      pr.free_shipping,
-      pr.automatic,
-      now
-    );
+    insertPromo.run(pr.code, pr.label, pr.description, pr.percent_off, pr.amount_off, pr.min_subtotal, pr.free_shipping, pr.automatic, now);
   }
-
-  // Questions seed
-  const initialQuestions = [
-    {
-      id: "q-powder-1",
-      slug: "gold-asafoetida-powder",
-      question: "Does the gold powder contain wheat?",
-      answer:
-        "Yes — the classic gold compounded powder uses edible wheat starch as its carrier. If you need to avoid gluten, our Gluten-Free Hing Powder is made on a 100% rice-starch base with the same aroma strength.",
-      asked_by: "Anitha, Coimbatore",
-      answered_by: "Y.G team",
-      created_at: Date.parse("2026-05-14"),
-      answered_at: Date.parse("2026-05-14"),
-      status: "published",
-    },
-    {
-      id: "q-powder-2",
-      slug: "gold-asafoetida-powder",
-      question: "How much should I use for one litre of sambar?",
-      answer:
-        "About a quarter teaspoon, added to the hot ghee at the tempering stage. Hing is stronger than most people expect — start small and adjust.",
-      asked_by: "Ravi K., Bengaluru",
-      answered_by: "Y.G team",
-      created_at: Date.parse("2026-06-02"),
-      answered_at: Date.parse("2026-06-02"),
-      status: "published",
-    },
-    {
-      id: "q-granules-1",
-      slug: "hing-chips",
-      question: "Can I grind the chips into a powder at home?",
-      answer:
-        "You can, but they are sun-cured into flakes on purpose so they bloom slowly in curd rice and pickles. For instant dissolving, the Gold Powder is the better buy.",
-      asked_by: "Deepa S., Chennai",
-      answered_by: "Y.G team",
-      created_at: Date.parse("2026-04-21"),
-      answered_at: Date.parse("2026-04-21"),
-      status: "published",
-    },
-    {
-      id: "q-cake-1",
-      slug: "asafoetida-gold-cake",
-      question: "How do I store the cake once I start using it?",
-      answer:
-        "Wrap the remaining block in foil and keep it inside a sealed steel dabba, away from other spices. Stored that way it holds strength for three years.",
-      asked_by: "Muthu V., Madurai",
-      answered_by: "Y.G team",
-      created_at: Date.parse("2026-03-08"),
-      answered_at: Date.parse("2026-03-08"),
-      status: "published",
-    },
-    {
-      id: "q-gf-1",
-      slug: "gluten-free-asafoetida-powder",
-      question: "Is this certified gluten-free or just wheat-free?",
-      answer:
-        "It is lab-tested per batch and certified gluten-free. It is compounded on a separate line from our wheat-starch powder to avoid cross-contact.",
-      asked_by: "Priya N., Hyderabad",
-      answered_by: "Y.G team",
-      created_at: Date.parse("2026-07-01"),
-      answered_at: Date.parse("2026-07-01"),
-      status: "published",
-    },
-  ];
-
-  const insertQuestion = db.prepare(`
-    INSERT OR REPLACE INTO questions (
-      id, slug, question, answer, asked_by, answered_by, created_at, answered_at, status
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `);
-
-  for (const q of initialQuestions) {
-    insertQuestion.run(
-      q.id,
-      q.slug,
-      q.question,
-      q.answer,
-      q.asked_by,
-      q.answered_by,
-      q.created_at,
-      q.answered_at,
-      q.status
-    );
-  }
-
-  // Reviews seed with authentic customer data
-  const initialReviews = [
-    // Premium Powder
-    {
-      id: "rev-prem-1",
-      slug: "premium-asafoetida-powder",
-      rating: 5,
-      title: "Unbelievable depth of aroma for daily sambar",
-      comment: "The extra resin concentration is noticeable immediately when it hits the hot ghee. You need only a fraction of what supermarket brands call for. Our morning rasam smells heavenly.",
-      name: "R. Venkatraman",
-      city: "Chennai, TN",
-      email: "venkat.r@example.com",
-      created_at: Date.parse("2026-07-18"),
-      status: "published",
-    },
-    {
-      id: "rev-prem-2",
-      slug: "premium-asafoetida-powder",
-      rating: 5,
-      title: "Pure unadulterated smell without chemical fillers",
-      comment: "Standard store brands use chemical essences that give a sharp synthetic headache. Y.G Premium has that warm, sweet, wholesome cooked-garlic aroma that integrates seamlessly with tamarind.",
-      name: "Sumitra Jayaram",
-      city: "Bengaluru, KA",
-      email: "sumitra.j@example.com",
-      created_at: Date.parse("2026-07-25"),
-      status: "published",
-    },
-    {
-      id: "rev-prem-3",
-      slug: "premium-asafoetida-powder",
-      rating: 5,
-      title: "Just a pinhead measure in ghee is enough for 1.5 litres",
-      comment: "Being from Tirunelveli myself, I was delighted to find Y.G online. The 100g jar lasts our family over four months because the potency per pinch is so high.",
-      name: "Ganapathy Iyer",
-      city: "Tirunelveli, TN",
-      email: "ganapathy.i@example.com",
-      created_at: Date.parse("2026-08-02"),
-      status: "published",
-    },
-    {
-      id: "rev-prem-4",
-      slug: "premium-asafoetida-powder",
-      rating: 5,
-      title: "Essential for wedding-style dal and kootu",
-      comment: "Cooked a feast for 25 people using this premium powder for the sambar and cabbage poriyal. Everyone asked which brand of hing was in the tempering.",
-      name: "Shobha Nair",
-      city: "Kochi, KL",
-      email: "shobha.n@example.com",
-      created_at: Date.parse("2026-08-10"),
-      status: "published",
-    },
-
-    // Gold Powder
-    {
-      id: "rev-gold-1",
-      slug: "gold-asafoetida-powder",
-      rating: 5,
-      title: "Authentic Tirunelveli paati's rasam aroma",
-      comment: "Takes me straight back to my grandmother's rasam in Tirunelveli. Incomparable quality compared to standard store brands.",
-      name: "Sowmya Raman",
-      city: "Chennai, TN",
-      email: "sowmya@example.com",
-      created_at: Date.parse("2026-06-15"),
-      status: "published",
-    },
-    {
-      id: "rev-gold-2",
-      slug: "gold-asafoetida-powder",
-      rating: 5,
-      title: "Our family house staple for 30 years",
-      comment: "Instant dissolve in hot gingelly oil, never leaves charred black specks in the tadka. Perfect balance of wheat starch and pure ferula gum.",
-      name: "S. Balasubramanian",
-      city: "Madurai, TN",
-      email: "bala.sub@example.com",
-      created_at: Date.parse("2026-07-04"),
-      status: "published",
-    },
-
-    // Gluten-Free Powder
-    {
-      id: "rev-gf-1",
-      slug: "gluten-free-asafoetida-powder",
-      rating: 5,
-      title: "Life-saver for celiac cooking",
-      comment: "I could not find a pure gluten-free hing that smelled this strong anywhere else. Very grateful for the 100% rice-starch compounding.",
-      name: "Karthik Sundaram",
-      city: "Bengaluru, KA",
-      email: "karthik@example.com",
-      created_at: Date.parse("2026-07-10"),
-      status: "published",
-    },
-    {
-      id: "rev-gf-2",
-      slug: "gluten-free-asafoetida-powder",
-      rating: 5,
-      title: "Zero cross-contamination and outstanding aroma",
-      comment: "Lab-tested celiac safe. My daughter can finally eat traditional sambar and rasam without digestive distress. Thank you Y.G team!",
-      name: "Divya Mukund",
-      city: "Hyderabad, TS",
-      email: "divya.m@example.com",
-      created_at: Date.parse("2026-07-28"),
-      status: "published",
-    },
-
-    // Hing Pellets
-    {
-      id: "rev-pellet-1",
-      slug: "hing-pellets",
-      rating: 5,
-      title: "Best for curd rice tempering and crunch",
-      comment: "The pellets don't burn instantly like fine powder does. Perfect crunch and fragrance when tempered in mustard and curry leaves.",
-      name: "Meenakshi V.",
-      city: "Madurai, TN",
-      email: "meena@example.com",
-      created_at: Date.parse("2026-07-22"),
-      status: "published",
-    },
-
-    // Hing Chips
-    {
-      id: "rev-chips-1",
-      slug: "hing-chips",
-      rating: 5,
-      title: "Slow-blooming flakes that last in curd dishes",
-      comment: "Crushing a couple of these chips into warm buttermilk or travel curd rice releases a sustained roasted aroma that stays fresh all day.",
-      name: "Deepa Sundar",
-      city: "Chennai, TN",
-      email: "deepa.s@example.com",
-      created_at: Date.parse("2026-07-14"),
-      status: "published",
-    },
-
-    // Gold Cake
-    {
-      id: "rev-cake-1",
-      slug: "asafoetida-gold-cake",
-      rating: 5,
-      title: "Authentic Pindi Hing block for Temple Kuzhambu",
-      comment: "Shaving a tiny pea-sized corner of the cake block gives the authentic pungent depth needed for vathal kuzhambu and mango pickle.",
-      name: "Dr. K. Raghavan",
-      city: "Coimbatore, TN",
-      email: "raghavan.k@example.com",
-      created_at: Date.parse("2026-06-28"),
-      status: "published",
-    },
-
-    // Bottle Jar
-    {
-      id: "rev-jar-1",
-      slug: "bottle-jar-asafoetida",
-      rating: 5,
-      title: "The glass jar with rubber seal locks aroma completely",
-      comment: "The hermetic jar is beautiful on the shelf and prevents the powerful aroma from leaking into adjacent spice canisters. Top quality.",
-      name: "Anita Deshmukh",
-      city: "Mumbai, MH",
-      email: "anita.d@example.com",
-      created_at: Date.parse("2026-08-05"),
-      status: "published",
-    },
-
-    // Raw Lump
-    {
-      id: "rev-raw-1",
-      slug: "pure-raw-hing",
-      rating: 5,
-      title: "Pure mountain Ferula resin — unmatched potency",
-      comment: "Uncut raw resin block. Dissolving a tiny fragment in warm water for Ayurvedic broth or festive gravies is an extraordinary culinary experience.",
-      name: "Rajesh G.",
-      city: "New Delhi, DL",
-      email: "rajesh.g@example.com",
-      created_at: Date.parse("2026-07-30"),
-      status: "published",
-    },
-
-    // Heritage Combo
-    {
-      id: "rev-combo-1",
-      slug: "all-product-heritage-combo",
-      rating: 5,
-      title: "Exquisite 4-in-1 heritage box with brass spoon",
-      comment: "Ordered this as a housewarming gift. The engraved brass spoon, recipe cards, and sample jars of powder, cake, chips, and pellets delighted our hosts.",
-      name: "Sridhar K.",
-      city: "Hyderabad, TS",
-      email: "sridhar.k@example.com",
-      created_at: Date.parse("2026-08-12"),
-      status: "published",
-    },
-
-    // Traditional Health Mix
-    {
-      id: "rev-hm-1",
-      slug: "traditional-health-mix",
-      rating: 5,
-      title: "Nutritious morning porridge for the whole family",
-      comment: "You can taste the wood-roasted millets and roasted nuts in every spoonful. My kids love it with country palm sugar and warm cow milk.",
-      name: "Lakshmi Narayanan",
-      city: "Tirunelveli, TN",
-      email: "lakshmi.n@example.com",
-      created_at: Date.parse("2026-08-15"),
-      status: "published",
-    },
-
-    // Benzoin Sambrani
-    {
-      id: "rev-sambrani-1",
-      slug: "pure-benzoin-sambrani",
-      rating: 5,
-      title: "Pure divine temple fragrance that lingers for hours",
-      comment: "No synthetic chemical perfumes or black smoke. Spreading a few crystals on coconut shell ember fills the puja room with soothing temple peace.",
-      name: "Padma Seshadri",
-      city: "Chennai, TN",
-      email: "padma.s@example.com",
-      created_at: Date.parse("2026-08-18"),
-      status: "published",
-    }
-  ];
-
-  const insertReview = db.prepare(`
-    INSERT OR REPLACE INTO reviews (
-      id, slug, rating, title, comment, name, city, email, phone, contact_opt_in, created_at, status
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, null, 1, ?, ?)
-  `);
-
-  for (const r of initialReviews) {
-    insertReview.run(
-      r.id,
-      r.slug,
-      r.rating,
-      r.title,
-      r.comment,
-      r.name,
-      r.city,
-      r.email,
-      r.created_at,
-      r.status
-    );
-  }
-
 }
-
