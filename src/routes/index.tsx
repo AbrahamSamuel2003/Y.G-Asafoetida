@@ -266,9 +266,10 @@ function HomePage() {
     if (!video) return;
 
     video.muted = isMuted;
+    video.volume = 1.0;
     video.currentTime = 0;
     video.play().catch(() => {});
-  }, [currentVideoIndex]);
+  }, [currentVideoIndex, isMuted]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -282,6 +283,7 @@ function HomePage() {
     const activateSound = () => {
       if (video && soundPlayCountRef.current < 2) {
         video.muted = false;
+        video.volume = 1.0;
         setIsMuted(false);
         video.play().catch(() => {});
       }
@@ -304,12 +306,15 @@ function HomePage() {
     const video = videoRef.current;
     if (!video) return;
 
-    if (!video.muted) {
-      soundPlayCountRef.current += 1;
-      // After playing sound 2 times, automatically mute
-      if (soundPlayCountRef.current >= 2) {
-        video.muted = true;
-        setIsMuted(true);
+    // Only count as a completed cycle after the entire 4-video reel completes the last video
+    if (currentVideoIndex === HERO_VIDEOS.length - 1) {
+      if (!isMuted) {
+        soundPlayCountRef.current += 1;
+        // After playing the full sequence 2 times with sound, automatically mute
+        if (soundPlayCountRef.current >= 2) {
+          video.muted = true;
+          setIsMuted(true);
+        }
       }
     }
 
@@ -318,11 +323,24 @@ function HomePage() {
   };
 
   const nextVideo = () => {
+    if (soundPlayCountRef.current < 2) {
+      setIsMuted(false);
+    }
     setCurrentVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
   };
 
   const prevVideo = () => {
+    if (soundPlayCountRef.current < 2) {
+      setIsMuted(false);
+    }
     setCurrentVideoIndex((prev) => (prev - 1 + HERO_VIDEOS.length) % HERO_VIDEOS.length);
+  };
+
+  const selectVideo = (index: number) => {
+    if (soundPlayCountRef.current < 2) {
+      setIsMuted(false);
+    }
+    setCurrentVideoIndex(index);
   };
 
   const displayedProducts = products.filter((p) => {
@@ -374,7 +392,7 @@ function HomePage() {
             <button
               key={v.src}
               type="button"
-              onClick={() => setCurrentVideoIndex(i)}
+              onClick={() => selectVideo(i)}
               aria-label={`Switch to video ${i + 1}`}
               className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
                 currentVideoIndex === i
