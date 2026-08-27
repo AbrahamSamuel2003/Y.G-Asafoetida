@@ -11,7 +11,7 @@ export type PincodeLookup = {
 };
 
 export const lookupPincode = createServerFn({ method: "GET" })
-  .inputValidator((data: { pin: string }) => {
+  .validator((data: { pin: string }) => {
     const pin = String(data?.pin ?? "").trim();
     if (!/^\d{6}$/.test(pin)) throw new Error("PIN must be 6 digits");
     return { pin };
