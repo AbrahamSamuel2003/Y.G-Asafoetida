@@ -20,7 +20,7 @@ import { n as Route$14, t as QuantityStepper } from "./product._slug-8Z_Hno5r.mj
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { n as Root, t as Indicator } from "../_libs/radix-ui__react-progress.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-3j5be-W7.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DHYGJSsd.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-BRGDoe5h.css";
@@ -554,7 +554,7 @@ function CartDrawer() {
 						onClick: () => cart.setOpen(false),
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 							to: "/shop",
-							children: "Shop all hing"
+							children: "Shop all products"
 						})
 					})
 				]
@@ -816,7 +816,7 @@ function NotFoundComponent() {
 				children: [
 					{
 						to: "/shop",
-						label: "Shop all hing"
+						label: "Shop all products"
 					},
 					{
 						to: "/story",

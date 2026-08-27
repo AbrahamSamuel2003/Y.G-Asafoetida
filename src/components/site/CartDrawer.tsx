@@ -28,7 +28,7 @@ export function CartDrawer() {
               Your basket is empty. Start with our 1932 classic hing powder.
             </p>
             <Button asChild onClick={() => cart.setOpen(false)}>
-              <Link to="/shop">Shop all hing</Link>
+              <Link to="/shop">Shop all products</Link>
             </Button>
           </div>
         ) : (

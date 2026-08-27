@@ -42,7 +42,7 @@ function DeferUntilIdle({ children }: { children: ReactNode }) {
 
 function NotFoundComponent() {
   const links = [
-    { to: "/shop", label: "Shop all hing" },
+    { to: "/shop", label: "Shop all products" },
     { to: "/story", label: "Our story since 1932" },
     { to: "/contact", label: "Contact support" },
     { to: "/account", label: "Your orders" },
