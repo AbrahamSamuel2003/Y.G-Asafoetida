@@ -7,7 +7,7 @@ import { B as Leaf, Ct as ArrowRight, St as Award, d as Star, mt as ChevronLeft,
 import { i as storyShopImage, t as SmartImage } from "./SmartImage-D8VVqI28.mjs";
 import { i as products } from "./products--El95C0C.mjs";
 import { t as ProductCard } from "./ProductCard-CYe909vP.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BdS4jJfY.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes--yitDDKu.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function SectionHeading({ eyebrow, title, description, align = "left", action }) {
@@ -161,7 +161,7 @@ var HERO_VIDEOS = [
 		title: "Gold Hing Collection"
 	},
 	{
-		src: "/hero-video.mp4",
+		src: "/hero-video-master.mp4?v=20260827",
 		title: "Artisanal Compounding"
 	}
 ];

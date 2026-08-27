@@ -249,7 +249,7 @@ const HERO_VIDEOS = [
     title: "Gold Hing Collection",
   },
   {
-    src: "/hero-video.mp4",
+    src: "/hero-video-master.mp4?v=20260827",
     title: "Artisanal Compounding",
   },
 ];

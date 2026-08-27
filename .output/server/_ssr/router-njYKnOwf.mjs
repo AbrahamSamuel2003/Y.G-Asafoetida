@@ -20,7 +20,7 @@ import { n as Route$14, t as QuantityStepper } from "./product._slug-8Z_Hno5r.mj
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { n as Root, t as Indicator } from "../_libs/radix-ui__react-progress.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DHYGJSsd.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-njYKnOwf.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-BRGDoe5h.css";
@@ -1079,7 +1079,7 @@ function RootComponent() {
 		] }) }) }) })
 	});
 }
-var $$splitComponentImporter$8 = () => import("./routes-BdS4jJfY.mjs");
+var $$splitComponentImporter$8 = () => import("./routes--yitDDKu.mjs");
 var Route$8 = createFileRoute("/")({
 	head: () => ({
 		meta: [
