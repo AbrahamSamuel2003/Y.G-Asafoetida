@@ -348,6 +348,8 @@ function HomePage() {
     return p.format === activeCatalogTab;
   });
 
+  const currentVideo = HERO_VIDEOS[currentVideoIndex] ?? HERO_VIDEOS[0]!;
+
   return (
     <div className="space-y-0">
       {/* ======================================================== */}
@@ -355,7 +357,7 @@ function HomePage() {
       {/* ======================================================== */}
       <section className="group relative overflow-hidden border-b border-border aspect-[16/9] sm:aspect-[21/9] max-h-[75vh] w-full bg-black select-none">
         <video
-          key={HERO_VIDEOS[currentVideoIndex].src}
+          key={currentVideo.src}
           ref={videoRef}
           autoPlay
           playsInline
@@ -363,7 +365,7 @@ function HomePage() {
           onEnded={handleVideoEnded}
           className="h-full w-full object-cover object-center"
         >
-          <source src={HERO_VIDEOS[currentVideoIndex].src} type="video/mp4" />
+          <source src={currentVideo.src} type="video/mp4" />
         </video>
 
         {/* Navigation Arrow Left */}
@@ -614,11 +616,11 @@ function HomePage() {
           align="center"
         />
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 flex gap-3.5 overflow-x-auto pb-3 pt-1 px-1 -mx-1 snap-x snap-mandatory scrollbar-none sm:grid sm:overflow-visible sm:p-0 sm:m-0 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {verifiedReviews.map((rev) => (
             <figure
               key={rev.name}
-              className="surface-card flex flex-col justify-between p-4 rounded-xl border border-border shadow-xs hover:border-primary/40 transition-all"
+              className="surface-card flex flex-col justify-between p-4 rounded-xl border border-border shadow-xs hover:border-primary/40 transition-all min-w-[260px] max-w-[290px] sm:min-w-0 sm:max-w-none snap-start shrink-0 sm:shrink bg-card"
             >
               <div>
                 <div className="flex items-center justify-between">
