@@ -616,40 +616,45 @@ function HomePage() {
           align="center"
         />
 
-        <div className="mt-6 flex gap-3.5 overflow-x-auto pb-3 pt-1 px-1 -mx-1 snap-x snap-mandatory scrollbar-none sm:grid sm:overflow-visible sm:p-0 sm:m-0 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 flex flex-nowrap overflow-x-auto gap-3.5 pb-4 pt-1 px-4 -mx-4 scroll-smooth snap-x snap-mandatory touch-pan-x scrollbar-none md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:p-0 md:m-0 md:gap-4">
           {verifiedReviews.map((rev) => (
             <figure
               key={rev.name}
-              className="surface-card flex flex-col justify-between p-4 rounded-xl border border-border shadow-xs hover:border-primary/40 transition-all min-w-[260px] max-w-[290px] sm:min-w-0 sm:max-w-none snap-start shrink-0 sm:shrink bg-card"
+              className="w-[82vw] max-w-[320px] shrink-0 snap-center md:w-auto md:max-w-none md:shrink surface-card flex flex-col justify-between p-4 sm:p-5 rounded-2xl border border-border shadow-xs hover:border-primary/40 transition-all bg-card"
             >
               <div>
                 <div className="flex items-center justify-between">
                   <div className="flex text-amber-500">
                     {Array.from({ length: rev.rating }).map((_, i) => (
-                      <Star key={i} className="h-3 w-3 fill-amber-500 text-amber-500" />
+                      <Star key={i} className="h-3.5 w-3.5 fill-amber-500 text-amber-500" />
                     ))}
                   </div>
-                  <span className="text-[9px] px-1.5 py-0.2 bg-primary/10 text-primary font-bold rounded">
-                    Verified
+                  <span className="text-[9px] px-2 py-0.5 bg-primary/10 text-primary font-bold rounded-full">
+                    Verified Purchase
                   </span>
                 </div>
 
-                <h4 className="mt-2 text-xs font-bold text-foreground leading-snug">{rev.title}</h4>
+                <h4 className="mt-2.5 text-sm font-bold text-foreground leading-snug">{rev.title}</h4>
 
-                <blockquote className="mt-1.5 text-[11px] text-muted-foreground leading-relaxed line-clamp-3">
+                <blockquote className="mt-1.5 text-xs text-muted-foreground leading-relaxed">
                   &ldquo;{rev.comment}&rdquo;
                 </blockquote>
               </div>
 
-              <div className="mt-3 pt-2 border-t border-border/60 flex items-center justify-between text-[10px]">
+              <div className="mt-4 pt-2.5 border-t border-border/60 flex items-center justify-between text-xs">
                 <div>
-                  <p className="font-bold text-foreground">{rev.name}</p>
-                  <p className="text-muted-foreground">{rev.city}</p>
+                  <p className="font-bold text-foreground text-xs">{rev.name}</p>
+                  <p className="text-muted-foreground text-[11px]">{rev.city}</p>
                 </div>
-                <span className="font-semibold text-primary">{rev.product}</span>
+                <span className="font-semibold text-primary text-[11px] bg-primary/5 px-2 py-0.5 rounded border border-primary/15">{rev.product}</span>
               </div>
             </figure>
           ))}
+        </div>
+
+        {/* Mobile Swipe Hint */}
+        <div className="flex md:hidden items-center justify-center gap-1.5 pt-2 text-[11px] font-medium text-muted-foreground">
+          <span>← Swipe horizontally to view more reviews →</span>
         </div>
       </section>
 
