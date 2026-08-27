@@ -3,11 +3,13 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "main": "app.js",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
     "build:node": "NITRO_PRESET=node-server vite build",
     "build:dev": "vite build --mode development",
+    "start": "node app.js",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
