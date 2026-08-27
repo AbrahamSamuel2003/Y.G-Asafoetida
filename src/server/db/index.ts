@@ -81,10 +81,11 @@ class PureJsDatabase implements DbInterface {
     // 1. SELECT COUNT(*)
     if (upper.includes("SELECT COUNT(*)")) {
       const match = rawSql.match(/FROM\s+([a-zA-Z0-9_]+)/i);
-      const tableName = match ? match[1] : "";
+      const tableName = match && match[1] ? match[1] : "";
+      const tableRows = tableName && this.data[tableName] ? this.data[tableName] : [];
       return {
-        all: () => [{ count: (this.data[tableName] || []).length }],
-        get: () => ({ count: (this.data[tableName] || []).length }),
+        all: () => [{ count: tableRows.length }],
+        get: () => ({ count: tableRows.length }),
         run: () => ({ changes: 0 }),
       };
     }
@@ -92,20 +93,23 @@ class PureJsDatabase implements DbInterface {
     // 2. SELECT * FROM table ...
     if (upper.startsWith("SELECT")) {
       const fromMatch = rawSql.match(/FROM\s+([a-zA-Z0-9_]+)/i);
-      const tableName = fromMatch ? fromMatch[1] : "";
-      const rows = this.data[tableName] || [];
+      const tableName = fromMatch && fromMatch[1] ? fromMatch[1] : "";
+      const rows = tableName && this.data[tableName] ? this.data[tableName] : [];
 
       return {
         all: (...params: unknown[]) => {
           let result = [...rows];
           // Simple WHERE matching
           if (upper.includes("WHERE")) {
-            const wherePart = rawSql.split(/WHERE/i)[1].split(/ORDER|LIMIT|GROUP/i)[0].trim();
+            const parts = rawSql.split(/WHERE/i);
+            const whereClause = parts[1] ?? "";
+            const wherePart = (whereClause.split(/ORDER|LIMIT|GROUP/i)[0] ?? "").trim();
             result = this.filterRows(result, wherePart, params);
           }
           // Order By
           if (upper.includes("ORDER BY")) {
-            const orderPart = rawSql.split(/ORDER BY/i)[1].trim();
+            const parts = rawSql.split(/ORDER BY/i);
+            const orderPart = (parts[1] ?? "").trim();
             result = this.sortRows(result, orderPart);
           }
           return result;
@@ -113,7 +117,9 @@ class PureJsDatabase implements DbInterface {
         get: (...params: unknown[]) => {
           let result = [...rows];
           if (upper.includes("WHERE")) {
-            const wherePart = rawSql.split(/WHERE/i)[1].split(/ORDER|LIMIT|GROUP/i)[0].trim();
+            const parts = rawSql.split(/WHERE/i);
+            const whereClause = parts[1] ?? "";
+            const wherePart = (whereClause.split(/ORDER|LIMIT|GROUP/i)[0] ?? "").trim();
             result = this.filterRows(result, wherePart, params);
           }
           return result[0];
@@ -125,14 +131,16 @@ class PureJsDatabase implements DbInterface {
     // 3. INSERT OR REPLACE INTO / INSERT INTO
     if (upper.startsWith("INSERT")) {
       const match = rawSql.match(/INTO\s+([a-zA-Z0-9_]+)\s*\(([^)]+)\)/i);
-      const tableName = match ? match[1] : "";
-      const columns = match ? match[2].split(",").map((c) => c.trim()) : [];
+      const tableName = match && match[1] ? match[1] : "";
+      const columns = match && match[2] ? match[2].split(",").map((c) => c.trim()) : [];
 
       return {
         all: () => [],
         get: () => undefined,
         run: (...params: unknown[]) => {
+          if (!tableName) return { changes: 0 };
           if (!this.data[tableName]) this.data[tableName] = [];
+          const tableData = this.data[tableName]!;
           const obj: Record<string, any> = {};
           columns.forEach((col, idx) => {
             obj[col] = params[idx];
@@ -140,20 +148,20 @@ class PureJsDatabase implements DbInterface {
 
           // Primary key matching (slug or id or (product_slug, id) or code)
           let existingIdx = -1;
-          if (tableName === "products" && obj.slug) {
-            existingIdx = this.data[tableName].findIndex((r) => r.slug === obj.slug);
-          } else if (tableName === "product_variants" && obj.product_slug && obj.id) {
-            existingIdx = this.data[tableName].findIndex((r) => r.product_slug === obj.product_slug && r.id === obj.id);
-          } else if (tableName === "promos" && obj.code) {
-            existingIdx = this.data[tableName].findIndex((r) => r.code === obj.code);
-          } else if (obj.id) {
-            existingIdx = this.data[tableName].findIndex((r) => r.id === obj.id);
+          if (tableName === "products" && obj["slug"]) {
+            existingIdx = tableData.findIndex((r: any) => r["slug"] === obj["slug"]);
+          } else if (tableName === "product_variants" && obj["product_slug"] && obj["id"]) {
+            existingIdx = tableData.findIndex((r: any) => r["product_slug"] === obj["product_slug"] && r["id"] === obj["id"]);
+          } else if (tableName === "promos" && obj["code"]) {
+            existingIdx = tableData.findIndex((r: any) => r["code"] === obj["code"]);
+          } else if (obj["id"]) {
+            existingIdx = tableData.findIndex((r: any) => r["id"] === obj["id"]);
           }
 
-          if (existingIdx >= 0) {
-            this.data[tableName][existingIdx] = { ...this.data[tableName][existingIdx], ...obj };
+          if (existingIdx >= 0 && tableData[existingIdx]) {
+            tableData[existingIdx] = { ...tableData[existingIdx], ...obj };
           } else {
-            this.data[tableName].push(obj);
+            tableData.push(obj);
           }
 
           this.save();
@@ -165,26 +173,32 @@ class PureJsDatabase implements DbInterface {
     // 4. UPDATE table SET ... WHERE ...
     if (upper.startsWith("UPDATE")) {
       const match = rawSql.match(/UPDATE\s+([a-zA-Z0-9_]+)\s+SET\s+(.+?)\s+WHERE\s+(.+)/i);
-      const tableName = match ? match[1] : "";
-      const setPart = match ? match[2] : "";
-      const wherePart = match ? match[3] : "";
+      const tableName = match && match[1] ? match[1] : "";
+      const setPart = match && match[2] ? match[2] : "";
+      const wherePart = match && match[3] ? match[3] : "";
 
       return {
         all: () => [],
         get: () => undefined,
         run: (...params: unknown[]) => {
+          if (!tableName) return { changes: 0 };
           const rows = this.data[tableName] || [];
           // Count '?' in setPart to split params between SET and WHERE
           const setCount = (setPart.match(/\?/g) || []).length;
           const setParams = params.slice(0, setCount);
           const whereParams = params.slice(setCount);
 
-          const setFields = setPart.split(",").map((s) => s.trim().split("=")[0].trim());
+          const setFields = setPart.split(",").map((s) => {
+            const first = s.trim().split("=")[0];
+            return first ? first.trim() : "";
+          }).filter(Boolean);
           const matching = this.filterRows(rows, wherePart, whereParams);
 
           for (const row of matching) {
             setFields.forEach((field, i) => {
-              row[field] = setParams[i];
+              if (field) {
+                row[field] = setParams[i];
+              }
             });
           }
 
@@ -197,13 +211,14 @@ class PureJsDatabase implements DbInterface {
     // 5. DELETE FROM table WHERE ...
     if (upper.startsWith("DELETE")) {
       const match = rawSql.match(/DELETE\s+FROM\s+([a-zA-Z0-9_]+)(?:\s+WHERE\s+(.+))?/i);
-      const tableName = match ? match[1] : "";
-      const wherePart = match ? match[2] : "";
+      const tableName = match && match[1] ? match[1] : "";
+      const wherePart = match && match[2] ? match[2] : "";
 
       return {
         all: () => [],
         get: () => undefined,
         run: (...params: unknown[]) => {
+          if (!tableName) return { changes: 0 };
           if (!wherePart) {
             this.data[tableName] = [];
             this.save();
@@ -211,7 +226,7 @@ class PureJsDatabase implements DbInterface {
           }
           const rows = this.data[tableName] || [];
           const toDelete = new Set(this.filterRows(rows, wherePart, params));
-          this.data[tableName] = rows.filter((r) => !toDelete.has(r));
+          this.data[tableName] = rows.filter((r: any) => !toDelete.has(r));
           this.save();
           return { changes: toDelete.size };
         },
@@ -233,9 +248,11 @@ class PureJsDatabase implements DbInterface {
       for (const cond of conditions) {
         const c = cond.trim();
         if (c.includes("=")) {
-          const [field, val] = c.split("=").map((s) => s.trim());
+          const parts = c.split("=");
+          const field = (parts[0] ?? "").trim();
+          const val = (parts[1] ?? "").trim();
           const targetVal = val === "?" ? params[pIdx++] : val.replace(/['"]/g, "");
-          if (String(row[field]) !== String(targetVal)) return false;
+          if (field && String(row[field]) !== String(targetVal)) return false;
         }
       }
       return true;
@@ -246,10 +263,14 @@ class PureJsDatabase implements DbInterface {
     const parts = orderSql.split(",").map((s) => s.trim());
     return [...rows].sort((a, b) => {
       for (const part of parts) {
-        const [field, dir] = part.split(/\s+/);
+        const tokens = part.split(/\s+/);
+        const field = tokens[0] ?? "";
+        const dir = tokens[1] ?? "";
         const isDesc = dir && dir.toUpperCase() === "DESC";
-        if (a[field] < b[field]) return isDesc ? 1 : -1;
-        if (a[field] > b[field]) return isDesc ? -1 : 1;
+        if (field) {
+          if (a[field] < b[field]) return isDesc ? 1 : -1;
+          if (a[field] > b[field]) return isDesc ? -1 : 1;
+        }
       }
       return 0;
     });
