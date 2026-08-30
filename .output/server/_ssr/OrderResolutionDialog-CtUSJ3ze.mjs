@@ -3,7 +3,7 @@ import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { y as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { t as Button } from "./button-DRsC1qZi.mjs";
 import { t as SUPPORT } from "./faq-CtCudbc5.mjs";
-import { A as MessageCircle, C as Phone, G as Info, K as IndianRupee, P as Mail, at as Copy, ct as CircleSlash, g as ShieldCheck, s as TriangleAlert, ut as CircleCheck, xt as Ban, z as LifeBuoy } from "../_libs/lucide-react.mjs";
+import { H as LifeBuoy, J as Info, L as Mail, M as MessageCircle, Y as IndianRupee, _ as ShieldCheck, c as TriangleAlert, ct as Copy, dt as CircleSlash, pt as CircleCheck, w as Phone, wt as Ban } from "../_libs/lucide-react.mjs";
 import { a as DialogHeader, i as DialogFooter, n as DialogContent, o as DialogTitle, r as DialogDescription, s as DialogTrigger, t as Dialog } from "./dialog-CiapfthD.mjs";
 import { n as formatPrice } from "./products--El95C0C.mjs";
 import { n as toast } from "../_libs/sonner.mjs";

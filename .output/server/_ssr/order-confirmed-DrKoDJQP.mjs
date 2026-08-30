@@ -1,7 +1,7 @@
 import { y as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { t as Button } from "./button-DRsC1qZi.mjs";
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { ut as CircleCheck } from "../_libs/lucide-react.mjs";
+import { pt as CircleCheck } from "../_libs/lucide-react.mjs";
 import { n as formatPrice } from "./products--El95C0C.mjs";
 import { t as Route } from "./order-confirmed-CDIYRSjH.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/order-confirmed-DrKoDJQP.js

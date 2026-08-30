@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useCart } from "@/lib/cart";
 import { useWishlist } from "@/lib/wishlist";
+import { ThemeSwitcher } from "@/components/site/ThemeSwitcher";
 
 // Search palette is only pulled in when opened (click or ⌘K).
 const SearchDialog = lazy(() =>
@@ -138,6 +139,10 @@ export function Header() {
                 </nav>
               </div>
 
+              <div className="pt-4 border-t border-border flex items-center justify-between">
+                <span className="text-xs font-medium text-muted-foreground">Theme</span>
+                <ThemeSwitcher />
+              </div>
             </SheetContent>
           </Sheet>
         </div>
@@ -176,6 +181,8 @@ export function Header() {
 
         {/* Right Actions */}
         <div className="flex items-center gap-0.5 sm:gap-1.5 shrink-0">
+          <ThemeSwitcher className="inline-flex" />
+
           <Button
             variant="ghost"
             size="icon"

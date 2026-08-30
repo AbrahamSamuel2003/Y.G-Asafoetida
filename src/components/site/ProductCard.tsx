@@ -258,7 +258,7 @@ export function ProductCard({
           width={1000}
           height={1000}
           fallbackLabel={product.name}
-          wrapperClassName="aspect-square w-full flex items-center justify-center"
+          wrapperClassName="h-full w-full flex items-center justify-center"
           className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">

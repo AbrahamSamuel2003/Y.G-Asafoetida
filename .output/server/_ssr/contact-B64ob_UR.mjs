@@ -3,7 +3,7 @@ import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { y as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { t as Button } from "./button-DRsC1qZi.mjs";
 import { r as faqs, t as SUPPORT } from "./faq-CtCudbc5.mjs";
-import { A as MessageCircle, C as Phone, L as LoaderCircle, N as MapPin, O as MessageSquare, P as Mail, ut as CircleCheck } from "../_libs/lucide-react.mjs";
+import { A as MessageSquare, B as LoaderCircle, I as MapPin, L as Mail, M as MessageCircle, pt as CircleCheck, w as Phone } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
 import { t as Input } from "./input-DYHYoj49.mjs";
 import { t as Label } from "./label-B4PTMSG2.mjs";

@@ -4,7 +4,7 @@ import { y as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[..
 import { t as Button } from "./button-DRsC1qZi.mjs";
 import { i as quickQuestions, n as answerQuestion, t as SUPPORT } from "./faq-CtCudbc5.mjs";
 import { g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { C as Phone, O as MessageSquare, P as Mail, _ as Send, n as X } from "../_libs/lucide-react.mjs";
+import { A as MessageSquare, L as Mail, r as X, v as Send, w as Phone } from "../_libs/lucide-react.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/FaqBot-DPAXQK0w.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();

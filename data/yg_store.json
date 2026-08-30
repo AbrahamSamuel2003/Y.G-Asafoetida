@@ -17,8 +17,8 @@
       "stock_left": null,
       "rating": 4.9,
       "reviews": 1420,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "premium-asafoetida-powder",
@@ -37,8 +37,8 @@
       "stock_left": null,
       "rating": 4.9,
       "reviews": 890,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "gluten-free-asafoetida-powder",
@@ -57,8 +57,8 @@
       "stock_left": 8,
       "rating": 4.8,
       "reviews": 512,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "asafoetida-gold-cake",
@@ -77,8 +77,8 @@
       "stock_left": null,
       "rating": 4.9,
       "reviews": 340,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "hing-chips",
@@ -97,8 +97,8 @@
       "stock_left": null,
       "rating": 4.9,
       "reviews": 215,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "hing-pellets",
@@ -117,8 +117,8 @@
       "stock_left": null,
       "rating": 4.8,
       "reviews": 310,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "bottle-jar-asafoetida",
@@ -137,8 +137,8 @@
       "stock_left": null,
       "rating": 5,
       "reviews": 460,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "pure-raw-hing",
@@ -157,8 +157,8 @@
       "stock_left": null,
       "rating": 5,
       "reviews": 195,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "all-product-heritage-combo",
@@ -177,8 +177,8 @@
       "stock_left": null,
       "rating": 5,
       "reviews": 280,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "traditional-health-mix",
@@ -197,8 +197,8 @@
       "stock_left": null,
       "rating": 4.9,
       "reviews": 310,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "pure-benzoin-sambrani",
@@ -217,8 +217,8 @@
       "stock_left": null,
       "rating": 5,
       "reviews": 185,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "black-sesame-seeds",
@@ -237,8 +237,8 @@
       "stock_left": null,
       "rating": 4.9,
       "reviews": 145,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "traditional-idli-podi",
@@ -257,8 +257,8 @@
       "stock_left": null,
       "rating": 5,
       "reviews": 260,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "millet-pongal-mix",
@@ -277,8 +277,8 @@
       "stock_left": null,
       "rating": 4.9,
       "reviews": 178,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     },
     {
       "slug": "millet-sambar-mix",
@@ -297,8 +297,8 @@
       "stock_left": null,
       "rating": 4.9,
       "reviews": 162,
-      "created_at": 1787815480132,
-      "updated_at": 1787815480132
+      "created_at": 1788067780576,
+      "updated_at": 1788067780576
     }
   ],
   "product_variants": [
@@ -616,7 +616,7 @@
       "min_subtotal": null,
       "free_shipping": 0,
       "automatic": 0,
-      "is_active": 1787815480132
+      "is_active": 1788067780576
     },
     {
       "code": "HING50",
@@ -627,7 +627,7 @@
       "min_subtotal": 399,
       "free_shipping": 0,
       "automatic": 0,
-      "is_active": 1787815480132
+      "is_active": 1788067780576
     },
     {
       "code": "FREESHIP",
@@ -638,7 +638,7 @@
       "min_subtotal": null,
       "free_shipping": 1,
       "automatic": 0,
-      "is_active": 1787815480132
+      "is_active": 1788067780576
     },
     {
       "code": "BULK15",
@@ -649,7 +649,7 @@
       "min_subtotal": 999,
       "free_shipping": 0,
       "automatic": 1,
-      "is_active": 1787815480132
+      "is_active": 1788067780576
     }
   ],
   "recipes": []

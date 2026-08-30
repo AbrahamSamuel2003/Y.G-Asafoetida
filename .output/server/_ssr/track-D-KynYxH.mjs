@@ -3,7 +3,7 @@ import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { y as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { t as Button } from "./button-DRsC1qZi.mjs";
 import { _ as useNavigate, g as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { E as PackageSearch, y as SearchX } from "../_libs/lucide-react.mjs";
+import { O as PackageSearch, b as SearchX } from "../_libs/lucide-react.mjs";
 import { d as useOrders } from "./orders-C0nOgnCU.mjs";
 import { t as Input } from "./input-DYHYoj49.mjs";
 import { t as Label } from "./label-B4PTMSG2.mjs";

@@ -1,4 +1,4 @@
-@import "tailwindcss" source(none);
+@import "tailwindcss";
 @source "../src";
 @import "tw-animate-css";
 
@@ -67,6 +67,8 @@
 /* 1. SAFFRON SANDAL THEME (DEFAULT HIGH CONTRAST)         */
 /* ======================================================== */
 :root,
+html[data-theme="saffron"],
+:root[data-theme="saffron"],
 [data-theme="saffron"] {
   --radius: 0.625rem;
 
@@ -118,6 +120,23 @@
   --sidebar-border: oklch(0.89 0.02 80);
   --sidebar-ring: oklch(0.52 0.19 44);
 
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
   --gradient-warm: linear-gradient(
     135deg,
     oklch(1 0 0) 0%,
@@ -137,6 +156,8 @@
 /* ======================================================== */
 /* 2. HERBAL SAGE THEME (DEEP BOTANICAL EMERALD CONTRAST)   */
 /* ======================================================== */
+html[data-theme="sage"],
+:root[data-theme="sage"],
 [data-theme="sage"] {
   --radius: 0.625rem;
 
@@ -171,6 +192,35 @@
   --clove: oklch(0.20 0.04 155);
   --clove-foreground: oklch(0.99 0 0);
 
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --destructive: oklch(0.52 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.88 0.02 145);
+  --input: oklch(0.88 0.02 145);
+  --ring: oklch(0.46 0.15 150);
+
+  --gold: oklch(0.70 0.13 110);
+  --gold-foreground: oklch(0.16 0.035 155);
+  --clove: oklch(0.20 0.04 155);
+  --clove-foreground: oklch(0.99 0 0);
+
   --gradient-warm: linear-gradient(
     135deg,
     oklch(1 0 0) 0%,
@@ -190,6 +240,8 @@
 /* ======================================================== */
 /* 3. ROSEWATER SILK THEME (ROYAL SPICE RUBY CONTRAST)      */
 /* ======================================================== */
+html[data-theme="rose"],
+:root[data-theme="rose"],
 [data-theme="rose"] {
   --radius: 0.625rem;
 
@@ -224,6 +276,23 @@
   --clove: oklch(0.20 0.045 20);
   --clove-foreground: oklch(0.99 0 0);
 
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
   --gradient-warm: linear-gradient(
     135deg,
     oklch(1 0 0) 0%,
@@ -243,6 +312,8 @@
 /* ======================================================== */
 /* 4. TEMPLE AMBER THEME (BOLD GOLDEN OCHRE CONTRAST)       */
 /* ======================================================== */
+html[data-theme="amber"],
+:root[data-theme="amber"],
 [data-theme="amber"] {
   --radius: 0.625rem;
 
@@ -277,6 +348,23 @@
   --clove: oklch(0.21 0.05 60);
   --clove-foreground: oklch(0.99 0 0);
 
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
   --gradient-warm: linear-gradient(
     135deg,
     oklch(1 0 0) 0%,
@@ -291,6 +379,366 @@
     0 8px 20px -12px oklch(0.18 0.04 60 / 0.18);
   --shadow-lift: 0 2px 4px oklch(0.18 0.04 60 / 0.08),
     0 14px 28px -14px oklch(0.18 0.04 60 / 0.28);
+}
+
+/* ======================================================== */
+/* 5. EMERALD CARDAMOM THEME (VIBRANT BOTANICAL GREEN)      */
+/* ======================================================== */
+html[data-theme="emerald"],
+:root[data-theme="emerald"],
+[data-theme="emerald"] {
+  --radius: 0.625rem;
+
+  --background: oklch(1 0 0); /* Pure White */
+  --foreground: oklch(0.16 0.04 145); /* Deep Emerald Charcoal */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0.04 145);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.16 0.04 145);
+
+  --primary: oklch(0.44 0.17 142); /* Vibrant Vedic Emerald Green */
+  --primary-foreground: oklch(0.99 0.005 140);
+
+  --secondary: oklch(0.96 0.025 140);
+  --secondary-foreground: oklch(0.18 0.045 145);
+
+  --muted: oklch(0.955 0.015 140);
+  --muted-foreground: oklch(0.40 0.04 145);
+
+  --accent: oklch(0.92 0.05 140);
+  --accent-foreground: oklch(0.18 0.045 145);
+
+  --destructive: oklch(0.52 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.88 0.025 140);
+  --input: oklch(0.88 0.025 140);
+  --ring: oklch(0.44 0.17 142);
+
+  --gold: oklch(0.72 0.15 105);
+  --gold-foreground: oklch(0.16 0.04 145);
+  --clove: oklch(0.19 0.045 145);
+  --clove-foreground: oklch(0.99 0 0);
+
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    oklch(1 0 0) 0%,
+    oklch(0.96 0.03 140) 100%
+  );
+  --gradient-gold: linear-gradient(
+    100deg,
+    oklch(0.44 0.17 142) 0%,
+    oklch(0.68 0.15 125) 100%
+  );
+  --shadow-soft: 0 1px 3px oklch(0.16 0.04 145 / 0.06),
+    0 8px 20px -12px oklch(0.16 0.04 145 / 0.18);
+  --shadow-lift: 0 2px 4px oklch(0.16 0.04 145 / 0.08),
+    0 14px 28px -14px oklch(0.16 0.04 145 / 0.28);
+}
+
+/* ======================================================== */
+/* 6. NILGIRI INDIGO THEME (ROYAL BLUE SAPPHIRE)            */
+/* ======================================================== */
+html[data-theme="indigo"],
+:root[data-theme="indigo"],
+[data-theme="indigo"] {
+  --radius: 0.625rem;
+
+  --background: oklch(1 0 0); /* Pure White */
+  --foreground: oklch(0.16 0.04 260); /* Deep Navy Charcoal */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0.04 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.16 0.04 260);
+
+  --primary: oklch(0.44 0.18 255); /* Deep Royal Nilgiri Indigo */
+  --primary-foreground: oklch(0.99 0.005 250);
+
+  --secondary: oklch(0.96 0.02 250);
+  --secondary-foreground: oklch(0.18 0.045 260);
+
+  --muted: oklch(0.955 0.012 250);
+  --muted-foreground: oklch(0.40 0.035 255);
+
+  --accent: oklch(0.92 0.045 250);
+  --accent-foreground: oklch(0.18 0.045 260);
+
+  --destructive: oklch(0.52 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.88 0.02 250);
+  --input: oklch(0.88 0.02 250);
+  --ring: oklch(0.44 0.18 255);
+
+  --gold: oklch(0.72 0.14 80);
+  --gold-foreground: oklch(0.16 0.04 260);
+  --clove: oklch(0.19 0.045 260);
+  --clove-foreground: oklch(0.99 0 0);
+
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    oklch(1 0 0) 0%,
+    oklch(0.965 0.025 250) 100%
+  );
+  --gradient-gold: linear-gradient(
+    100deg,
+    oklch(0.44 0.18 255) 0%,
+    oklch(0.66 0.16 235) 100%
+  );
+  --shadow-soft: 0 1px 3px oklch(0.16 0.04 260 / 0.06),
+    0 8px 20px -12px oklch(0.16 0.04 260 / 0.18);
+  --shadow-lift: 0 2px 4px oklch(0.16 0.04 260 / 0.08),
+    0 14px 28px -14px oklch(0.16 0.04 260 / 0.28);
+}
+
+/* ======================================================== */
+/* 7. MYSORE PLUM THEME (ROYAL AMETHYST / JAMUN VELVET)     */
+/* ======================================================== */
+html[data-theme="plum"],
+:root[data-theme="plum"],
+[data-theme="plum"] {
+  --radius: 0.625rem;
+
+  --background: oklch(1 0 0); /* Pure White */
+  --foreground: oklch(0.17 0.04 315); /* Deep Amethyst Charcoal */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.17 0.04 315);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.17 0.04 315);
+
+  --primary: oklch(0.44 0.19 315); /* Rich Mysore Plum Purple */
+  --primary-foreground: oklch(0.99 0.005 315);
+
+  --secondary: oklch(0.965 0.02 315);
+  --secondary-foreground: oklch(0.19 0.045 315);
+
+  --muted: oklch(0.96 0.012 315);
+  --muted-foreground: oklch(0.42 0.035 315);
+
+  --accent: oklch(0.92 0.045 315);
+  --accent-foreground: oklch(0.19 0.045 315);
+
+  --destructive: oklch(0.52 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.89 0.02 315);
+  --input: oklch(0.89 0.02 315);
+  --ring: oklch(0.44 0.19 315);
+
+  --gold: oklch(0.72 0.14 70);
+  --gold-foreground: oklch(0.17 0.04 315);
+  --clove: oklch(0.20 0.045 315);
+  --clove-foreground: oklch(0.99 0 0);
+
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    oklch(1 0 0) 0%,
+    oklch(0.965 0.025 315) 100%
+  );
+  --gradient-gold: linear-gradient(
+    100deg,
+    oklch(0.44 0.19 315) 0%,
+    oklch(0.66 0.16 295) 100%
+  );
+  --shadow-soft: 0 1px 3px oklch(0.17 0.04 315 / 0.06),
+    0 8px 20px -12px oklch(0.17 0.04 315 / 0.18);
+  --shadow-lift: 0 2px 4px oklch(0.17 0.04 315 / 0.08),
+    0 14px 28px -14px oklch(0.17 0.04 315 / 0.28);
+}
+
+/* ======================================================== */
+/* 8. COROMANDEL TEAL THEME (OCEAN COASTAL TEAL)            */
+/* ======================================================== */
+html[data-theme="teal"],
+:root[data-theme="teal"],
+[data-theme="teal"] {
+  --radius: 0.625rem;
+
+  --background: oklch(1 0 0); /* Pure White */
+  --foreground: oklch(0.16 0.035 195); /* Deep Teal Charcoal */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0.035 195);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.16 0.035 195);
+
+  --primary: oklch(0.45 0.14 195); /* Coromandel Deep Teal */
+  --primary-foreground: oklch(0.99 0.005 190);
+
+  --secondary: oklch(0.96 0.02 195);
+  --secondary-foreground: oklch(0.18 0.04 195);
+
+  --muted: oklch(0.955 0.012 195);
+  --muted-foreground: oklch(0.40 0.035 195);
+
+  --accent: oklch(0.92 0.04 195);
+  --accent-foreground: oklch(0.18 0.04 195);
+
+  --destructive: oklch(0.52 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.88 0.02 195);
+  --input: oklch(0.88 0.02 195);
+  --ring: oklch(0.45 0.14 195);
+
+  --gold: oklch(0.70 0.13 110);
+  --gold-foreground: oklch(0.16 0.035 195);
+  --clove: oklch(0.19 0.04 195);
+  --clove-foreground: oklch(0.99 0 0);
+
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    oklch(1 0 0) 0%,
+    oklch(0.96 0.025 195) 100%
+  );
+  --gradient-gold: linear-gradient(
+    100deg,
+    oklch(0.45 0.14 195) 0%,
+    oklch(0.66 0.13 175) 100%
+  );
+  --shadow-soft: 0 1px 3px oklch(0.16 0.035 195 / 0.06),
+    0 8px 20px -12px oklch(0.16 0.035 195 / 0.18);
+  --shadow-lift: 0 2px 4px oklch(0.16 0.035 195 / 0.08),
+    0 14px 28px -14px oklch(0.16 0.035 195 / 0.28);
+}
+
+/* ======================================================== */
+/* 9. MALABAR COPPER THEME (WARM ROASTED CINNAMON & BRASS)  */
+/* ======================================================== */
+html[data-theme="copper"],
+:root[data-theme="copper"],
+[data-theme="copper"] {
+  --radius: 0.625rem;
+
+  --background: oklch(1 0 0); /* Pure White */
+  --foreground: oklch(0.18 0.04 38); /* Deep Copper Charcoal */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.04 38);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.04 38);
+
+  --primary: oklch(0.48 0.18 36); /* Burnished Spice Copper */
+  --primary-foreground: oklch(0.99 0.005 60);
+
+  --secondary: oklch(0.965 0.022 45);
+  --secondary-foreground: oklch(0.20 0.05 38);
+
+  --muted: oklch(0.96 0.012 45);
+  --muted-foreground: oklch(0.42 0.035 40);
+
+  --accent: oklch(0.92 0.045 40);
+  --accent-foreground: oklch(0.20 0.05 38);
+
+  --destructive: oklch(0.52 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.88 0.022 45);
+  --input: oklch(0.88 0.022 45);
+  --ring: oklch(0.48 0.18 36);
+
+  --gold: oklch(0.72 0.15 65);
+  --gold-foreground: oklch(0.18 0.04 38);
+  --clove: oklch(0.21 0.05 38);
+  --clove-foreground: oklch(0.99 0 0);
+
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --gradient-warm: linear-gradient(
+    135deg,
+    oklch(1 0 0) 0%,
+    oklch(0.965 0.025 45) 100%
+  );
+  --gradient-gold: linear-gradient(
+    100deg,
+    oklch(0.48 0.18 36) 0%,
+    oklch(0.68 0.15 55) 100%
+  );
+  --shadow-soft: 0 1px 3px oklch(0.18 0.04 38 / 0.06),
+    0 8px 20px -12px oklch(0.18 0.04 38 / 0.18);
+  --shadow-lift: 0 2px 4px oklch(0.18 0.04 38 / 0.08),
+    0 14px 28px -14px oklch(0.18 0.04 38 / 0.28);
 }
 
 @layer base {

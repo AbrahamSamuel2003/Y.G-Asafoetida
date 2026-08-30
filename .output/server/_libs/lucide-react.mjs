@@ -995,6 +995,30 @@ var MapPin = createLucideIcon("map-pin", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Maximize2 = createLucideIcon("maximize-2", [
+	["path", {
+		d: "M15 3h6v6",
+		key: "1q9fwt"
+	}],
+	["path", {
+		d: "m21 3-7 7",
+		key: "1l2asr"
+	}],
+	["path", {
+		d: "m3 21 7-7",
+		key: "tjx5ai"
+	}],
+	["path", {
+		d: "M9 21H3v-6",
+		key: "wtvkvv"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Menu = createLucideIcon("menu", [
 	["path", {
 		d: "M4 5h16",
@@ -1138,6 +1162,46 @@ var Package = createLucideIcon("package", [
 	["path", {
 		d: "m7.5 4.27 9 5.15",
 		key: "1c824w"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Palette = createLucideIcon("palette", [
+	["path", {
+		d: "M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z",
+		key: "e79jfc"
+	}],
+	["circle", {
+		cx: "13.5",
+		cy: "6.5",
+		r: ".5",
+		fill: "currentColor",
+		key: "1okk4w"
+	}],
+	["circle", {
+		cx: "17.5",
+		cy: "10.5",
+		r: ".5",
+		fill: "currentColor",
+		key: "f64h9f"
+	}],
+	["circle", {
+		cx: "6.5",
+		cy: "12.5",
+		r: ".5",
+		fill: "currentColor",
+		key: "qy21gx"
+	}],
+	["circle", {
+		cx: "8.5",
+		cy: "7.5",
+		r: ".5",
+		fill: "currentColor",
+		key: "fotxhn"
 	}]
 ]);
 /**
@@ -1586,5 +1650,40 @@ var Zap = createLucideIcon("zap", [["path", {
 	d: "M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z",
 	key: "1xq2db"
 }]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var ZoomIn = createLucideIcon("zoom-in", [
+	["circle", {
+		cx: "11",
+		cy: "11",
+		r: "8",
+		key: "4ej97u"
+	}],
+	["line", {
+		x1: "21",
+		x2: "16.65",
+		y1: "21",
+		y2: "16.65",
+		key: "13gj7c"
+	}],
+	["line", {
+		x1: "11",
+		x2: "11",
+		y1: "8",
+		y2: "14",
+		key: "1vmskp"
+	}],
+	["line", {
+		x1: "8",
+		x2: "14",
+		y1: "11",
+		y2: "11",
+		key: "durymu"
+	}]
+]);
 //#endregion
-export { FileCheck as $, MessageCircle as A, Leaf as B, Phone as C, ArrowRight as Ct, Minus as D, PackageSearch as E, LogOut as F, Info as G, LayoutDashboard as H, Lock as I, History as J, IndianRupee as K, LoaderCircle as L, Menu as M, MapPin as N, MessageSquare as O, Mail as P, Flame as Q, List as R, Plus as S, Award as St, Package as T, Layers as U, LayoutGrid as V, KeyRound as W, Grid2x2 as X, Heart as Y, Gift as Z, Send as _, Building2 as _t, Upload as a, Copy as at, RotateCcw as b, BellRing as bt, TrendingUp as c, CircleSlash as ct, Star as d, CircleAlert as dt, Factory as et, SquarePen as f, ChevronUp as ft, ShieldCheck as g, Check as gt, ShoppingBag as h, ChevronDown as ht, UserRound as i, CornerDownLeft as it, MessageCircleQuestionMark as j, MessageSquarePlus as k, Trash2 as l, CircleQuestionMark as lt, SlidersHorizontal as m, ChevronLeft as mt, X as n, Earth as nt, Truck as o, Clock3 as ot, Sparkles as p, ChevronRight as pt, ImageOff as q, Users as r, DollarSign as rt, TriangleAlert as s, Circle as st, Zap as t, Eye as tt, Tag as u, CircleCheck as ut, Search as v, Box as vt, Pencil as w, RefreshCw as x, Ban as xt, SearchX as y, Bell as yt, LifeBuoy as z };
+export { Grid2x2 as $, MessageSquare as A, LoaderCircle as B, Plus as C, BellRing as Ct, Package as D, Palette as E, ArrowRight as Et, Maximize2 as F, LayoutDashboard as G, LifeBuoy as H, MapPin as I, Info as J, Layers as K, Mail as L, MessageCircle as M, MessageCircleQuestionMark as N, PackageSearch as O, Menu as P, Heart as Q, LogOut as R, RefreshCw as S, Bell as St, Pencil as T, Award as Tt, Leaf as U, List as V, LayoutGrid as W, ImageOff as X, IndianRupee as Y, History as Z, ShieldCheck as _, ChevronLeft as _t, UserRound as a, Earth as at, SearchX as b, Building2 as bt, TriangleAlert as c, Copy as ct, Tag as d, CircleSlash as dt, Gift as et, Star as f, CircleQuestionMark as ft, ShoppingBag as g, ChevronRight as gt, SlidersHorizontal as h, ChevronUp as ht, Users as i, Eye as it, MessageSquarePlus as j, Minus as k, TrendingUp as l, Clock3 as lt, Sparkles as m, CircleAlert as mt, Zap as n, FileCheck as nt, Upload as o, DollarSign as ot, SquarePen as p, CircleCheck as pt, KeyRound as q, X as r, Factory as rt, Truck as s, CornerDownLeft as st, ZoomIn as t, Flame as tt, Trash2 as u, Circle as ut, Send as v, ChevronDown as vt, Phone as w, Ban as wt, RotateCcw as x, Box as xt, Search as y, Check as yt, Lock as z };

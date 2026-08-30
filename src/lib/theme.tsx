@@ -1,45 +1,70 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
-export type PaletteThemeId = "saffron" | "sage" | "rose" | "amber";
+export type PaletteThemeId = "saffron" | "emerald" | "indigo" | "plum";
 
 export type PaletteThemeInfo = {
   id: PaletteThemeId;
   name: string;
   subtitle: string;
-  dotColor: string; // CSS color for UI preview
+  dotColor: string;
   bgPreview: string;
+  primary: string;
+  ring: string;
 };
 
 export const PALETTE_THEMES: PaletteThemeInfo[] = [
   {
     id: "saffron",
     name: "Saffron Sandal",
-    subtitle: "Pure White & Rich Heritage Terracotta",
+    subtitle: "Heritage Terracotta & Sandal Gold",
     dotColor: "#C25E00",
     bgPreview: "#FFFFFF",
+    primary: "oklch(0.52 0.19 44)",
+    ring: "oklch(0.52 0.19 44)",
   },
   {
-    id: "sage",
-    name: "Herbal Sage",
-    subtitle: "Pure White & Deep Botanical Emerald",
-    dotColor: "#1B7A46",
+    id: "emerald",
+    name: "Emerald Cardamom",
+    subtitle: "Vedic Botanical Cardamom Green",
+    dotColor: "#059669",
     bgPreview: "#FFFFFF",
+    primary: "oklch(0.44 0.17 142)",
+    ring: "oklch(0.44 0.17 142)",
   },
   {
-    id: "rose",
-    name: "Rosewater Silk",
-    subtitle: "Pure White & Royal Kumkum Ruby",
-    dotColor: "#B51A38",
+    id: "indigo",
+    name: "Nilgiri Indigo",
+    subtitle: "Royal Heritage Sapphire Blue",
+    dotColor: "#2563EB",
     bgPreview: "#FFFFFF",
+    primary: "oklch(0.44 0.18 255)",
+    ring: "oklch(0.44 0.18 255)",
   },
   {
-    id: "amber",
-    name: "Temple Amber",
-    subtitle: "Pure White & Bold Golden Ochre",
-    dotColor: "#B36600",
+    id: "plum",
+    name: "Mysore Plum",
+    subtitle: "Royal Velvet Amethyst Purple",
+    dotColor: "#9333EA",
     bgPreview: "#FFFFFF",
+    primary: "oklch(0.44 0.19 315)",
+    ring: "oklch(0.44 0.19 315)",
   },
 ];
+
+function applyThemeToDOM(themeId: PaletteThemeId) {
+  if (typeof document === "undefined") return;
+  const item = PALETTE_THEMES.find((t) => t.id === themeId) ?? PALETTE_THEMES[0]!;
+  document.documentElement.setAttribute("data-theme", themeId);
+  document.documentElement.style.setProperty("--primary", item.primary);
+  document.documentElement.style.setProperty("--color-primary", item.primary);
+  document.documentElement.style.setProperty("--ring", item.ring);
+  document.documentElement.style.setProperty("--color-ring", item.ring);
+  if (document.body) {
+    document.body.setAttribute("data-theme", themeId);
+    document.body.style.setProperty("--primary", item.primary);
+    document.body.style.setProperty("--color-primary", item.primary);
+  }
+}
 
 type ThemeContextValue = {
   theme: PaletteThemeId;
@@ -49,6 +74,7 @@ type ThemeContextValue = {
 };
 
 const THEME_STORAGE_KEY = "yg-palette-theme-v1";
+const VALID_THEMES = new Set<string>(PALETTE_THEMES.map((t) => t.id));
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
@@ -56,17 +82,17 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    let initial: PaletteThemeId = "saffron";
     try {
       const stored = window.localStorage.getItem(THEME_STORAGE_KEY) as PaletteThemeId | null;
-      if (stored && (stored === "saffron" || stored === "sage" || stored === "rose" || stored === "amber")) {
-        setThemeState(stored);
-        document.documentElement.setAttribute("data-theme", stored);
-      } else {
-        document.documentElement.setAttribute("data-theme", "saffron");
+      if (stored && VALID_THEMES.has(stored)) {
+        initial = stored;
       }
     } catch {
-      document.documentElement.setAttribute("data-theme", "saffron");
+      /* ignore */
     }
+    setThemeState(initial);
+    applyThemeToDOM(initial);
     document.documentElement.classList.remove("dark");
     document.documentElement.style.colorScheme = "light";
     setReady(true);
@@ -74,7 +100,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   const setTheme = useCallback((next: PaletteThemeId) => {
     setThemeState(next);
-    document.documentElement.setAttribute("data-theme", next);
+    applyThemeToDOM(next);
     try {
       window.localStorage.setItem(THEME_STORAGE_KEY, next);
     } catch {
@@ -83,7 +109,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const cycleTheme = useCallback(() => {
-    const list: PaletteThemeId[] = ["saffron", "sage", "rose", "amber"];
+    const list: PaletteThemeId[] = PALETTE_THEMES.map((t) => t.id);
     const idx = list.indexOf(theme);
     const next = list[(idx + 1) % list.length] ?? "saffron";
     setTheme(next);
