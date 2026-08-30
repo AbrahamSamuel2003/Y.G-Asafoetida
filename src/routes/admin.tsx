@@ -978,12 +978,14 @@ function AdminDashboardPage() {
                             <tr key={o.id} className="hover:bg-muted/30 transition-colors">
                               <td className="py-3 font-mono font-semibold text-primary">{o.id}</td>
                               <td className="py-3 text-xs text-muted-foreground">
-                                {new Date(o.createdAt).toLocaleDateString("en-IN", {
-                                  day: "numeric",
-                                  month: "short",
-                                  hour: "2-digit",
-                                  minute: "2-digit",
-                                })}
+                                {o.createdAt
+                                  ? new Date(o.createdAt).toLocaleDateString("en-IN", {
+                                      day: "numeric",
+                                      month: "short",
+                                      hour: "2-digit",
+                                      minute: "2-digit",
+                                    })
+                                  : "Recent"}
                               </td>
                               <td className="py-3">{o.email}</td>
                               <td className="py-3">{o.itemCount} items</td>
@@ -1099,12 +1101,14 @@ function AdminDashboardPage() {
                           <td className="p-3 align-top">
                             <span className="font-mono font-bold text-primary block">{o.id}</span>
                             <span className="text-xs text-muted-foreground block">
-                              {new Date(o.createdAt).toLocaleDateString("en-IN", {
-                                day: "numeric",
-                                month: "short",
-                                hour: "2-digit",
-                                minute: "2-digit",
-                              })}
+                              {o.createdAt
+                                ? new Date(o.createdAt).toLocaleDateString("en-IN", {
+                                    day: "numeric",
+                                    month: "short",
+                                    hour: "2-digit",
+                                    minute: "2-digit",
+                                  })
+                                : "Recent"}
                             </span>
                             <Badge variant="outline" className="mt-1 text-[10px] uppercase">
                               {o.delivery} delivery

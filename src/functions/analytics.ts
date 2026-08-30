@@ -18,6 +18,7 @@ export type AdminDashboardStats = {
     total: number;
     status: string;
     itemCount: number;
+
   }>;
   recentSalesTrend: Array<{
     date: string;
@@ -33,20 +34,68 @@ export const adminGetDashboardStatsServerFn = createServerFn({ method: "GET" })
     startOfToday.setHours(0, 0, 0, 0);
     const startOfTodayMs = startOfToday.getTime();
 
-    // Total revenue & orders
-    const ordersSummary = db.prepare(`
-      SELECT
-        COUNT(*) as totalOrders,
-        SUM(CASE WHEN status != 'cancelled' THEN total ELSE 0 END) as totalRevenue,
-        SUM(CASE WHEN created_at >= ? THEN 1 ELSE 0 END) as ordersToday
-      FROM orders
-    `).get(startOfTodayMs) as { totalOrders: number; totalRevenue: number | null; ordersToday: number | null } | undefined;
+    // Fetch datasets cleanly
+    let allOrders: Array<any> = [];
+    let allOrderItems: Array<any> = [];
+    let allReviews: Array<any> = [];
+    let allQuestions: Array<any> = [];
+    let allTickets: Array<any> = [];
+    let allProducts: Array<any> = [];
+    let allAlerts: Array<any> = [];
+
+    try {
+      allOrders = (db.prepare("SELECT * FROM orders").all() ?? []) as Array<any>;
+    } catch {
+      allOrders = [];
+    }
+
+    try {
+      allOrderItems = (db.prepare("SELECT * FROM order_items").all() ?? []) as Array<any>;
+    } catch {
+      allOrderItems = [];
+    }
+
+    try {
+      allReviews = (db.prepare("SELECT * FROM reviews").all() ?? []) as Array<any>;
+    } catch {
+      allReviews = [];
+    }
+
+    try {
+      allQuestions = (db.prepare("SELECT * FROM questions").all() ?? []) as Array<any>;
+    } catch {
+      allQuestions = [];
+    }
+
+    try {
+      allTickets = (db.prepare("SELECT * FROM tickets").all() ?? []) as Array<any>;
+    } catch {
+      allTickets = [];
+    }
+
+    try {
+      allProducts = (db.prepare("SELECT * FROM products").all() ?? []) as Array<any>;
+    } catch {
+      allProducts = [];
+    }
+
+    try {
+      allAlerts = (db.prepare("SELECT * FROM stock_alerts").all() ?? []) as Array<any>;
+    } catch {
+      allAlerts = [];
+    }
+
+    // Aggregations
+    const totalOrders = allOrders.length;
+    const totalRevenue = allOrders
+      .filter((o) => o && o.status !== "cancelled")
+      .reduce((acc, o) => acc + (Number(o.total) || 0), 0);
+
+    const ordersPlacedToday = allOrders.filter(
+      (o) => o && Number(o.created_at || 0) >= startOfTodayMs,
+    ).length;
 
     // Status counts
-    const statusRows = db.prepare(`
-      SELECT status, COUNT(*) as c FROM orders GROUP BY status
-    `).all() as Array<{ status: string; c: number }>;
-
     const ordersByStatus: Record<string, number> = {
       placed: 0,
       packed: 0,
@@ -57,36 +106,42 @@ export const adminGetDashboardStatsServerFn = createServerFn({ method: "GET" })
       refund_requested: 0,
       refunded: 0,
     };
-    for (const r of statusRows) {
-      ordersByStatus[r.status] = r.c;
+    for (const o of allOrders) {
+      if (o && o.status) {
+        ordersByStatus[o.status] = (ordersByStatus[o.status] ?? 0) + 1;
+      }
     }
 
     // Pending counts
-    const pendingReviews = (db.prepare("SELECT COUNT(*) as c FROM reviews WHERE status = 'pending'").get() as { c: number })?.c ?? 0;
-    const openQuestions = (db.prepare("SELECT COUNT(*) as c FROM questions WHERE status = 'pending' OR answer IS NULL").get() as { c: number })?.c ?? 0;
-    const openTickets = (db.prepare("SELECT COUNT(*) as c FROM tickets WHERE status = 'open' OR status = 'in_progress'").get() as { c: number })?.c ?? 0;
-    const lowStock = (db.prepare("SELECT COUNT(*) as c FROM products WHERE in_stock = 0 OR (stock_left IS NOT NULL AND stock_left <= 5)").get() as { c: number })?.c ?? 0;
-    const stockAlerts = (db.prepare("SELECT COUNT(*) as c FROM stock_alerts WHERE notified = 0").get() as { c: number })?.c ?? 0;
+    const pendingReviewsCount = allReviews.filter((r) => r && r.status === "pending").length;
+    const openQuestionsCount = allQuestions.filter(
+      (q) => q && (q.status === "pending" || !q.answer),
+    ).length;
+    const openTicketsCount = allTickets.filter(
+      (t) => t && (t.status === "open" || t.status === "in_progress"),
+    ).length;
+    const lowStockProductsCount = allProducts.filter(
+      (p) => p && (!p.in_stock || (p.stock_left !== null && p.stock_left !== undefined && Number(p.stock_left) <= 5)),
+    ).length;
+    const stockAlertsCount = allAlerts.filter((a) => a && Number(a.notified) === 0).length;
 
-    // Recent orders
-    const recentOrdersRows = db.prepare(`
-      SELECT o.id, o.created_at, o.email, o.total, o.status,
-             (SELECT COUNT(*) FROM order_items WHERE order_id = o.id) as itemCount
-      FROM orders o
-      ORDER BY o.created_at DESC
-      LIMIT 6
-    `).all() as Array<{ id: string; created_at: number; email: string; total: number; status: string; itemCount: number }>;
+    // Recent orders (latest 6)
+    const recentOrders = [...allOrders]
+      .sort((a, b) => (Number(b.created_at) || 0) - (Number(a.created_at) || 0))
+      .slice(0, 6)
+      .map((o) => {
+        const count = allOrderItems.filter((i) => i && i.order_id === o.id).length;
+        return {
+          id: String(o.id || ""),
+          createdAt: Number(o.created_at) || Date.now(),
+          email: String(o.email || ""),
+          total: Number(o.total) || 0,
+          status: String(o.status || "placed"),
+          itemCount: count || 1,
+        };
+      });
 
-    const recentOrders = recentOrdersRows.map((r) => ({
-      id: r.id,
-      createdAt: r.created_at,
-      email: r.email,
-      total: r.total,
-      status: r.status,
-      itemCount: r.itemCount,
-    }));
-
-    // Last 7 days trend
+    // 7-day sales trend
     const recentSalesTrend: Array<{ date: string; revenue: number; orders: number }> = [];
     for (let i = 6; i >= 0; i--) {
       const d = new Date();
@@ -94,31 +149,30 @@ export const adminGetDashboardStatsServerFn = createServerFn({ method: "GET" })
       const dayStart = new Date(d.getFullYear(), d.getMonth(), d.getDate(), 0, 0, 0, 0).getTime();
       const dayEnd = new Date(d.getFullYear(), d.getMonth(), d.getDate(), 23, 59, 59, 999).getTime();
 
-      const dayStats = db.prepare(`
-        SELECT
-          COUNT(*) as cnt,
-          SUM(CASE WHEN status != 'cancelled' THEN total ELSE 0 END) as rev
-        FROM orders
-        WHERE created_at >= ? AND created_at <= ?
-      `).get(dayStart, dayEnd) as { cnt: number; rev: number | null } | undefined;
+      const dayOrders = allOrders.filter(
+        (o) => o && Number(o.created_at || 0) >= dayStart && Number(o.created_at || 0) <= dayEnd,
+      );
+      const dayRev = dayOrders
+        .filter((o) => o.status !== "cancelled")
+        .reduce((sum, o) => sum + (Number(o.total) || 0), 0);
 
       const dateLabel = d.toLocaleDateString("en-IN", { month: "short", day: "numeric" });
       recentSalesTrend.push({
         date: dateLabel,
-        revenue: dayStats?.rev ?? 0,
-        orders: dayStats?.cnt ?? 0,
+        revenue: dayRev,
+        orders: dayOrders.length,
       });
     }
 
     return {
-      totalRevenue: ordersSummary?.totalRevenue ?? 0,
-      totalOrders: ordersSummary?.totalOrders ?? 0,
-      ordersPlacedToday: ordersSummary?.ordersToday ?? 0,
-      pendingReviewsCount: pendingReviews,
-      openQuestionsCount: openQuestions,
-      openTicketsCount: openTickets,
-      lowStockProductsCount: lowStock,
-      stockAlertsCount: stockAlerts,
+      totalRevenue,
+      totalOrders,
+      ordersPlacedToday,
+      pendingReviewsCount,
+      openQuestionsCount,
+      openTicketsCount,
+      lowStockProductsCount,
+      stockAlertsCount,
       ordersByStatus,
       recentOrders,
       recentSalesTrend,
