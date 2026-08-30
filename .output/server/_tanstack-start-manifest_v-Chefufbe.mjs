@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-DEtpgKRe.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-Chefufbe.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "G:/Y.G-E-COMM/src/routes/__root.tsx",
@@ -18,8 +18,9 @@ var tsrStartManifest = () => ({ routes: {
 			"/policies/$slug",
 			"/product/$slug"
 		],
+		css: ["/assets/styles-Dak8kpb7.css"],
 		preloads: [
-			"/assets/index-CwpOM3g7.js",
+			"/assets/index-DvataS6O.js",
 			"/assets/createLucideIcon-Qk0VrUvi.js",
 			"/assets/createServerFn-Cgt2qLK-.js",
 			"/assets/link-CahZZY15.js",
@@ -35,29 +36,29 @@ var tsrStartManifest = () => ({ routes: {
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-CwpOM3g7.js"
+			src: "/assets/index-DvataS6O.js"
 		} }]
 	},
 	"/": {
 		filePath: "G:/Y.G-E-COMM/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-D6ABswpk.js",
+			"/assets/routes-DFjXQz_D.js",
 			"/assets/arrow-right-DNJwBKfT.js",
 			"/assets/award-B1b0mtob.js",
 			"/assets/truck-BfP6IyW0.js",
 			"/assets/chevron-right-Bj_KW_iD.js",
 			"/assets/star-BEAUIMql.js",
 			"/assets/sparkles-YJipJYOr.js",
-			"/assets/ProductCard--D9Cil0l.js"
+			"/assets/ProductCard-FCdGO7VW.js"
 		]
 	},
 	"/account": {
 		filePath: "G:/Y.G-E-COMM/src/routes/account.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/account-BEP0JFd2.js",
-			"/assets/OrderResolutionDialog-DpgMXPeX.js",
+			"/assets/account-DRbzH7gK.js",
+			"/assets/OrderResolutionDialog-EHoAJSsk.js",
 			"/assets/package-BP5brPu7.js",
 			"/assets/rotate-ccw-D_TOQcIJ.js",
 			"/assets/input-bBJa4LxQ.js",
@@ -69,14 +70,14 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/Y.G-E-COMM/src/routes/admin.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/admin-DLV1rJw_.js",
+			"/assets/admin-D1b3yV5b.js",
 			"/assets/star-BEAUIMql.js",
 			"/assets/triangle-alert-CTQiK_Cu.js",
 			"/assets/lock-BVsDF5gZ.js",
 			"/assets/package-BP5brPu7.js",
 			"/assets/shield-check-BRyfGHB7.js",
 			"/assets/sparkles-YJipJYOr.js",
-			"/assets/dialog-CDtq7xSb.js",
+			"/assets/dialog-CtgZtTKi.js",
 			"/assets/input-bBJa4LxQ.js",
 			"/assets/label-BSTgYtqt.js",
 			"/assets/dist-Bn4LlgGU.js",
@@ -84,7 +85,7 @@ var tsrStartManifest = () => ({ routes: {
 			"/assets/dist-CcMZzHWY.js",
 			"/assets/textarea-CXAqO8kY.js",
 			"/assets/tickets-5sBLbMRC.js",
-			"/assets/select-ChQbfcXd.js",
+			"/assets/select-Dqpxs7AV.js",
 			"/assets/questions-BMKTHLWt.js"
 		]
 	},
@@ -92,7 +93,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/Y.G-E-COMM/src/routes/checkout.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/checkout-aCy4ByKB.js",
+			"/assets/checkout-DjJGxhQ7.js",
 			"/assets/truck-BfP6IyW0.js",
 			"/assets/radio-group-D93ZxI0q.js",
 			"/assets/gift-DNq5BBQe.js",
@@ -110,23 +111,23 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/Y.G-E-COMM/src/routes/contact.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/contact-D-VRy_r_.js",
+			"/assets/contact-BmOD10M5.js",
 			"/assets/circle-check-CRQN4vvI.js",
 			"/assets/loader-circle-BAhHYJnl.js",
-			"/assets/support-B4uhgPpD.js",
+			"/assets/support-OvaxNcEj.js",
 			"/assets/message-square-l2Tyzf61.js",
 			"/assets/faq-DZ_WL7C1.js",
 			"/assets/input-bBJa4LxQ.js",
 			"/assets/label-BSTgYtqt.js",
 			"/assets/textarea-CXAqO8kY.js",
-			"/assets/accordion-BFB27nzU.js"
+			"/assets/accordion-BkAptRx_.js"
 		]
 	},
 	"/custom-branding": {
 		filePath: "G:/Y.G-E-COMM/src/routes/custom-branding.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/custom-branding-BqS7AbDg.js",
+			"/assets/custom-branding-BMTtViS1.js",
 			"/assets/arrow-right-DNJwBKfT.js",
 			"/assets/circle-check-CRQN4vvI.js",
 			"/assets/message-square-l2Tyzf61.js",
@@ -141,22 +142,22 @@ var tsrStartManifest = () => ({ routes: {
 	"/order-confirmed": {
 		filePath: "G:/Y.G-E-COMM/src/routes/order-confirmed.tsx",
 		children: void 0,
-		preloads: ["/assets/order-confirmed-DgmqgSE7.js", "/assets/circle-check-CRQN4vvI.js"]
+		preloads: ["/assets/order-confirmed-CP9yxAdS.js", "/assets/circle-check-CRQN4vvI.js"]
 	},
 	"/shop": {
 		filePath: "G:/Y.G-E-COMM/src/routes/shop.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/shop-GWedDXK_.js",
-			"/assets/ProductCard--D9Cil0l.js",
-			"/assets/select-ChQbfcXd.js"
+			"/assets/shop-BYTRExXS.js",
+			"/assets/ProductCard-FCdGO7VW.js",
+			"/assets/select-Dqpxs7AV.js"
 		]
 	},
 	"/story": {
 		filePath: "G:/Y.G-E-COMM/src/routes/story.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/story-DZGB98Ci.js",
+			"/assets/story-DPwDqwXf.js",
 			"/assets/arrow-right-DNJwBKfT.js",
 			"/assets/award-B1b0mtob.js",
 			"/assets/history-Bp4cwO0E.js",
@@ -168,7 +169,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "G:/Y.G-E-COMM/src/routes/track.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/track-T8unHmEU.js",
+			"/assets/track-CzaPV1Jj.js",
 			"/assets/input-bBJa4LxQ.js",
 			"/assets/label-BSTgYtqt.js"
 		]
@@ -176,14 +177,14 @@ var tsrStartManifest = () => ({ routes: {
 	"/wishlist": {
 		filePath: "G:/Y.G-E-COMM/src/routes/wishlist.tsx",
 		children: void 0,
-		preloads: ["/assets/wishlist-CQmaiW8F.js", "/assets/RecentlyViewed-Cg7_8Qi9.js"]
+		preloads: ["/assets/wishlist-i76OX8HS.js", "/assets/RecentlyViewed-A52kefg5.js"]
 	},
 	"/order/$id": {
 		filePath: "G:/Y.G-E-COMM/src/routes/order.$id.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/order._id-C0lbEG4w.js",
-			"/assets/OrderResolutionDialog-DpgMXPeX.js",
+			"/assets/order._id-B1eTJj7n.js",
+			"/assets/OrderResolutionDialog-EHoAJSsk.js",
 			"/assets/gift-DNq5BBQe.js",
 			"/assets/loader-circle-BAhHYJnl.js",
 			"/assets/package-BP5brPu7.js",
@@ -194,15 +195,15 @@ var tsrStartManifest = () => ({ routes: {
 	"/policies/$slug": {
 		filePath: "G:/Y.G-E-COMM/src/routes/policies.$slug.tsx",
 		children: void 0,
-		preloads: ["/assets/policies._slug-BYYuI6IW.js", "/assets/shield-check-BRyfGHB7.js"]
+		preloads: ["/assets/policies._slug-Dwyyak-9.js", "/assets/shield-check-BRyfGHB7.js"]
 	},
 	"/product/$slug": {
 		filePath: "G:/Y.G-E-COMM/src/routes/product.$slug.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/product._slug-C89gTq_4.js",
+			"/assets/product._slug-DWNGr2sT.js",
 			"/assets/arrow-right-DNJwBKfT.js",
-			"/assets/RecentlyViewed-Cg7_8Qi9.js",
+			"/assets/RecentlyViewed-A52kefg5.js",
 			"/assets/truck-BfP6IyW0.js",
 			"/assets/chevron-right-Bj_KW_iD.js",
 			"/assets/circle-check-CRQN4vvI.js",
@@ -212,13 +213,13 @@ var tsrStartManifest = () => ({ routes: {
 			"/assets/rotate-ccw-D_TOQcIJ.js",
 			"/assets/shield-check-BRyfGHB7.js",
 			"/assets/sparkles-YJipJYOr.js",
-			"/assets/dialog-CDtq7xSb.js",
-			"/assets/ProductCard--D9Cil0l.js",
+			"/assets/dialog-CtgZtTKi.js",
+			"/assets/ProductCard-FCdGO7VW.js",
 			"/assets/input-bBJa4LxQ.js",
 			"/assets/label-BSTgYtqt.js",
 			"/assets/textarea-CXAqO8kY.js",
 			"/assets/questions-BMKTHLWt.js",
-			"/assets/accordion-BFB27nzU.js"
+			"/assets/accordion-BkAptRx_.js"
 		]
 	}
 } });

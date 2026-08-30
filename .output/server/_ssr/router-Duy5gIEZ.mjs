@@ -20,7 +20,7 @@ import { n as Route$14, t as QuantityStepper } from "./product._slug-C3t_QnF8.mj
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { n as Root, t as Indicator } from "../_libs/radix-ui__react-progress.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-lOKD6m3w.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Duy5gIEZ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-DIXYtwCT.css";
@@ -1130,6 +1130,11 @@ var Route$9 = createRootRouteWithContext()({
 				href: "https://ygasafoetida.in"
 			},
 			{
+				rel: "preload",
+				href: styles_default,
+				as: "style"
+			},
+			{
 				rel: "stylesheet",
 				href: styles_default
 			},
@@ -1203,7 +1208,16 @@ function RootShell({ children }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
 		lang: "en",
 		"data-theme": "saffron",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("head", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("script", { dangerouslySetInnerHTML: { __html: `try{var t=localStorage.getItem('yg-palette-theme-v1')||'saffron';document.documentElement.setAttribute('data-theme',t);}catch(e){}` } }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("head", { children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("style", { dangerouslySetInnerHTML: { __html: `
+              html { background-color: #ffffff; color: #1c1917; }
+              body { margin: 0; background-color: #ffffff; color: #1c1917; font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+              header { background-color: #ffffff; }
+              img { content-visibility: auto; }
+            ` } }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("script", { dangerouslySetInnerHTML: { __html: `try{var t=localStorage.getItem('yg-palette-theme-v1')||'saffron';document.documentElement.setAttribute('data-theme',t);var c={saffron:'oklch(0.52 0.19 44)',emerald:'oklch(0.44 0.17 142)',indigo:'oklch(0.44 0.18 255)',plum:'oklch(0.44 0.19 315)'};if(c[t]){document.documentElement.style.setProperty('--primary',c[t]);document.documentElement.style.setProperty('--color-primary',c[t]);}}catch(e){}` } }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {})
+		] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
 	});
 }
 function RootComponent() {

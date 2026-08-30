@@ -52,257 +52,257 @@ var public_assets_data_default = {
 		"size": 4523,
 		"path": "../public/sitemap.xml"
 	},
-	"/assets/accordion-BFB27nzU.js": {
+	"/assets/accordion-BkAptRx_.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1bfd-yIG5aw+N4RyzY/6ddCGEF+uubZ4\"",
-		"mtime": "2026-08-30T05:45:52.932Z",
+		"etag": "\"1bfd-gHkZyuz17VtckKDDZiU/ErfBsPw\"",
+		"mtime": "2026-08-30T06:03:03.963Z",
 		"size": 7165,
-		"path": "../public/assets/accordion-BFB27nzU.js"
+		"path": "../public/assets/accordion-BkAptRx_.js"
 	},
-	"/assets/account-BEP0JFd2.js": {
+	"/assets/account-DRbzH7gK.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1a1e-Rke3TeZtG0voRMS/iZI8sSNPCrU\"",
-		"mtime": "2026-08-30T05:45:52.932Z",
+		"etag": "\"1a1e-ZlKOT1NOpdB+n54tc05O6oblk+8\"",
+		"mtime": "2026-08-30T06:03:03.963Z",
 		"size": 6686,
-		"path": "../public/assets/account-BEP0JFd2.js"
+		"path": "../public/assets/account-DRbzH7gK.js"
 	},
 	"/assets/arrow-right-DNJwBKfT.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"a5-cJv0Zc38qmmtLmGVnGQsCsl3w44\"",
-		"mtime": "2026-08-30T05:45:52.935Z",
+		"mtime": "2026-08-30T06:03:03.965Z",
 		"size": 165,
 		"path": "../public/assets/arrow-right-DNJwBKfT.js"
 	},
 	"/assets/award-B1b0mtob.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"112-zbGkAeZDZVfLxYKbIf92AKv7H8Q\"",
-		"mtime": "2026-08-30T05:45:52.935Z",
+		"mtime": "2026-08-30T06:03:03.965Z",
 		"size": 274,
 		"path": "../public/assets/award-B1b0mtob.js"
 	},
-	"/assets/admin-DLV1rJw_.js": {
+	"/assets/admin-D1b3yV5b.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"126e3-JR1a/07ReMjfXlpAmaDGHauTlH8\"",
-		"mtime": "2026-08-30T05:45:52.934Z",
+		"etag": "\"126e3-VV9fvFkb8GBtT78qdutTMiGtk7Y\"",
+		"mtime": "2026-08-30T06:03:03.964Z",
 		"size": 75491,
-		"path": "../public/assets/admin-DLV1rJw_.js"
+		"path": "../public/assets/admin-D1b3yV5b.js"
+	},
+	"/assets/checkout-DjJGxhQ7.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"7282-13uwNZkwMhy66YNg+g+E196/V4U\"",
+		"mtime": "2026-08-30T06:03:03.966Z",
+		"size": 29314,
+		"path": "../public/assets/checkout-DjJGxhQ7.js"
 	},
 	"/assets/button-BHo6p2Ug.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"7ce7-VQjlHMlK3xBagQGMo6mfsTCSKVE\"",
-		"mtime": "2026-08-30T05:45:52.936Z",
+		"mtime": "2026-08-30T06:03:03.966Z",
 		"size": 31975,
 		"path": "../public/assets/button-BHo6p2Ug.js"
-	},
-	"/assets/checkout-aCy4ByKB.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"7282-EMmQplpv9w8lB4KIdzb7f35xRxM\"",
-		"mtime": "2026-08-30T05:45:52.936Z",
-		"size": 29314,
-		"path": "../public/assets/checkout-aCy4ByKB.js"
 	},
 	"/assets/chevron-right-Bj_KW_iD.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"82-16xHjx7RMEM17WVhsBa/0pfi17k\"",
-		"mtime": "2026-08-30T05:45:52.937Z",
+		"mtime": "2026-08-30T06:03:03.967Z",
 		"size": 130,
 		"path": "../public/assets/chevron-right-Bj_KW_iD.js"
+	},
+	"/assets/contact-BmOD10M5.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"21f8-rBs7ihRUYgh/QBhme1OH/+vgpo4\"",
+		"mtime": "2026-08-30T06:03:03.969Z",
+		"size": 8696,
+		"path": "../public/assets/contact-BmOD10M5.js"
 	},
 	"/assets/circle-check-CRQN4vvI.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"b2-wLjMGqav0OPYKaA4TxBuBdBcegA\"",
-		"mtime": "2026-08-30T05:45:52.937Z",
+		"mtime": "2026-08-30T06:03:03.968Z",
 		"size": 178,
 		"path": "../public/assets/circle-check-CRQN4vvI.js"
-	},
-	"/assets/createLucideIcon-Qk0VrUvi.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"32f1-YcgSnbeHPGUm7KIGejOIRD4fj3Y\"",
-		"mtime": "2026-08-30T05:45:52.937Z",
-		"size": 13041,
-		"path": "../public/assets/createLucideIcon-Qk0VrUvi.js"
-	},
-	"/assets/contact-D-VRy_r_.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"21f8-uPqrnyjUtP3ImcOl0LoudTLa6eM\"",
-		"mtime": "2026-08-30T05:45:52.937Z",
-		"size": 8696,
-		"path": "../public/assets/contact-D-VRy_r_.js"
 	},
 	"/assets/createServerFn-Cgt2qLK-.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"94ed-J0fwDj5NsaWWKd5jiKOGlecNmO0\"",
-		"mtime": "2026-08-30T05:45:52.940Z",
+		"mtime": "2026-08-30T06:03:03.971Z",
 		"size": 38125,
 		"path": "../public/assets/createServerFn-Cgt2qLK-.js"
 	},
-	"/assets/custom-branding-BqS7AbDg.js": {
+	"/assets/createLucideIcon-Qk0VrUvi.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"5d36-6Wt2AUbg152/Orf8NTtHCGBRhu8\"",
-		"mtime": "2026-08-30T05:45:52.940Z",
+		"etag": "\"32f1-YcgSnbeHPGUm7KIGejOIRD4fj3Y\"",
+		"mtime": "2026-08-30T06:03:03.970Z",
+		"size": 13041,
+		"path": "../public/assets/createLucideIcon-Qk0VrUvi.js"
+	},
+	"/assets/custom-branding-BMTtViS1.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"5d36-VsDrIzPRG1liKIHowFz6S1cDTrc\"",
+		"mtime": "2026-08-30T06:03:03.972Z",
 		"size": 23862,
-		"path": "../public/assets/custom-branding-BqS7AbDg.js"
+		"path": "../public/assets/custom-branding-BMTtViS1.js"
 	},
-	"/assets/dialog-CDtq7xSb.js": {
+	"/assets/dialog-CtgZtTKi.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"841-Ns3BW6skCKaAdpckUS7VQubJ5Zw\"",
-		"mtime": "2026-08-30T05:45:52.940Z",
+		"etag": "\"841-UjmCrqGaoa/E2FgbFi8FIwngNzc\"",
+		"mtime": "2026-08-30T06:03:03.973Z",
 		"size": 2113,
-		"path": "../public/assets/dialog-CDtq7xSb.js"
-	},
-	"/assets/dist-BuOGcenG.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"29b-WIbeVYzyHr1KIvkGl151ZQyTpc0\"",
-		"mtime": "2026-08-30T05:45:52.941Z",
-		"size": 667,
-		"path": "../public/assets/dist-BuOGcenG.js"
+		"path": "../public/assets/dialog-CtgZtTKi.js"
 	},
 	"/assets/dist-Bn4LlgGU.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1356-N5ZZ+cm594UN7aP8I+TK/ruM1XU\"",
-		"mtime": "2026-08-30T05:45:52.941Z",
+		"mtime": "2026-08-30T06:03:03.973Z",
 		"size": 4950,
 		"path": "../public/assets/dist-Bn4LlgGU.js"
+	},
+	"/assets/dist-BuOGcenG.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"29b-WIbeVYzyHr1KIvkGl151ZQyTpc0\"",
+		"mtime": "2026-08-30T06:03:03.975Z",
+		"size": 667,
+		"path": "../public/assets/dist-BuOGcenG.js"
 	},
 	"/assets/dist-CcMZzHWY.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"284-hmwICHsLOsv3I2by6K6ovyB4rfc\"",
-		"mtime": "2026-08-30T05:45:52.942Z",
+		"mtime": "2026-08-30T06:03:03.975Z",
 		"size": 644,
 		"path": "../public/assets/dist-CcMZzHWY.js"
 	},
 	"/assets/dist-CSg9brrI.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1c28-CSVudwfMkgAvMxDDGINmA/47fG8\"",
-		"mtime": "2026-08-30T05:45:52.942Z",
+		"mtime": "2026-08-30T06:03:03.975Z",
 		"size": 7208,
 		"path": "../public/assets/dist-CSg9brrI.js"
 	},
 	"/assets/dist-jwIiqr1T.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1c9f-u4GPs7/IvwJmyFVWIslVn3rpH1s\"",
-		"mtime": "2026-08-30T05:45:52.943Z",
+		"mtime": "2026-08-30T06:03:03.977Z",
 		"size": 7327,
 		"path": "../public/assets/dist-jwIiqr1T.js"
 	},
 	"/assets/dist-SosQ1KXr.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"129-tyHeHPAdBrIb8iZJ2c3GBFvglCo\"",
-		"mtime": "2026-08-30T05:45:52.943Z",
+		"mtime": "2026-08-30T06:03:03.976Z",
 		"size": 297,
 		"path": "../public/assets/dist-SosQ1KXr.js"
 	},
 	"/assets/faq-DZ_WL7C1.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1d97-YYfdas79m7uBSMNABJ4HbqZ20Tc\"",
-		"mtime": "2026-08-30T05:45:52.944Z",
+		"mtime": "2026-08-30T06:03:03.978Z",
 		"size": 7575,
 		"path": "../public/assets/faq-DZ_WL7C1.js"
-	},
-	"/assets/FaqBot-BlB84Rxt.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"134d-tYNk6ut4Rjo8kvRXuxgJWOZmf44\"",
-		"mtime": "2026-08-30T05:45:52.927Z",
-		"size": 4941,
-		"path": "../public/assets/FaqBot-BlB84Rxt.js"
 	},
 	"/assets/gift-DNq5BBQe.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"15d-nBLgaLkJbwvpiuFfZwT6a/yHHEw\"",
-		"mtime": "2026-08-30T05:45:52.944Z",
+		"mtime": "2026-08-30T06:03:03.979Z",
 		"size": 349,
 		"path": "../public/assets/gift-DNq5BBQe.js"
+	},
+	"/assets/FaqBot-DFMbMrPB.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"134d-0AEL5FJ6v5tbRPwG/47jVxntNhg\"",
+		"mtime": "2026-08-30T06:03:03.959Z",
+		"size": 4941,
+		"path": "../public/assets/FaqBot-DFMbMrPB.js"
 	},
 	"/assets/history-Bp4cwO0E.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"ed-T/o1Zbdn0iCWKz4iTZ3VVNm03cU\"",
-		"mtime": "2026-08-30T05:45:52.944Z",
+		"mtime": "2026-08-30T06:03:03.980Z",
 		"size": 237,
 		"path": "../public/assets/history-Bp4cwO0E.js"
 	},
 	"/assets/input-bBJa4LxQ.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"2b4-jQZSlIm0ap5DbEhCy8zHFB8aOlM\"",
-		"mtime": "2026-08-30T05:45:52.945Z",
+		"mtime": "2026-08-30T06:03:03.980Z",
 		"size": 692,
 		"path": "../public/assets/input-bBJa4LxQ.js"
 	},
 	"/assets/invariant-DEEwAagU.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"3c-eVh/3DMi1s3cxf4N/OJar+ew1jA\"",
-		"mtime": "2026-08-30T05:45:52.945Z",
+		"mtime": "2026-08-30T06:03:03.981Z",
 		"size": 60,
 		"path": "../public/assets/invariant-DEEwAagU.js"
 	},
 	"/assets/label-BSTgYtqt.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"2b3-v96lgUWsOrxk+VAkwy8m9A1u6JM\"",
-		"mtime": "2026-08-30T05:45:52.946Z",
+		"mtime": "2026-08-30T06:03:03.981Z",
 		"size": 691,
 		"path": "../public/assets/label-BSTgYtqt.js"
-	},
-	"/assets/index-CwpOM3g7.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"69e46-JyibZ+lyshIPU2Opu+UgPUah6+g\"",
-		"mtime": "2026-08-30T05:45:52.927Z",
-		"size": 433734,
-		"path": "../public/assets/index-CwpOM3g7.js"
 	},
 	"/assets/link-CahZZY15.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"5af6-hYr+cUDLN6UIpeDXwVxuIfLNEvM\"",
-		"mtime": "2026-08-30T05:45:52.946Z",
+		"mtime": "2026-08-30T06:03:03.981Z",
 		"size": 23286,
 		"path": "../public/assets/link-CahZZY15.js"
 	},
 	"/assets/loader-circle-BAhHYJnl.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"90-xGUV0vXI0NHTPsHCQo2BE2ZBzXQ\"",
-		"mtime": "2026-08-30T05:45:52.947Z",
+		"mtime": "2026-08-30T06:03:03.981Z",
 		"size": 144,
 		"path": "../public/assets/loader-circle-BAhHYJnl.js"
-	},
-	"/assets/lock-BVsDF5gZ.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"ce-dosszMG7CQWdHor0vzL62vwaXrE\"",
-		"mtime": "2026-08-30T05:45:52.948Z",
-		"size": 206,
-		"path": "../public/assets/lock-BVsDF5gZ.js"
 	},
 	"/assets/message-square-l2Tyzf61.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"e9-3LjcSy2fVAKdzX4XKRQECDM2s3k\"",
-		"mtime": "2026-08-30T05:45:52.948Z",
+		"mtime": "2026-08-30T06:03:03.984Z",
 		"size": 233,
 		"path": "../public/assets/message-square-l2Tyzf61.js"
+	},
+	"/assets/lock-BVsDF5gZ.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"ce-dosszMG7CQWdHor0vzL62vwaXrE\"",
+		"mtime": "2026-08-30T06:03:03.984Z",
+		"size": 206,
+		"path": "../public/assets/lock-BVsDF5gZ.js"
 	},
 	"/assets/not-found-i5RsCZif.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"76-Trmr7GZIBZuvfg4uM18tBiRtOXg\"",
-		"mtime": "2026-08-30T05:45:52.948Z",
+		"mtime": "2026-08-30T06:03:03.985Z",
 		"size": 118,
 		"path": "../public/assets/not-found-i5RsCZif.js"
 	},
-	"/assets/order-confirmed-DgmqgSE7.js": {
+	"/assets/order-confirmed-CP9yxAdS.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"7df-fHoLCOUV51o4oRQvCBMYeyaJnhU\"",
-		"mtime": "2026-08-30T05:45:52.949Z",
+		"etag": "\"7df-hXjr6ZjYpUgz+7zMNVRHKA7maHQ\"",
+		"mtime": "2026-08-30T06:03:03.986Z",
 		"size": 2015,
-		"path": "../public/assets/order-confirmed-DgmqgSE7.js"
+		"path": "../public/assets/order-confirmed-CP9yxAdS.js"
 	},
-	"/assets/order._id-C0lbEG4w.js": {
+	"/assets/order._id-B1eTJj7n.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1be1-8aQqxg4srOyrF9z75YbRKu/BHRU\"",
-		"mtime": "2026-08-30T05:45:52.950Z",
+		"etag": "\"1be1-mlVSHGmHd6t5fE2ZtRe+vik76VQ\"",
+		"mtime": "2026-08-30T06:03:03.987Z",
 		"size": 7137,
-		"path": "../public/assets/order._id-C0lbEG4w.js"
+		"path": "../public/assets/order._id-B1eTJj7n.js"
 	},
-	"/assets/OrderResolutionDialog-DpgMXPeX.js": {
+	"/assets/OrderResolutionDialog-EHoAJSsk.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"27e6-l/i7oS4SSbT0HFVoomEZsX4/onw\"",
-		"mtime": "2026-08-30T05:45:52.927Z",
+		"etag": "\"27e6-wejhFQBtDm5kGgtaLAsEmSV5P6I\"",
+		"mtime": "2026-08-30T06:03:03.959Z",
 		"size": 10214,
-		"path": "../public/assets/OrderResolutionDialog-DpgMXPeX.js"
+		"path": "../public/assets/OrderResolutionDialog-EHoAJSsk.js"
+	},
+	"/assets/index-DvataS6O.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"6a12b-9FStWzUjpL9P+Hv6uOu1qIgq/pg\"",
+		"mtime": "2026-08-30T06:03:03.957Z",
+		"size": 434475,
+		"path": "../public/assets/index-DvataS6O.js"
 	},
 	"/hero-video-gold.mp4": {
 		"type": "video/mp4",
@@ -311,19 +311,19 @@ var public_assets_data_default = {
 		"size": 2638817,
 		"path": "../public/hero-video-gold.mp4"
 	},
-	"/hero-video-master.mp4": {
-		"type": "video/mp4",
-		"etag": "\"2db110-nmXMhfO749DxxSrLZBp28FxPO4E\"",
-		"mtime": "2026-08-27T08:05:04.439Z",
-		"size": 2994448,
-		"path": "../public/hero-video-master.mp4"
-	},
 	"/hero-video-slide2.mp4": {
 		"type": "video/mp4",
 		"etag": "\"2e5c3f-hA63w8pz3VDSRfOniLKuQodoApo\"",
 		"mtime": "2026-08-26T14:41:22.254Z",
 		"size": 3038271,
 		"path": "../public/hero-video-slide2.mp4"
+	},
+	"/hero-video-master.mp4": {
+		"type": "video/mp4",
+		"etag": "\"2db110-nmXMhfO749DxxSrLZBp28FxPO4E\"",
+		"mtime": "2026-08-27T08:05:04.439Z",
+		"size": 2994448,
+		"path": "../public/hero-video-master.mp4"
 	},
 	"/hero-video.mp4": {
 		"type": "video/mp4",
@@ -342,317 +342,317 @@ var public_assets_data_default = {
 	"/assets/package-BP5brPu7.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"174-y6kcMBaUpHERgIv08fNGaWaoUoo\"",
-		"mtime": "2026-08-30T05:45:52.950Z",
+		"mtime": "2026-08-30T06:03:03.988Z",
 		"size": 372,
 		"path": "../public/assets/package-BP5brPu7.js"
 	},
 	"/assets/pincode.functions-CsMUP8KA.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"282-y4Nqh2kNi5C9CYteVGCta0g4vEQ\"",
-		"mtime": "2026-08-30T05:45:52.951Z",
+		"mtime": "2026-08-30T06:03:03.989Z",
 		"size": 642,
 		"path": "../public/assets/pincode.functions-CsMUP8KA.js"
 	},
-	"/assets/policies._slug-BYYuI6IW.js": {
+	"/assets/policies._slug-Dwyyak-9.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"a4b-Vq52nAxiXgjXhTgBf9erMVV0I8Q\"",
-		"mtime": "2026-08-30T05:45:52.952Z",
+		"etag": "\"a4b-rDwaXQcHwaOOiPDNgm1IMW6DGPY\"",
+		"mtime": "2026-08-30T06:03:03.989Z",
 		"size": 2635,
-		"path": "../public/assets/policies._slug-BYYuI6IW.js"
+		"path": "../public/assets/policies._slug-Dwyyak-9.js"
 	},
 	"/assets/product-cake-400-IyNQ7Qca.webp": {
 		"type": "image/webp",
 		"etag": "\"231a-XZXTs8DL9WIV0wM06ILR+TyXGyw\"",
-		"mtime": "2026-08-30T05:45:52.963Z",
+		"mtime": "2026-08-30T06:03:04.004Z",
 		"size": 8986,
 		"path": "../public/assets/product-cake-400-IyNQ7Qca.webp"
 	},
 	"/assets/product-cake-800-D7p8IG0h.webp": {
 		"type": "image/webp",
 		"etag": "\"8a9c-FUEv5wy89JF3N/Xi4FPDGq0Oa6A\"",
-		"mtime": "2026-08-30T05:45:52.964Z",
+		"mtime": "2026-08-30T06:03:04.005Z",
 		"size": 35484,
 		"path": "../public/assets/product-cake-800-D7p8IG0h.webp"
 	},
 	"/assets/product-glutenfree-400-dtzpdwMq.webp": {
 		"type": "image/webp",
 		"etag": "\"191c-0160DxdXvd1Ez2qyK+5Edn8kPHk\"",
-		"mtime": "2026-08-30T05:45:52.965Z",
+		"mtime": "2026-08-30T06:03:04.005Z",
 		"size": 6428,
 		"path": "../public/assets/product-glutenfree-400-dtzpdwMq.webp"
 	},
 	"/assets/product-glutenfree-800-BRbglSHw.webp": {
 		"type": "image/webp",
 		"etag": "\"4be2-4ZuVdoh9vc8SIcRNeniPXSXBpG4\"",
-		"mtime": "2026-08-30T05:45:52.965Z",
+		"mtime": "2026-08-30T06:03:04.006Z",
 		"size": 19426,
 		"path": "../public/assets/product-glutenfree-800-BRbglSHw.webp"
 	},
 	"/assets/product-granules-400-D98wWv4R.webp": {
 		"type": "image/webp",
 		"etag": "\"1986-pW4Tw+bAfTFuVQjtOVNXaLBbG3M\"",
-		"mtime": "2026-08-30T05:45:52.965Z",
+		"mtime": "2026-08-30T06:03:04.007Z",
 		"size": 6534,
 		"path": "../public/assets/product-granules-400-D98wWv4R.webp"
 	},
 	"/assets/product-granules-800-WWT9xaKD.webp": {
 		"type": "image/webp",
 		"etag": "\"4c94-ndAVPibr7RpoSMK3WBGSbMGTCM0\"",
-		"mtime": "2026-08-30T05:45:52.966Z",
+		"mtime": "2026-08-30T06:03:04.007Z",
 		"size": 19604,
 		"path": "../public/assets/product-granules-800-WWT9xaKD.webp"
 	},
 	"/assets/product-powder-400-BzZ6QhiJ.webp": {
 		"type": "image/webp",
 		"etag": "\"1484-G3RIQC0/RrkZqXpVf02Q9xEmMns\"",
-		"mtime": "2026-08-30T05:45:52.966Z",
+		"mtime": "2026-08-30T06:03:04.007Z",
 		"size": 5252,
 		"path": "../public/assets/product-powder-400-BzZ6QhiJ.webp"
 	},
 	"/assets/product-powder-800-DcdU81cH.webp": {
 		"type": "image/webp",
 		"etag": "\"3770-kg0m3WIrBgEFb276hCgR5PeaH1w\"",
-		"mtime": "2026-08-30T05:45:52.968Z",
+		"mtime": "2026-08-30T06:03:04.007Z",
 		"size": 14192,
 		"path": "../public/assets/product-powder-800-DcdU81cH.webp"
 	},
-	"/assets/product._slug-C89gTq_4.js": {
+	"/assets/product._slug-DWNGr2sT.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"abd0-h8s1W8ESgmRP1u8pJwgZ28Vw/y0\"",
-		"mtime": "2026-08-30T05:45:52.953Z",
+		"etag": "\"abd0-R+bmmX94oVlX1IvDpIKW1oQziXA\"",
+		"mtime": "2026-08-30T06:03:03.990Z",
 		"size": 43984,
-		"path": "../public/assets/product._slug-C89gTq_4.js"
+		"path": "../public/assets/product._slug-DWNGr2sT.js"
 	},
-	"/assets/ProductCard--D9Cil0l.js": {
+	"/assets/ProductCard-FCdGO7VW.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"315b-uKRN0EyCwDNnsfiCUJp+fH8ezWU\"",
-		"mtime": "2026-08-30T05:45:52.929Z",
-		"size": 12635,
-		"path": "../public/assets/ProductCard--D9Cil0l.js"
-	},
-	"/assets/QuickViewDialog-C3z9Cszo.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"b67-QYFt5KDR5Zmvmktszzhe3YDgZak\"",
-		"mtime": "2026-08-30T05:45:52.930Z",
-		"size": 2919,
-		"path": "../public/assets/QuickViewDialog-C3z9Cszo.js"
+		"etag": "\"317b-tkA/ShJGlwpUDOiv8M1QqG9QFMU\"",
+		"mtime": "2026-08-30T06:03:03.960Z",
+		"size": 12667,
+		"path": "../public/assets/ProductCard-FCdGO7VW.js"
 	},
 	"/assets/questions-BMKTHLWt.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"3fe-NC4vglgo0vzgARRm59ts3s6E8O8\"",
-		"mtime": "2026-08-30T05:45:52.954Z",
+		"mtime": "2026-08-30T06:03:03.990Z",
 		"size": 1022,
 		"path": "../public/assets/questions-BMKTHLWt.js"
 	},
-	"/assets/RecentlyViewed-Cg7_8Qi9.js": {
+	"/assets/QuickViewDialog-DxWBgNHz.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"97c-VtQoYk+JKgSrPIdzu+ReGLr4oPI\"",
-		"mtime": "2026-08-30T05:45:52.931Z",
-		"size": 2428,
-		"path": "../public/assets/RecentlyViewed-Cg7_8Qi9.js"
+		"etag": "\"b67-V1EqiYdNVSP7NGuqJjacUbf7yS0\"",
+		"mtime": "2026-08-30T06:03:03.960Z",
+		"size": 2919,
+		"path": "../public/assets/QuickViewDialog-DxWBgNHz.js"
 	},
 	"/assets/radio-group-D93ZxI0q.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1856-60tugdsmXqkhJn7MyEKuIZnlDUs\"",
-		"mtime": "2026-08-30T05:45:52.954Z",
+		"mtime": "2026-08-30T06:03:03.991Z",
 		"size": 6230,
 		"path": "../public/assets/radio-group-D93ZxI0q.js"
+	},
+	"/assets/RecentlyViewed-A52kefg5.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"97c-Lslw3DoOwGchfiA8g9jLlT7SmV4\"",
+		"mtime": "2026-08-30T06:03:03.960Z",
+		"size": 2428,
+		"path": "../public/assets/RecentlyViewed-A52kefg5.js"
 	},
 	"/assets/redirect-Dhm19zUi.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1f4-ePZWCXP5uehkmkGMkMl5xDch+/Y\"",
-		"mtime": "2026-08-30T05:45:52.954Z",
+		"mtime": "2026-08-30T06:03:03.991Z",
 		"size": 500,
 		"path": "../public/assets/redirect-Dhm19zUi.js"
 	},
 	"/assets/rotate-ccw-D_TOQcIJ.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"c8-tAwsEz/QTQBMGPoh8jMzU1gr5iI\"",
-		"mtime": "2026-08-30T05:45:52.956Z",
+		"mtime": "2026-08-30T06:03:03.991Z",
 		"size": 200,
 		"path": "../public/assets/rotate-ccw-D_TOQcIJ.js"
 	},
-	"/assets/routes-D6ABswpk.js": {
+	"/assets/routes-DFjXQz_D.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"463d-f7j78CDCR5wMtNhVYhBe0V0sosk\"",
-		"mtime": "2026-08-30T05:45:52.956Z",
+		"etag": "\"463d-8mRPM6LhiAWafZ5hAsClPA+Blpg\"",
+		"mtime": "2026-08-30T06:03:03.991Z",
 		"size": 17981,
-		"path": "../public/assets/routes-D6ABswpk.js"
+		"path": "../public/assets/routes-DFjXQz_D.js"
+	},
+	"/assets/SearchDialog-CIHBnP9F.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"5064-cdUXOFiG9BqcHk/3CjxgDs3KjD0\"",
+		"mtime": "2026-08-30T06:03:03.962Z",
+		"size": 20580,
+		"path": "../public/assets/SearchDialog-CIHBnP9F.js"
 	},
 	"/assets/shield-check-BRyfGHB7.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"140-7bIyAgIaSc4NwHVpdeIW1USyzOI\"",
-		"mtime": "2026-08-30T05:45:52.957Z",
+		"mtime": "2026-08-30T06:03:03.991Z",
 		"size": 320,
 		"path": "../public/assets/shield-check-BRyfGHB7.js"
 	},
-	"/assets/SearchDialog-DigA_IpO.js": {
+	"/assets/select-Dqpxs7AV.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"5064-WCaNAivNliV9EQhVPABNLDxIrDA\"",
-		"mtime": "2026-08-30T05:45:52.932Z",
-		"size": 20580,
-		"path": "../public/assets/SearchDialog-DigA_IpO.js"
-	},
-	"/assets/select-ChQbfcXd.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"baaa-KvSRNlgYksfUb08arrDMYwh3+q4\"",
-		"mtime": "2026-08-30T05:45:52.957Z",
+		"etag": "\"baaa-ooudUWrtgnEpGNCsBCBD4HSir3U\"",
+		"mtime": "2026-08-30T06:03:03.991Z",
 		"size": 47786,
-		"path": "../public/assets/select-ChQbfcXd.js"
+		"path": "../public/assets/select-Dqpxs7AV.js"
 	},
-	"/assets/shop-GWedDXK_.js": {
+	"/assets/shop-BYTRExXS.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"18d0-MYEXV9ozeX4RVY22q2HVddD0jbY\"",
-		"mtime": "2026-08-30T05:45:52.957Z",
+		"etag": "\"18d0-YGlkFPo9EiRG8wJKbw0I1CHE468\"",
+		"mtime": "2026-08-30T06:03:03.995Z",
 		"size": 6352,
-		"path": "../public/assets/shop-GWedDXK_.js"
+		"path": "../public/assets/shop-BYTRExXS.js"
 	},
 	"/assets/sparkles-YJipJYOr.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1ee-zyZ1oSDWz3P+iC/JPdiWM51tjCo\"",
-		"mtime": "2026-08-30T05:45:52.957Z",
+		"mtime": "2026-08-30T06:03:03.995Z",
 		"size": 494,
 		"path": "../public/assets/sparkles-YJipJYOr.js"
 	},
 	"/assets/star-BEAUIMql.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"2a3-qHAQP8YapWh/M975LgcgT3DXX84\"",
-		"mtime": "2026-08-30T05:45:52.957Z",
+		"mtime": "2026-08-30T06:03:03.996Z",
 		"size": 675,
 		"path": "../public/assets/star-BEAUIMql.js"
-	},
-	"/assets/story-1-shop-900-C1hKWfWP.webp": {
-		"type": "image/webp",
-		"etag": "\"1c524-wJ5rCMaRqEWBHHJPFRlStv2Bbz4\"",
-		"mtime": "2026-08-30T05:45:52.969Z",
-		"size": 116004,
-		"path": "../public/assets/story-1-shop-900-C1hKWfWP.webp"
-	},
-	"/assets/story-1-shop-560-C9AOS04y.webp": {
-		"type": "image/webp",
-		"etag": "\"d3c2-Mg5/P4UXbq5SBypO4cN/MbDdotw\"",
-		"mtime": "2026-08-30T05:45:52.969Z",
-		"size": 54210,
-		"path": "../public/assets/story-1-shop-560-C9AOS04y.webp"
-	},
-	"/assets/story-2-kitchen-560-BwiFpku4.webp": {
-		"type": "image/webp",
-		"etag": "\"f778-fzVX+5ecgwmKIWcIN6n2HJ4ElJU\"",
-		"mtime": "2026-08-30T05:45:52.970Z",
-		"size": 63352,
-		"path": "../public/assets/story-2-kitchen-560-BwiFpku4.webp"
 	},
 	"/assets/story-1-shop-1200-KH6P15Oz.webp": {
 		"type": "image/webp",
 		"etag": "\"2d50c-+x+NV7ahJwD6K2FAnVqBqXzkqnk\"",
-		"mtime": "2026-08-30T05:45:52.968Z",
+		"mtime": "2026-08-30T06:03:04.007Z",
 		"size": 185612,
 		"path": "../public/assets/story-1-shop-1200-KH6P15Oz.webp"
+	},
+	"/assets/story-1-shop-560-C9AOS04y.webp": {
+		"type": "image/webp",
+		"etag": "\"d3c2-Mg5/P4UXbq5SBypO4cN/MbDdotw\"",
+		"mtime": "2026-08-30T06:03:04.007Z",
+		"size": 54210,
+		"path": "../public/assets/story-1-shop-560-C9AOS04y.webp"
+	},
+	"/assets/story-1-shop-900-C1hKWfWP.webp": {
+		"type": "image/webp",
+		"etag": "\"1c524-wJ5rCMaRqEWBHHJPFRlStv2Bbz4\"",
+		"mtime": "2026-08-30T06:03:04.007Z",
+		"size": 116004,
+		"path": "../public/assets/story-1-shop-900-C1hKWfWP.webp"
+	},
+	"/assets/story-2-kitchen-560-BwiFpku4.webp": {
+		"type": "image/webp",
+		"etag": "\"f778-fzVX+5ecgwmKIWcIN6n2HJ4ElJU\"",
+		"mtime": "2026-08-30T06:03:04.007Z",
+		"size": 63352,
+		"path": "../public/assets/story-2-kitchen-560-BwiFpku4.webp"
+	},
+	"/assets/story-2-kitchen-900-D9xPH5h3.webp": {
+		"type": "image/webp",
+		"etag": "\"24d44-pFv3Ceyn3Qyk+v4gcbBCsMhbClU\"",
+		"mtime": "2026-08-30T06:03:04.007Z",
+		"size": 150852,
+		"path": "../public/assets/story-2-kitchen-900-D9xPH5h3.webp"
 	},
 	"/assets/story-2-kitchen-1200-B0XrR51h.webp": {
 		"type": "image/webp",
 		"etag": "\"3a14e-w3i/7SDu4WeVbSIwWEuZaPVpkt8\"",
-		"mtime": "2026-08-30T05:45:52.970Z",
+		"mtime": "2026-08-30T06:03:04.007Z",
 		"size": 237902,
 		"path": "../public/assets/story-2-kitchen-1200-B0XrR51h.webp"
 	},
 	"/assets/story-3-today-560-BqodebNV.webp": {
 		"type": "image/webp",
 		"etag": "\"100b2-SEV1Se0DY2Exhgul/oj4yrRrjow\"",
-		"mtime": "2026-08-30T05:45:52.977Z",
+		"mtime": "2026-08-30T06:03:04.007Z",
 		"size": 65714,
 		"path": "../public/assets/story-3-today-560-BqodebNV.webp"
 	},
-	"/assets/story-DZGB98Ci.js": {
+	"/assets/story-DPwDqwXf.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"2d32-Ccqu5gKrwlWL4r+yQN8W+f2BkiY\"",
-		"mtime": "2026-08-30T05:45:52.959Z",
+		"etag": "\"2d32-EwT9AIfTxtYGbZDrkrMjOJZ/Eg0\"",
+		"mtime": "2026-08-30T06:03:03.996Z",
 		"size": 11570,
-		"path": "../public/assets/story-DZGB98Ci.js"
+		"path": "../public/assets/story-DPwDqwXf.js"
 	},
-	"/assets/story-2-kitchen-900-D9xPH5h3.webp": {
-		"type": "image/webp",
-		"etag": "\"24d44-pFv3Ceyn3Qyk+v4gcbBCsMhbClU\"",
-		"mtime": "2026-08-30T05:45:52.971Z",
-		"size": 150852,
-		"path": "../public/assets/story-2-kitchen-900-D9xPH5h3.webp"
-	},
-	"/assets/support-B4uhgPpD.js": {
+	"/assets/support-OvaxNcEj.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"887-MEQj4TTCTPB+i4JiLJmvKFhkVl0\"",
-		"mtime": "2026-08-30T05:45:52.959Z",
+		"etag": "\"887-1W5JGmBQmpc05VDsmxocnM3m/G8\"",
+		"mtime": "2026-08-30T06:03:03.996Z",
 		"size": 2183,
-		"path": "../public/assets/support-B4uhgPpD.js"
+		"path": "../public/assets/support-OvaxNcEj.js"
+	},
+	"/assets/story-3-today-900-CoQyFYq-.webp": {
+		"type": "image/webp",
+		"etag": "\"2642e-PrnboRpJqv4QYtJLSs+oAYMBQx8\"",
+		"mtime": "2026-08-30T06:03:04.007Z",
+		"size": 156718,
+		"path": "../public/assets/story-3-today-900-CoQyFYq-.webp"
+	},
+	"/assets/story-3-today-1200-COgTFLEH.webp": {
+		"type": "image/webp",
+		"etag": "\"3b3e0-IgpgxUNMre1gLuXTJ/BXAXKOeR8\"",
+		"mtime": "2026-08-30T06:03:04.007Z",
+		"size": 242656,
+		"path": "../public/assets/story-3-today-1200-COgTFLEH.webp"
 	},
 	"/assets/textarea-CXAqO8kY.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"24e-HyRAzIKE5xZ14tMS+3/BrTcK7rY\"",
-		"mtime": "2026-08-30T05:45:52.959Z",
+		"mtime": "2026-08-30T06:03:03.996Z",
 		"size": 590,
 		"path": "../public/assets/textarea-CXAqO8kY.js"
 	},
 	"/assets/tickets-5sBLbMRC.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"17f-JwnZIYEjB4+nMZF50kd5H+SGy9E\"",
-		"mtime": "2026-08-30T05:45:52.960Z",
+		"mtime": "2026-08-30T06:03:03.996Z",
 		"size": 383,
 		"path": "../public/assets/tickets-5sBLbMRC.js"
-	},
-	"/assets/track-T8unHmEU.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"ed8-Du6pDfEQ4Le361kKJ6e2qJv9II0\"",
-		"mtime": "2026-08-30T05:45:52.960Z",
-		"size": 3800,
-		"path": "../public/assets/track-T8unHmEU.js"
-	},
-	"/assets/story-3-today-900-CoQyFYq-.webp": {
-		"type": "image/webp",
-		"etag": "\"2642e-PrnboRpJqv4QYtJLSs+oAYMBQx8\"",
-		"mtime": "2026-08-30T05:45:52.977Z",
-		"size": 156718,
-		"path": "../public/assets/story-3-today-900-CoQyFYq-.webp"
-	},
-	"/assets/triangle-alert-CTQiK_Cu.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"251-s7a6SLXh33q2F5cfy6Zk8nN9LpM\"",
-		"mtime": "2026-08-30T05:45:52.960Z",
-		"size": 593,
-		"path": "../public/assets/triangle-alert-CTQiK_Cu.js"
 	},
 	"/assets/styles-Dak8kpb7.css": {
 		"type": "text/css; charset=utf-8",
 		"etag": "\"20f63-5EpAPkBJ0MRXvJDVj+5JSxAE0oo\"",
-		"mtime": "2026-08-30T05:45:52.977Z",
+		"mtime": "2026-08-30T06:03:04.015Z",
 		"size": 135011,
 		"path": "../public/assets/styles-Dak8kpb7.css"
 	},
-	"/assets/story-3-today-1200-COgTFLEH.webp": {
-		"type": "image/webp",
-		"etag": "\"3b3e0-IgpgxUNMre1gLuXTJ/BXAXKOeR8\"",
-		"mtime": "2026-08-30T05:45:52.972Z",
-		"size": 242656,
-		"path": "../public/assets/story-3-today-1200-COgTFLEH.webp"
-	},
-	"/assets/useRouter-D7Fmf6Jm.js": {
+	"/assets/track-CzaPV1Jj.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"9c-hPvxQFuMBFv4OrkqvTQ9w93NQW4\"",
-		"mtime": "2026-08-30T05:45:52.962Z",
-		"size": 156,
-		"path": "../public/assets/useRouter-D7Fmf6Jm.js"
+		"etag": "\"ed8-B7x5efSrCsmbTQ9ONxkF47/7A3Q\"",
+		"mtime": "2026-08-30T06:03:03.996Z",
+		"size": 3800,
+		"path": "../public/assets/track-CzaPV1Jj.js"
 	},
-	"/assets/wishlist-CQmaiW8F.js": {
+	"/assets/triangle-alert-CTQiK_Cu.js": {
 		"type": "text/javascript; charset=utf-8",
-		"etag": "\"df5-SPSIzfgDTYBMR5fI2eXNLxJ8icA\"",
-		"mtime": "2026-08-30T05:45:52.962Z",
-		"size": 3573,
-		"path": "../public/assets/wishlist-CQmaiW8F.js"
+		"etag": "\"251-s7a6SLXh33q2F5cfy6Zk8nN9LpM\"",
+		"mtime": "2026-08-30T06:03:03.996Z",
+		"size": 593,
+		"path": "../public/assets/triangle-alert-CTQiK_Cu.js"
 	},
 	"/assets/truck-BfP6IyW0.js": {
 		"type": "text/javascript; charset=utf-8",
 		"etag": "\"1e3-KfgVjbwVk3gTkggzdlTqXGpdH3w\"",
-		"mtime": "2026-08-30T05:45:52.962Z",
+		"mtime": "2026-08-30T06:03:04.000Z",
 		"size": 483,
 		"path": "../public/assets/truck-BfP6IyW0.js"
+	},
+	"/assets/useRouter-D7Fmf6Jm.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"9c-hPvxQFuMBFv4OrkqvTQ9w93NQW4\"",
+		"mtime": "2026-08-30T06:03:04.001Z",
+		"size": 156,
+		"path": "../public/assets/useRouter-D7Fmf6Jm.js"
+	},
+	"/assets/wishlist-i76OX8HS.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"df5-h5hRBpRg+V3EupKWW+fGul1FRsU\"",
+		"mtime": "2026-08-30T06:03:04.003Z",
+		"size": 3573,
+		"path": "../public/assets/wishlist-i76OX8HS.js"
 	},
 	"/products/100g-asafoetida-gold-cake/img-1.jpg": {
 		"type": "image/jpeg",
@@ -668,19 +668,19 @@ var public_assets_data_default = {
 		"size": 211544,
 		"path": "../public/products/100g-asafoetida-gold-cake/img-2.jpg"
 	},
-	"/products/100g-asafoetida-gold-cake/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"5f2a7-gk96D4Hg/vtk1/GpWtVbfr8k4K8\"",
-		"mtime": "2026-08-24T05:52:11.612Z",
-		"size": 389799,
-		"path": "../public/products/100g-asafoetida-gold-cake/img-3.jpg"
-	},
 	"/products/100g-asafoetida-gold-cake/img-4.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"61f28-8Ft0dQ2msQmT24QiT/pBzi5L/yY\"",
 		"mtime": "2026-08-24T05:52:13.171Z",
 		"size": 401192,
 		"path": "../public/products/100g-asafoetida-gold-cake/img-4.jpg"
+	},
+	"/products/100g-asafoetida-gold-cake/img-3.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"5f2a7-gk96D4Hg/vtk1/GpWtVbfr8k4K8\"",
+		"mtime": "2026-08-24T05:52:11.612Z",
+		"size": 389799,
+		"path": "../public/products/100g-asafoetida-gold-cake/img-3.jpg"
 	},
 	"/products/100g-asafoetida-gold-cake/img-5.jpg": {
 		"type": "image/jpeg",
@@ -696,19 +696,19 @@ var public_assets_data_default = {
 		"size": 309891,
 		"path": "../public/products/100g-asafoetida-gold-cake/img-6.jpg"
 	},
+	"/products/100g-gold-asafoetida-powder/img-1.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"40b6f-DqcC3CwSYJHqHWw3gFDvXdJ5YWA\"",
+		"mtime": "2026-08-24T05:52:19.570Z",
+		"size": 265071,
+		"path": "../public/products/100g-gold-asafoetida-powder/img-1.jpg"
+	},
 	"/products/100g-asafoetida-gold-cake/img-7.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"59a8b-zoFT3mmxeDKt5P1FYK/o0cNC+wY\"",
 		"mtime": "2026-08-24T05:52:17.295Z",
 		"size": 367243,
 		"path": "../public/products/100g-asafoetida-gold-cake/img-7.jpg"
-	},
-	"/products/100g-gold-asafoetida-powder/img-2.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"398f6-vJEFP1F2ACp8MujUyOSn48yRkyA\"",
-		"mtime": "2026-08-24T05:52:20.504Z",
-		"size": 235766,
-		"path": "../public/products/100g-gold-asafoetida-powder/img-2.jpg"
 	},
 	"/products/100g-asafoetida-gold-cake/img-8.jpg": {
 		"type": "image/jpeg",
@@ -717,12 +717,12 @@ var public_assets_data_default = {
 		"size": 357640,
 		"path": "../public/products/100g-asafoetida-gold-cake/img-8.jpg"
 	},
-	"/products/100g-gold-asafoetida-powder/img-1.jpg": {
+	"/products/100g-gold-asafoetida-powder/img-2.jpg": {
 		"type": "image/jpeg",
-		"etag": "\"40b6f-DqcC3CwSYJHqHWw3gFDvXdJ5YWA\"",
-		"mtime": "2026-08-24T05:52:19.570Z",
-		"size": 265071,
-		"path": "../public/products/100g-gold-asafoetida-powder/img-1.jpg"
+		"etag": "\"398f6-vJEFP1F2ACp8MujUyOSn48yRkyA\"",
+		"mtime": "2026-08-24T05:52:20.504Z",
+		"size": 235766,
+		"path": "../public/products/100g-gold-asafoetida-powder/img-2.jpg"
 	},
 	"/products/100g-gold-asafoetida-powder/img-3.jpg": {
 		"type": "image/jpeg",
@@ -738,6 +738,13 @@ var public_assets_data_default = {
 		"size": 246149,
 		"path": "../public/products/100g-gold-asafoetida-powder/img-4.jpg"
 	},
+	"/products/500g-gold-asafoetida-powder/img-1.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"3e58f-CnY1+4BAsSUAmJXl0Ko2ZuPdhYE\"",
+		"mtime": "2026-08-24T05:53:23.269Z",
+		"size": 255375,
+		"path": "../public/products/500g-gold-asafoetida-powder/img-1.jpg"
+	},
 	"/products/500g-gold-asafoetida-powder/img-2.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"395ed-oS2PKHuKNR8opSaONdw57Y9cPQM\"",
@@ -751,13 +758,6 @@ var public_assets_data_default = {
 		"mtime": "2026-08-24T05:53:26.609Z",
 		"size": 231357,
 		"path": "../public/products/500g-gold-asafoetida-powder/img-3.jpg"
-	},
-	"/products/500g-gold-asafoetida-powder/img-1.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"3e58f-CnY1+4BAsSUAmJXl0Ko2ZuPdhYE\"",
-		"mtime": "2026-08-24T05:53:23.269Z",
-		"size": 255375,
-		"path": "../public/products/500g-gold-asafoetida-powder/img-1.jpg"
 	},
 	"/products/100g-premium-asafoetida-powder/img-1.jpg": {
 		"type": "image/jpeg",
@@ -780,19 +780,19 @@ var public_assets_data_default = {
 		"size": 861888,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-10.png"
 	},
-	"/products/100g-premium-asafoetida-powder/img-13.png": {
-		"type": "image/png",
-		"etag": "\"d933b-ZXeFmXu/5O4OV1W2e6B5+B+L2pM\"",
-		"mtime": "2026-08-24T05:49:05.602Z",
-		"size": 889659,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-13.png"
-	},
 	"/products/100g-premium-asafoetida-powder/img-12.png": {
 		"type": "image/png",
 		"etag": "\"de1f7-mZSHOfwgbEOdxGECoR19wvRc+iQ\"",
 		"mtime": "2026-08-24T05:48:59.363Z",
 		"size": 909815,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-12.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-13.png": {
+		"type": "image/png",
+		"etag": "\"d933b-ZXeFmXu/5O4OV1W2e6B5+B+L2pM\"",
+		"mtime": "2026-08-24T05:49:05.602Z",
+		"size": 889659,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-13.png"
 	},
 	"/products/100g-premium-asafoetida-powder/img-14.png": {
 		"type": "image/png",
@@ -815,6 +815,13 @@ var public_assets_data_default = {
 		"size": 905129,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-17.png"
 	},
+	"/products/100g-premium-asafoetida-powder/img-19.png": {
+		"type": "image/png",
+		"etag": "\"8ff7c-KQpsRpFsRDr/oF76w/iZAIaahv8\"",
+		"mtime": "2026-08-24T05:52:39.231Z",
+		"size": 589692,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-19.png"
+	},
 	"/products/100g-premium-asafoetida-powder/img-18.png": {
 		"type": "image/png",
 		"etag": "\"df8db-7PG7ls7lK+vm5vV4fkN2NmfqOX0\"",
@@ -829,12 +836,12 @@ var public_assets_data_default = {
 		"size": 1129477,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-15.png"
 	},
-	"/products/100g-premium-asafoetida-powder/img-19.png": {
+	"/products/100g-premium-asafoetida-powder/img-16.png": {
 		"type": "image/png",
-		"etag": "\"8ff7c-KQpsRpFsRDr/oF76w/iZAIaahv8\"",
-		"mtime": "2026-08-24T05:52:39.231Z",
-		"size": 589692,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-19.png"
+		"etag": "\"12420d-JZnCGh7ypZdOubO8+TokJW2kQJw\"",
+		"mtime": "2026-08-24T05:49:18.891Z",
+		"size": 1196557,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-16.png"
 	},
 	"/products/100g-premium-asafoetida-powder/img-20.png": {
 		"type": "image/png",
@@ -842,13 +849,6 @@ var public_assets_data_default = {
 		"mtime": "2026-08-24T05:52:41.941Z",
 		"size": 577525,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-20.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-16.png": {
-		"type": "image/png",
-		"etag": "\"12420d-JZnCGh7ypZdOubO8+TokJW2kQJw\"",
-		"mtime": "2026-08-24T05:49:18.891Z",
-		"size": 1196557,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-16.png"
 	},
 	"/products/100g-premium-asafoetida-powder/img-21.png": {
 		"type": "image/png",
@@ -871,12 +871,12 @@ var public_assets_data_default = {
 		"size": 705541,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-22.png"
 	},
-	"/products/100g-premium-asafoetida-powder/img-23.png": {
+	"/products/100g-premium-asafoetida-powder/img-25.png": {
 		"type": "image/png",
-		"etag": "\"c7a34-6+BpaIko5lQ0wYkUk1ZFI0kZil4\"",
-		"mtime": "2026-08-24T05:52:46.489Z",
-		"size": 817716,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-23.png"
+		"etag": "\"9a1b8-+K2NoSySeScO5H7makOODgyBKUE\"",
+		"mtime": "2026-08-24T05:52:49.240Z",
+		"size": 631224,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-25.png"
 	},
 	"/products/100g-premium-asafoetida-powder/img-24.png": {
 		"type": "image/png",
@@ -892,12 +892,12 @@ var public_assets_data_default = {
 		"size": 664061,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-26.png"
 	},
-	"/products/100g-premium-asafoetida-powder/img-25.png": {
+	"/products/100g-premium-asafoetida-powder/img-23.png": {
 		"type": "image/png",
-		"etag": "\"9a1b8-+K2NoSySeScO5H7makOODgyBKUE\"",
-		"mtime": "2026-08-24T05:52:49.240Z",
-		"size": 631224,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-25.png"
+		"etag": "\"c7a34-6+BpaIko5lQ0wYkUk1ZFI0kZil4\"",
+		"mtime": "2026-08-24T05:52:46.489Z",
+		"size": 817716,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-23.png"
 	},
 	"/products/100g-premium-asafoetida-powder/img-29.png": {
 		"type": "image/png",
@@ -912,13 +912,6 @@ var public_assets_data_default = {
 		"mtime": "2026-08-24T05:52:59.014Z",
 		"size": 854788,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-30.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-4.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"479ed-nwq4tZ4Ndb5bMObF+/2+3sWJQM8\"",
-		"mtime": "2026-08-24T05:53:12.692Z",
-		"size": 293357,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-4.jpg"
 	},
 	"/products/100g-premium-asafoetida-powder/img-31.png": {
 		"type": "image/png",
@@ -941,33 +934,19 @@ var public_assets_data_default = {
 		"size": 1079362,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-27.png"
 	},
+	"/products/100g-premium-asafoetida-powder/img-4.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"479ed-nwq4tZ4Ndb5bMObF+/2+3sWJQM8\"",
+		"mtime": "2026-08-24T05:53:12.692Z",
+		"size": 293357,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-4.jpg"
+	},
 	"/products/100g-premium-asafoetida-powder/img-28.png": {
 		"type": "image/png",
 		"etag": "\"110db6-YqtsdWIErigcNHeeFXQmLUdXFMI\"",
 		"mtime": "2026-08-24T05:52:54.051Z",
 		"size": 1117622,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-28.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-35.png": {
-		"type": "image/png",
-		"etag": "\"c7031-q4pnFSFBpRsGin9xjHE0BGxytp8\"",
-		"mtime": "2026-08-24T05:53:07.464Z",
-		"size": 815153,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-35.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-37.png": {
-		"type": "image/png",
-		"etag": "\"fc902-0/cG+wdtERX/X7RRQvb3K7+YCfk\"",
-		"mtime": "2026-08-24T05:50:39.510Z",
-		"size": 1034498,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-37.png"
-	},
-	"/products/50g-asafoetida-gold-cake/img-1.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"3a0ca-aVPDF9cdGvAVy4P07Ngsn6kZb5c\"",
-		"mtime": "2026-08-24T05:53:28.344Z",
-		"size": 237770,
-		"path": "../public/products/50g-asafoetida-gold-cake/img-1.jpg"
 	},
 	"/products/100g-premium-asafoetida-powder/img-33.png": {
 		"type": "image/png",
@@ -976,6 +955,13 @@ var public_assets_data_default = {
 		"size": 1286084,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-33.png"
 	},
+	"/products/100g-premium-asafoetida-powder/img-35.png": {
+		"type": "image/png",
+		"etag": "\"c7031-q4pnFSFBpRsGin9xjHE0BGxytp8\"",
+		"mtime": "2026-08-24T05:53:07.464Z",
+		"size": 815153,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-35.png"
+	},
 	"/products/50g-asafoetida-gold-cake/img-2.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"2eebe-Z9vZzzHV7LvVtb6C7bzlP3333/c\"",
@@ -983,26 +969,19 @@ var public_assets_data_default = {
 		"size": 192190,
 		"path": "../public/products/50g-asafoetida-gold-cake/img-2.jpg"
 	},
-	"/products/100g-premium-asafoetida-powder/img-36.png": {
-		"type": "image/png",
-		"etag": "\"1054f2-eyg4iT+GkP/pux2N+zA0Kb8BZlc\"",
-		"mtime": "2026-08-24T05:50:34.531Z",
-		"size": 1070322,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-36.png"
+	"/products/50g-asafoetida-gold-cake/img-1.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"3a0ca-aVPDF9cdGvAVy4P07Ngsn6kZb5c\"",
+		"mtime": "2026-08-24T05:53:28.344Z",
+		"size": 237770,
+		"path": "../public/products/50g-asafoetida-gold-cake/img-1.jpg"
 	},
-	"/products/100g-premium-asafoetida-powder/img-34.png": {
+	"/products/100g-premium-asafoetida-powder/img-37.png": {
 		"type": "image/png",
-		"etag": "\"13907d-ycwwzfj90tSNJP7BtXBy7Wi/FyI\"",
-		"mtime": "2026-08-24T05:53:05.831Z",
-		"size": 1282173,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-34.png"
-	},
-	"/products/100g-premium-asafoetida-powder/img-9.png": {
-		"type": "image/png",
-		"etag": "\"ec65c-My/01AWsJ+75Nc+4bjQL5of3tdc\"",
-		"mtime": "2026-08-24T05:53:21.783Z",
-		"size": 968284,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-9.png"
+		"etag": "\"fc902-0/cG+wdtERX/X7RRQvb3K7+YCfk\"",
+		"mtime": "2026-08-24T05:50:39.510Z",
+		"size": 1034498,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-37.png"
 	},
 	"/products/100g-premium-asafoetida-powder/img-7.png": {
 		"type": "image/png",
@@ -1011,12 +990,26 @@ var public_assets_data_default = {
 		"size": 934070,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-7.png"
 	},
+	"/products/100g-premium-asafoetida-powder/img-34.png": {
+		"type": "image/png",
+		"etag": "\"13907d-ycwwzfj90tSNJP7BtXBy7Wi/FyI\"",
+		"mtime": "2026-08-24T05:53:05.831Z",
+		"size": 1282173,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-34.png"
+	},
 	"/products/100g-premium-asafoetida-powder/img-8.png": {
 		"type": "image/png",
 		"etag": "\"eb9c9-QrLZzbXkJ2o21tFraWAisWZzlSc\"",
 		"mtime": "2026-08-24T05:51:06.351Z",
 		"size": 965065,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-8.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-9.png": {
+		"type": "image/png",
+		"etag": "\"ec65c-My/01AWsJ+75Nc+4bjQL5of3tdc\"",
+		"mtime": "2026-08-24T05:53:21.783Z",
+		"size": 968284,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-9.png"
 	},
 	"/products/50g-asafoetida-gold-cake/img-3.jpg": {
 		"type": "image/jpeg",
@@ -1025,12 +1018,12 @@ var public_assets_data_default = {
 		"size": 418640,
 		"path": "../public/products/50g-asafoetida-gold-cake/img-3.jpg"
 	},
-	"/products/100g-premium-asafoetida-powder/img-5.png": {
+	"/products/100g-premium-asafoetida-powder/img-36.png": {
 		"type": "image/png",
-		"etag": "\"14d0fd-6aPT46ZCjYT6U0DvupQwlgrrqY0\"",
-		"mtime": "2026-08-24T05:50:47.697Z",
-		"size": 1364221,
-		"path": "../public/products/100g-premium-asafoetida-powder/img-5.png"
+		"etag": "\"1054f2-eyg4iT+GkP/pux2N+zA0Kb8BZlc\"",
+		"mtime": "2026-08-24T05:50:34.531Z",
+		"size": 1070322,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-36.png"
 	},
 	"/products/100g-premium-asafoetida-powder/img-6.png": {
 		"type": "image/png",
@@ -1038,6 +1031,13 @@ var public_assets_data_default = {
 		"mtime": "2026-08-24T05:50:53.475Z",
 		"size": 1388332,
 		"path": "../public/products/100g-premium-asafoetida-powder/img-6.png"
+	},
+	"/products/100g-premium-asafoetida-powder/img-5.png": {
+		"type": "image/png",
+		"etag": "\"14d0fd-6aPT46ZCjYT6U0DvupQwlgrrqY0\"",
+		"mtime": "2026-08-24T05:50:47.697Z",
+		"size": 1364221,
+		"path": "../public/products/100g-premium-asafoetida-powder/img-5.png"
 	},
 	"/products/50g-asafoetida-gold-cake/img-4.jpg": {
 		"type": "image/jpeg",
@@ -1060,6 +1060,13 @@ var public_assets_data_default = {
 		"size": 352269,
 		"path": "../public/products/50g-asafoetida-gold-cake/img-6.jpg"
 	},
+	"/products/50g-asafoetida-gold-cake/img-7.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"5d4d6-V3Wy4GEy1JeM/CJ6dLIc3CSzaI8\"",
+		"mtime": "2026-08-24T05:53:37.589Z",
+		"size": 382166,
+		"path": "../public/products/50g-asafoetida-gold-cake/img-7.jpg"
+	},
 	"/products/50g-asafoetida-gold-cake/img-8.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"58b7b-xgDMPtQS/PU25EWRxroL67ald2Y\"",
@@ -1073,13 +1080,6 @@ var public_assets_data_default = {
 		"mtime": "2026-08-24T05:53:40.884Z",
 		"size": 60803,
 		"path": "../public/products/50g-asafoetida-gold-cake/img-9.jpg"
-	},
-	"/products/50g-asafoetida-gold-cake/img-7.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"5d4d6-V3Wy4GEy1JeM/CJ6dLIc3CSzaI8\"",
-		"mtime": "2026-08-24T05:53:37.589Z",
-		"size": 382166,
-		"path": "../public/products/50g-asafoetida-gold-cake/img-7.jpg"
 	},
 	"/products/50g-gluten-free-asafoetida-powder/img-1.jpg": {
 		"type": "image/jpeg",
@@ -1165,6 +1165,34 @@ var public_assets_data_default = {
 		"size": 287198,
 		"path": "../public/products/50g-premium-asafoetida-powder/img-4.jpg"
 	},
+	"/products/black-sesame-seeds/img-2.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"506ac-dTVSnqWb/uJ2SLYKYkbu3UD7IP4\"",
+		"mtime": "2026-08-25T08:35:16.251Z",
+		"size": 329388,
+		"path": "../public/products/black-sesame-seeds/img-2.jpg"
+	},
+	"/products/black-sesame-seeds/img-1.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"581c5-CxoSsCsJw/3aN1cREACWPpxeXOY\"",
+		"mtime": "2026-08-25T08:35:15.543Z",
+		"size": 360901,
+		"path": "../public/products/black-sesame-seeds/img-1.jpg"
+	},
+	"/products/black-sesame-seeds/img-3.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"5e071-EgJnT5N6N20dujLCzTtqGzUy2ME\"",
+		"mtime": "2026-08-25T08:35:16.962Z",
+		"size": 385137,
+		"path": "../public/products/black-sesame-seeds/img-3.jpg"
+	},
+	"/products/black-sesame-seeds/img-4.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"4fd86-WaBr2aEgLFBsltt6I6afldaggOg\"",
+		"mtime": "2026-08-25T08:35:17.903Z",
+		"size": 327046,
+		"path": "../public/products/black-sesame-seeds/img-4.jpg"
+	},
 	"/products/all-product/img-1.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"4832f-qGxJ0DZlcK3Ojb6XTl+ZipnBQ1s\"",
@@ -1172,19 +1200,19 @@ var public_assets_data_default = {
 		"size": 295727,
 		"path": "../public/products/all-product/img-1.jpg"
 	},
-	"/products/all-product/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"45f60-u/6NSGRpzP/LYWriVX+3nmEqAvU\"",
-		"mtime": "2026-08-24T05:54:07.248Z",
-		"size": 286560,
-		"path": "../public/products/all-product/img-3.jpg"
-	},
 	"/products/all-product/img-2.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"40df4-ydaHxyRtlr1bqKIElCYpKjdh9AU\"",
 		"mtime": "2026-08-24T05:54:05.411Z",
 		"size": 265716,
 		"path": "../public/products/all-product/img-2.jpg"
+	},
+	"/products/all-product/img-3.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"45f60-u/6NSGRpzP/LYWriVX+3nmEqAvU\"",
+		"mtime": "2026-08-24T05:54:07.248Z",
+		"size": 286560,
+		"path": "../public/products/all-product/img-3.jpg"
 	},
 	"/products/all-product/img-4.jpg": {
 		"type": "image/jpeg",
@@ -1228,27 +1256,6 @@ var public_assets_data_default = {
 		"size": 279190,
 		"path": "../public/products/all-product/img-9.jpg"
 	},
-	"/products/black-sesame-seeds/img-1.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"581c5-CxoSsCsJw/3aN1cREACWPpxeXOY\"",
-		"mtime": "2026-08-25T08:35:15.543Z",
-		"size": 360901,
-		"path": "../public/products/black-sesame-seeds/img-1.jpg"
-	},
-	"/products/black-sesame-seeds/img-2.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"506ac-dTVSnqWb/uJ2SLYKYkbu3UD7IP4\"",
-		"mtime": "2026-08-25T08:35:16.251Z",
-		"size": 329388,
-		"path": "../public/products/black-sesame-seeds/img-2.jpg"
-	},
-	"/products/black-sesame-seeds/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"5e071-EgJnT5N6N20dujLCzTtqGzUy2ME\"",
-		"mtime": "2026-08-25T08:35:16.962Z",
-		"size": 385137,
-		"path": "../public/products/black-sesame-seeds/img-3.jpg"
-	},
 	"/products/bottle-jar/img-2.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"4bea6-ctZ0vyNvqx27yfRUinlwkPBkdoA\"",
@@ -1256,12 +1263,12 @@ var public_assets_data_default = {
 		"size": 310950,
 		"path": "../public/products/bottle-jar/img-2.jpg"
 	},
-	"/products/black-sesame-seeds/img-4.jpg": {
+	"/products/bottle-jar/img-3.jpg": {
 		"type": "image/jpeg",
-		"etag": "\"4fd86-WaBr2aEgLFBsltt6I6afldaggOg\"",
-		"mtime": "2026-08-25T08:35:17.903Z",
-		"size": 327046,
-		"path": "../public/products/black-sesame-seeds/img-4.jpg"
+		"etag": "\"5ac48-6c+jFf8UxUBmV3O/D+FTvgtavAY\"",
+		"mtime": "2026-08-24T05:54:24.722Z",
+		"size": 371784,
+		"path": "../public/products/bottle-jar/img-3.jpg"
 	},
 	"/products/bottle-jar/img-1.jpg": {
 		"type": "image/jpeg",
@@ -1276,13 +1283,6 @@ var public_assets_data_default = {
 		"mtime": "2026-08-24T05:54:26.349Z",
 		"size": 290066,
 		"path": "../public/products/bottle-jar/img-4.jpg"
-	},
-	"/products/bottle-jar/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"5ac48-6c+jFf8UxUBmV3O/D+FTvgtavAY\"",
-		"mtime": "2026-08-24T05:54:24.722Z",
-		"size": 371784,
-		"path": "../public/products/bottle-jar/img-3.jpg"
 	},
 	"/products/bottle-jar/img-5.jpg": {
 		"type": "image/jpeg",
@@ -1319,19 +1319,19 @@ var public_assets_data_default = {
 		"size": 239369,
 		"path": "../public/products/hing/img-4.jpg"
 	},
-	"/products/hing/img-6.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"2b9af-HACLKv2qOr7M42o7NtgZJhvHi0U\"",
-		"mtime": "2026-08-24T05:54:38.925Z",
-		"size": 178607,
-		"path": "../public/products/hing/img-6.jpg"
-	},
 	"/products/hing/img-5.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"41f59-diElF2bGkacRPtS0X+A4sByKfKE\"",
 		"mtime": "2026-08-24T05:54:37.323Z",
 		"size": 270169,
 		"path": "../public/products/hing/img-5.jpg"
+	},
+	"/products/hing/img-6.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"2b9af-HACLKv2qOr7M42o7NtgZJhvHi0U\"",
+		"mtime": "2026-08-24T05:54:38.925Z",
+		"size": 178607,
+		"path": "../public/products/hing/img-6.jpg"
 	},
 	"/products/hing-chips/img-1.jpg": {
 		"type": "image/jpeg",
@@ -1347,20 +1347,6 @@ var public_assets_data_default = {
 		"size": 267634,
 		"path": "../public/products/hing-chips/img-2.jpg"
 	},
-	"/products/hing-pellets/img-3.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"38013-8j5b5l2+OI9oRvipmkSVEhiUYtQ\"",
-		"mtime": "2026-08-24T05:54:47.895Z",
-		"size": 229395,
-		"path": "../public/products/hing-pellets/img-3.jpg"
-	},
-	"/products/hing-pellets/img-4.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"28c2d-xPJq2krVT8PO+bPfCDdzfViZclk\"",
-		"mtime": "2026-08-24T05:54:49.753Z",
-		"size": 166957,
-		"path": "../public/products/hing-pellets/img-4.jpg"
-	},
 	"/products/hing-pellets/img-1.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"6c226-Qs0lN2z5VR/CKixzdzrxMHB6HEw\"",
@@ -1374,6 +1360,20 @@ var public_assets_data_default = {
 		"mtime": "2026-08-24T05:54:46.080Z",
 		"size": 455438,
 		"path": "../public/products/hing-pellets/img-2.jpg"
+	},
+	"/products/hing-pellets/img-3.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"38013-8j5b5l2+OI9oRvipmkSVEhiUYtQ\"",
+		"mtime": "2026-08-24T05:54:47.895Z",
+		"size": 229395,
+		"path": "../public/products/hing-pellets/img-3.jpg"
+	},
+	"/products/hing-pellets/img-4.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"28c2d-xPJq2krVT8PO+bPfCDdzfViZclk\"",
+		"mtime": "2026-08-24T05:54:49.753Z",
+		"size": 166957,
+		"path": "../public/products/hing-pellets/img-4.jpg"
 	},
 	"/products/hing-pellets/img-5.jpg": {
 		"type": "image/jpeg",
@@ -1410,19 +1410,19 @@ var public_assets_data_default = {
 		"size": 264114,
 		"path": "../public/products/millet-sambar-mix/img-2.jpg"
 	},
-	"/products/pure-benzoin-sambrani/img-2.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"243aa-E8YGWbp1G9V9rTc9T4jZZ3jdvXI\"",
-		"mtime": "2026-08-24T05:54:54.026Z",
-		"size": 148394,
-		"path": "../public/products/pure-benzoin-sambrani/img-2.jpg"
-	},
 	"/products/pure-benzoin-sambrani/img-1.png": {
 		"type": "image/png",
 		"etag": "\"37ec0-iFgu0AnFiHawbyrq6G7XaJVGpec\"",
 		"mtime": "2026-08-24T05:52:25.579Z",
 		"size": 229056,
 		"path": "../public/products/pure-benzoin-sambrani/img-1.png"
+	},
+	"/products/pure-benzoin-sambrani/img-2.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"243aa-E8YGWbp1G9V9rTc9T4jZZ3jdvXI\"",
+		"mtime": "2026-08-24T05:54:54.026Z",
+		"size": 148394,
+		"path": "../public/products/pure-benzoin-sambrani/img-2.jpg"
 	},
 	"/products/pure-benzoin-sambrani/img-3.jpg": {
 		"type": "image/jpeg",
@@ -1487,19 +1487,19 @@ var public_assets_data_default = {
 		"size": 224188,
 		"path": "../public/products/traditional-health-mix/img-7.jpg"
 	},
-	"/products/traditional-idli-podi/img-1.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"549d4-nyhYmG7N+Vv0z6IqCkLUElcJMmo\"",
-		"mtime": "2026-08-25T08:35:18.647Z",
-		"size": 346580,
-		"path": "../public/products/traditional-idli-podi/img-1.jpg"
-	},
 	"/products/traditional-idli-podi/img-2.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"49741-oaKJsfbhCqNH8DO2qWNntrxhTEc\"",
 		"mtime": "2026-08-25T08:35:19.432Z",
 		"size": 300865,
 		"path": "../public/products/traditional-idli-podi/img-2.jpg"
+	},
+	"/products/traditional-idli-podi/img-1.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"549d4-nyhYmG7N+Vv0z6IqCkLUElcJMmo\"",
+		"mtime": "2026-08-25T08:35:18.647Z",
+		"size": 346580,
+		"path": "../public/products/traditional-idli-podi/img-1.jpg"
 	},
 	"/products/traditional-idli-podi/img-3.jpg": {
 		"type": "image/jpeg",

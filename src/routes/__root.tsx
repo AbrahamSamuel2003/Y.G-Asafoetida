@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { lazy, Suspense, useEffect, useState, type ReactNode } from "react";
 
+import "../styles.css";
 import appCss from "../styles.css?url";
 import { CartProvider } from "@/lib/cart";
 import { OrdersProvider } from "@/lib/orders";
@@ -162,6 +163,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "canonical", href: "https://ygasafoetida.in" },
+      { rel: "preload", href: appCss, as: "style" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -221,9 +223,19 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en" data-theme="saffron">
       <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              html { background-color: #ffffff; color: #1c1917; }
+              body { margin: 0; background-color: #ffffff; color: #1c1917; font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-font-smoothing: antialiased; }
+              header { background-color: #ffffff; }
+              img { content-visibility: auto; }
+            `,
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem('yg-palette-theme-v1')||'saffron';document.documentElement.setAttribute('data-theme',t);}catch(e){}`,
+            __html: `try{var t=localStorage.getItem('yg-palette-theme-v1')||'saffron';document.documentElement.setAttribute('data-theme',t);var c={saffron:'oklch(0.52 0.19 44)',emerald:'oklch(0.44 0.17 142)',indigo:'oklch(0.44 0.18 255)',plum:'oklch(0.44 0.19 315)'};if(c[t]){document.documentElement.style.setProperty('--primary',c[t]);document.documentElement.style.setProperty('--color-primary',c[t]);}}catch(e){}`,
           }}
         />
         <HeadContent />
